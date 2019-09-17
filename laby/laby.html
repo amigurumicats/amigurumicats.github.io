@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=1000px">
+		<title>Laby</title>
+		<link rel="stylesheet" href="laby.css" type="text/css">
+		<script type="text/javascript" src="../libs/jquery-3.4.0.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="laby.js"></script>
+		<!--[if IE]><script type="text/javascript" src="../excanvas.js"></script><![endif]-->
+	</head>
+	<body>
+		<div class="title">Laby</div>
+		<div class="center">
+			<div id="screen">
+				<div id="vrt1" class="vrt"></div>
+				<div id="vrt2" class="vrt"></div>
+				<div id="vrt3" class="vrt"></div>
+				<div id="vrt4" class="vrt"></div>
+				<div id="hrz1" class="hrz"></div>
+				<div id="hrz2" class="hrz"></div>
+				<div id="hrz3" class="hrz"></div>
+				<div id="hrz4" class="hrz"></div>
+
+				<div id="text-s" class="text">S</div>
+				<div id="text-g" class="text">G</div>
+
+				<div id="box">
+					<div id="circle"></div>
+				</div>
+			</div>
+		</div>
+		<div class="center">
+			<div id="display">
+				<div id="left0" class="left"></div>
+				<div id="up0" class="up"></div>
+				<div id="right0" class="right"></div>
+				<div id="down0" class="down"></div>
+
+				<div id="left1" class="left"></div>
+				<div id="up1" class="up"></div>
+				<div id="right1" class="right"></div>
+				<div id="down1" class="down"></div>
+
+				<div id="left2" class="left"></div>
+				<div id="up2" class="up"></div>
+				<div id="right2" class="right"></div>
+				<div id="down2" class="down"></div>
+
+				<div id="left3" class="left"></div>
+				<div id="up3" class="up"></div>
+				<div id="right3" class="right"></div>
+				<div id="down3" class="down"></div>
+
+				<div id="left4" class="left"></div>
+				<div id="up4" class="up"></div>
+				<div id="right4" class="right"></div>
+				<div id="down4" class="down"></div>
+
+				<div id="end" class="center">Congratulations!</div>
+			</div>
+		</div>
+		<div class="center">
+			<a href="javascript:void(0)" id = "go" class="button">GO</a>
+			<a href="javascript:void(0)" id = "delete" class="button">DELETE</a>
+			<a href="javascript:void(0)" id = "reset" class="button">RESET</a>
+		</div>
+		<div id="counter">10</div>
+		<div id="tweet-btn">tweet</div>
+	</body>
+</html>

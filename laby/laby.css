@@ -1,0 +1,359 @@
+.title{
+	font-size:72px;
+	text-align:center;
+	font-family:'ComicNeue-Light';
+}
+
+#counter{
+	position:absolute;;
+	font-size:54px;
+	font-family:'ComicNeue-Light';
+	bottom:0px;
+	right:0px;
+}
+
+.button{
+	display:inline-block;
+	width:160px;
+	background-color:#FFFFFF;
+	text-align:center;
+	text-decoration:none;
+	color:#FFFFFF;
+	font-family:'ComicNeue-Light';
+	font-size:28px;
+	border:1px solid #000000;
+	padding:10px;
+	border-radius:3px;
+}
+
+#display{
+	display:inline-block;
+	position:relative;
+	width:555px;
+	height:65px;
+	margin:5px;
+	background-color:#FFFFFF;
+	border:1px solid #000000;
+	border-radius:3px;
+}
+
+.left{
+	display:inline-block;
+	position:absolute;
+	width:0px;
+	height:0px;
+	margin-left:-16px;
+	border-left:24px solid transparent;
+	border-top:20px solid transparent;
+	border-right:24px solid rgba(0,0,0,0.6);
+	border-bottom:20px solid transparent;
+}
+
+.up{
+	display:inline-block;
+	position:absolute;
+	width:0px;
+	height:0px;
+	margin-top:-20px;
+	border-left:20px solid transparent;
+	border-top:24px solid transparent;
+	border-right:20px solid transparent;
+	border-bottom:24px solid rgba(0,0,0,0.6);
+}
+
+.right{
+	display:inline-block;
+	position:absolute;
+	width:0px;
+	height:0px;
+	margin-left:8px;
+	border-left:24px solid rgba(0,0,0,0.6);
+	border-top:20px solid transparent;
+	border-right:24px solid transparent;
+	border-bottom:20px solid transparent;
+}
+
+.down{
+	display:inline-block;
+	position:absolute;
+	width:0px;
+	height:0px;
+	margin-top:12px;
+	border-left:20px solid transparent;
+	border-top:24px solid rgba(0,0,0,0.6);
+	border-right:20px solid transparent;
+	border-bottom:24px solid transparent;
+}
+
+#left0{
+	visibility:hidden;
+	top:12px;
+	left:70px;
+}
+
+#up0{
+	visibility:hidden;
+	top:12px;
+	left:70px;
+}
+
+#right0{
+	visibility:hidden;
+	top:12px;
+	left:70px;
+}
+
+#down0{
+	visibility:hidden;
+	top:12px;
+	left:70px;
+}
+
+#left1{
+	visibility:hidden;
+	top:12px;
+	left:165px;
+}
+
+#up1{
+	visibility:hidden;
+	top:12px;
+	left:165px;
+}
+
+#right1{
+	visibility:hidden;
+	top:12px;
+	left:165px;
+}
+
+#down1{
+	visibility:hidden;
+	top:12px;
+	left:165px;
+}
+
+#left2{
+	visibility:hidden;
+	top:12px;
+	left:260px;
+}
+
+#up2{
+	visibility:hidden;
+	top:12px;
+	left:260px;
+}
+
+#right2{
+	visibility:hidden;
+	top:12px;
+	left:260px;
+}
+
+#down2{
+	visibility:hidden;
+	top:12px;
+	left:260px;
+}
+
+#left3{
+	visibility:hidden;
+	top:12px;
+	left:355px;
+}
+
+#up3{
+	visibility:hidden;
+	top:12px;
+	left:355px;
+}
+
+#right3{
+	visibility:hidden;
+	top:12px;
+	left:355px;
+}
+
+#down3{
+	visibility:hidden;
+	top:12px;
+	left:355px;
+}
+
+#left4{
+	visibility:hidden;
+	top:12px;
+	left:450px;
+}
+
+#up4{
+	visibility:hidden;
+	top:12px;
+	left:450px;
+}
+
+#right4{
+	visibility:hidden;
+	top:12px;
+	left:450px;
+}
+
+#down4{
+	visibility:hidden;
+	top:12px;
+	left:450px;
+}
+
+#screen{
+	display:inline-block;
+	position:relative;
+	width:400px;
+	height:400px;
+}
+
+.vrt{
+	display:inline-block;
+	position:absolute;
+	width:1px;
+	height:100%;
+	background-color:#000000;
+}
+
+.hrz{
+	display:inline-block;
+	position:absolute;
+	width:100%;
+	height:1px;
+	background-color:#000000;
+}
+
+#vrt1{
+	top:0px;
+	left:80px;
+}
+
+#vrt2{
+	top:0px;
+	left:160px;
+}
+
+#vrt3{
+	top:0px;
+	left:240px;
+}
+
+#vrt4{
+	top:0px;
+	left:320px;
+}
+
+#hrz1{
+	top:80px;
+	left:0px;
+}
+
+#hrz2{
+	top:160px;
+	left:0px;
+}
+
+#hrz3{
+	top:240px;
+	left:0px;
+}
+
+#hrz4{
+	top:320px;
+	left:0px;
+}
+
+.text{
+	font-size:70px;
+	text-align:center;
+	font-family:'ComicNeue-Light';
+	color:#EEEEEE;
+}
+
+#text-s{
+	position:absolute;
+	width:80px;
+	height:80px;
+	top:244px;
+	left:80px;
+}
+
+#text-g{
+	position:absolute;
+	width:80px;
+	height:80px;
+	top:84px;
+	left:240px;
+}
+
+#box{
+	position:absolute;
+	width:80px;
+	height:80px;
+	top:240px;
+	left:80px;
+}
+
+#circle{
+	position:absolute;
+	width:60px;
+	height:60px;
+	background-color:rgba(0,0,0,0.6);
+	border-radius:30px;
+	margin:10px;
+}
+
+#end{
+	visibility:hidden;
+	display:inline-block;
+	position:relative;
+	font-size:56px;
+	text-align:center;
+	font-family:'ComicNeue-Light';
+	
+}
+
+.center{
+	margin:0 auto;
+	text-align:center;
+}
+
+a:link{
+	color:#000000;
+	text-decoration:none
+}
+
+a:visited{
+	color:#000000;
+	text-decoration:none
+}
+
+a:active{
+	color:#000000;
+	text-decoration:none
+}
+
+@font-face{
+	font-family:'ComicNeue-Light';
+	src:url('ComicNeue-Light.ttf') format('truetype');
+}
+
+#tweet-btn{
+	position: absolute;
+	margin-top: 10px;
+	left: 50px;
+	color: #ffffff;
+	width: 60px;
+	height: 24px;
+	border-radius: 2px;
+	font-size: 16px;
+	text-align: center;
+	background: #00aced;
+	visibility:hidden;
+}
+

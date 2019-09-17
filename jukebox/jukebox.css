@@ -1,0 +1,82 @@
+html, body {
+  overflow: hidden;
+}
+
+body{
+  background-color: #fff6f6;
+}
+
+#main{
+	position: absolute;
+	width: 90vw;
+  height: 96vh;
+	border: 1px dashed #fb929e;
+	left: 50%;
+  margin-top: 1vh;
+  margin-left: -45vw;
+}
+
+#compass{
+  position: absolute;
+  background-color: #474a56;
+  left: 50%;
+  top: 50%;
+}
+
+#circle{
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+}
+
+#circle-out{
+  position: absolute;
+  border: 2px solid #aedefc;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+}
+
+#compass-progress{
+  position: absolute;
+  width: 70%;
+  height: 70%;
+}
+
+#circle-north{
+  position: absolute;
+  background-color: #aedefc;
+  width: 2px;
+  top: 1%;
+  left: 50%;
+  margin-left: -1px;
+}
+
+#needle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#needle-red{
+  position: absolute;
+  left: 50%;
+  height: 50%;
+  background:
+      linear-gradient(to bottom right, rgba(251,146,158,0) 50%, #fb929e 50.5%) no-repeat top left/50% 100%,
+      linear-gradient(to bottom left, rgba(251,146,158,0) 50%, #fb929e 50.5%) no-repeat top right/50% 100%;
+}
+
+#needle-white{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 50%;
+  background:
+      linear-gradient(to top right, rgba(255,255,255,0) 50%, #ffffff 50.5%) no-repeat top left/50% 100%,
+      linear-gradient(to top left, rgba(255,255,255,0) 50%, #ffffff 50.5%) no-repeat top right/50% 100%;
+}

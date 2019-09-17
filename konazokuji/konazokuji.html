@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=1000px">
+<title>小謎くじ</title>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,200,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300,200' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script type="text/javascript" src="../libs/jquery-3.4.0.min.js"></script>
+<script type="text/javascript" src="../libs/jquery-ui.min.js"></script>
+<script type="text/javascript" src="./konazokuji.js"></script>
+<script type="text/javascript" src="./checker.js"></script>
+
+</head>
+<body>
+
+  <div class="main" id="home">
+    <img src="assets/konazokuji-web-logo.svg" width="480px" height="240px">
+    <br>
+    <img src="assets/konazokuji-web-knot.svg" width="200px" height="100px">
+		<br>
+
+		あああ
+
+		<br>
+		<img src="assets/konazokuji-web-knot.svg" width="200px" height="100px">
+    <p class="small-text">
+      ヒント
+    </p>
+    <br>
+		<div class="shelf">
+      <div class="drawer" id="drawer-1">
+        <div class="drawer-inner">
+          <div class="text">01</div>
+          <div class="hint">
+            それぞれのアルファベットを、声に出して読んでみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-2">
+        <div class="drawer-inner">
+          <div class="text">02</div>
+          <div class="hint">
+            ヒントはそれぞれ「あか」「かさ」「はな」を表しています。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-3">
+        <div class="drawer-inner">
+          <div class="text">03</div>
+          <div class="hint">
+            それぞれの図形の読み方を当てはめてみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-4">
+        <div class="drawer-inner">
+          <div class="text">04</div>
+          <div class="hint">
+            漢字をひらがなになおしてみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-5">
+        <div class="drawer-inner">
+          <div class="text">05</div>
+          <div class="hint">
+            それぞれ一文字の漢字にしてわくに当てはめてみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-6">
+        <div class="drawer-inner">
+          <div class="text">06</div>
+          <div class="hint">
+            orやandが何の文字に変わっているか考えてみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-7">
+        <div class="drawer-inner">
+          <div class="text">07</div>
+          <div class="hint">
+            ゆみ<br>↓<br>↓<br>よめ です。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-8">
+        <div class="drawer-inner">
+          <div class="text">08</div>
+          <div class="hint">
+            いのちのはじまりは「い」です。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-9">
+        <div class="drawer-inner">
+          <div class="text">09</div>
+          <div class="hint">
+            それぞれのやじるしが差す向きを考えてみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-10">
+        <div class="drawer-inner">
+          <div class="text">10</div>
+          <div class="hint">
+            それぞれの単語の読み方をわくに当てはめてみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-11">
+        <div class="drawer-inner">
+          <div class="text">11</div>
+          <div class="hint">
+            「たてがきで〜」の文章を縦書きでマスに入れた後、数字のマスに入る文字をじゅんばんに読んでみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-12">
+        <div class="drawer-inner">
+          <div class="text">12</div>
+          <div class="hint">
+            △に入るのは「ゆ」です。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-13">
+        <div class="drawer-inner">
+          <div class="text">13</div>
+          <div class="hint">
+            真ん中で折って透かしてみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-14">
+        <div class="drawer-inner">
+          <div class="text">14</div>
+          <div class="hint">
+            それぞれ立方体が組み立てられそうな形になっていますね。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-15">
+        <div class="drawer-inner">
+          <div class="text">15</div>
+          <div class="hint">
+            指示に従って順番に読んでいきましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-16">
+        <div class="drawer-inner">
+          <div class="text">16</div>
+          <div class="hint">
+            こころをカタカナで書いて、同じ形を探してみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-17">
+        <div class="drawer-inner">
+          <div class="text">17</div>
+          <div class="hint">
+            2段目には「すけーと」がはいります。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-18">
+        <div class="drawer-inner">
+          <div class="text">18</div>
+          <div class="hint">
+            下は音階、上は曜日を入れてみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-19">
+        <div class="drawer-inner">
+          <div class="text">19</div>
+          <div class="hint">
+            50音表で考えてみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-20">
+        <div class="drawer-inner">
+          <div class="text">20</div>
+          <div class="hint">
+            マスに２文字ずつ入れて、言葉を完成させましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-21">
+        <div class="drawer-inner">
+          <div class="text">21</div>
+          <div class="hint">
+            一番左のマスに入る言葉は「おととい」です。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-22">
+        <div class="drawer-inner">
+          <div class="text">22</div>
+          <div class="hint">
+            トランプをおもいだしてみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-23">
+        <div class="drawer-inner">
+          <div class="text">23</div>
+          <div class="hint">
+            どの向きに並んでいるかを考えてみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-24">
+        <div class="drawer-inner">
+          <div class="text">24</div>
+          <div class="hint">
+            それぞれのイラストをひらがなに直してみましょう。
+          </div>
+        </div>
+      </div>
+
+      <div class="drawer" id="drawer-25">
+        <div class="drawer-inner">
+          <div class="text">25</div>
+          <div class="hint">
+            わくの形にあうように、埋め直してみましょう。
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <br>
+
+		<img src="assets/konazokuji-web-knot.svg" width="200px" height="100px">
+		<p class="small-text">
+      回答チェック
+    </p>
+		<div class="form">
+			<input type="text" id="answer" name="answer" placeholder="こたえ" />
+			<button type="button" id="submit" class="submit">回答</button>
+			<div id="message" class="big-text"></div>
+		</div>
+
+  </div>
+
+</body>
+</html>
