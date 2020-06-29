@@ -1,0 +1,343 @@
+html{
+  font-size: 62.5%;
+}
+
+body{
+    position: relative;
+    margin: 0px;
+    background-color: #f1f3f4;
+    font-family: "Noto Sans Japanese";
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 1.3;
+}
+
+@media screen and (max-width: 640px) { /* 640px以下 */
+    body{
+        font-size: 1.4rem;
+    }
+}
+
+a{
+    text-decoration: none;
+    overflow: hidden;
+    color: #2a7886;
+}
+
+.link-text{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-bottom: 1px dashed #2a7886;
+    cursor: pointer;
+}
+
+ul,li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.small-text{
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+#header{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #2a7886;
+}
+
+#title{
+    font-size: 2.0rem;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 10px;
+    margin-top: 5px;
+    color: #f1f3f4;
+}
+
+@media screen and (max-width: 640px) {/* 640px以下 */
+    #header{
+        height: 35px;
+    }
+    #title{
+        line-height: 35px;
+        font-size: 1.8rem;
+    }
+}
+
+#main{
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    background-color: #f1f3f4;
+}
+
+#main-content{
+    position: relative;
+    width: 90%;
+    margin: 20px 30px;
+}
+
+@media screen and (max-width: 640px) {/* 640px以下 */
+    #main-content{
+        margin: 5%;
+    }
+}
+
+#footer{
+    position: relative;
+    width: 100%;
+    left: 0;
+    height: 30px;
+    background-color: #512b58;
+}
+
+#footer-text{
+    color: #2a7886;
+    font-size: 1.0rem;
+    line-height: 30px;
+    margin-left: 10px;
+}
+
+#search-box input[type="text"]{
+    font-size: 1.8rem;
+    appearance: none;
+    outline: none;
+    height: 30px;
+    width: 400px;
+    border: 1px solid #d3e5e8;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+@media screen and (max-width: 640px) {/* 640px以下 */
+    #search-box input[type="text"]{
+        font-size: 1.6rem;
+        width: 70%;
+    }
+}
+
+#search-box input[type="text"]:focus{
+    border: 1px solid #79bac1;
+}
+
+#search-box input[type="submit"]{
+    appearance: none;
+    background-color: #2a7886;
+    color: #f1f3f4;
+    height: 30px;
+    font-size: 1.4rem;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    border: 0;
+    border-radius: 3px;
+    transition: 0.3s;
+    margin-left: 10px;
+    vertical-align: 2px;
+}
+
+@media screen and (max-width: 640px) {/* 640px以下 */
+    #search-box input[type="submit"]{
+        margin-left: 0;
+    }
+}
+
+#search-box input[type="submit"]:hover{
+    color: #f1f3f4;
+    background-color: #512b58;
+}
+
+.mode_description{
+    line-height: 1.5;
+    background-color: #d3e5e8;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.word-delete{
+    position: relative;
+    display: inline-block;
+    background-color: #d3e5e8;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin-right: 5px;
+    vertical-align: -4px;
+    cursor: pointer;
+}
+
+.word-delete::before, .word-delete::after{
+    content: "";
+    display: block;
+    width: 80%;
+    height: 2px;
+    background: #79bac1;
+    transform: rotate(45deg);
+    transform-origin: 0% 50%;
+    position: absolute;
+    top: calc(22.5% - 1px);
+    left: 22.5%;
+}
+
+.word-delete::after{
+    transform: rotate(-45deg);
+    transform-origin: 100% 50%;
+    left: auto;
+    right: 22.5%;
+}
+
+#result #result-message{
+    margin-bottom: 10px;
+}
+
+#result li{
+    margin-top: 5px;
+}
+
+.devalue-level-0{
+    opacity: 1;
+}
+
+.devalue-level-1{
+    opacity: 0.6;
+}
+
+.devalue-level-2{
+    opacity: 0.4;
+}
+
+.devalue-level-3{
+    opacity: 0.2;
+}
+
+
+
+
+
+
+#select{
+    width: 100%;
+    height: 50px;
+    background-color: #2a7886;
+}
+
+.select_box{
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+    margin: 3px 0 7px 10px;
+    background-color: #79bac1;
+    font-size: 1.6rem;
+    border-radius: 3px;
+    cursor: pointer;
+    line-height: 40px;
+    padding: 0 8px;
+}
+
+.select_box:hover{
+    background-color: #d3e5e8;
+}
+
+.select_box::before{
+    color: #2a7886;
+}
+
+#select_mode::before{
+    content: "モード：";
+}
+
+#select_dict::before{
+    content: "辞書：";
+}
+
+.select_box::after{
+    content: "▼";
+    color: #512b58;
+    position: absolute;
+    line-height: 40px;
+    font-size: 1.2rem;
+    right: 8px;
+}
+
+.modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+}
+
+.modal_back{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal_main{
+    position: absolute;
+    display: block;
+    max-height: 90vh;
+    max-width: 90vw;
+    min-width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    overflow-y: scroll;
+    z-index: 200;
+    border-radius: 3px;
+}
+
+.modal_title{
+    background-color: #dddddd;
+    padding: 0 10px;
+    line-height: 40px;
+    height: 40px;
+}
+
+.modal_main ul{
+    margin: 0;
+}
+
+.modal_main ul li{
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1.6rem;
+    border-top: 1px solid #dddddd;
+}
+
+.modal_main ul li{
+    padding-left: 10px;
+}
+
+.modal_main ul li::after{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 0px;
+    border-top: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    transform: rotate(45deg);
+    top: 50%;
+    margin-top: -4px;
+    right: 10px;
+}
+
+
+/* memo
+ほぼ黒　： #512b58
+濃いめ緑： #2a7886
+普通緑　： #79bac1
+淡い緑　： #d3e5e8
+ベース白： #f1f3f4
+*/
