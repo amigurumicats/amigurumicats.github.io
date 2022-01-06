@@ -1,0 +1,261 @@
+body {
+    font-family: "Hannari";
+}
+
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #3cb371;
+
+}
+
+#title-icon {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+#title {
+    position: absolute;
+    left: 60px;
+    line-height: 40px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#main {
+    position: absolute;
+    top: 40px;
+    left: 0;
+}
+
+#select-state-box {
+    position: relative;
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 40px;
+}
+
+.select-state {
+    position: absolute;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 0;
+}
+
+.select-state.active {
+    background-color: #cccccc;
+}
+
+#select-state-0 {
+    left: 0;
+    border: solid 1px #cccccc;
+    border-radius: 5px 0 0 5px;
+}
+
+#select-state-1 {
+    left: 40px;
+    border-top: solid 1px #cccccc;
+    border-bottom: solid 1px #cccccc;
+    border-right: solid 1px #cccccc;
+}
+
+#select-state-2 {
+    left: 80px;
+    border-top: solid 1px #cccccc;
+    border-bottom: solid 1px #cccccc;
+    border-right: solid 1px #cccccc;
+}
+
+#select-state-3 {
+    left: 120px;
+    border-radius: 0 5px 5px 0;
+    border-top: solid 1px #cccccc;
+    border-bottom: solid 1px #cccccc;
+    border-right: solid 1px #cccccc;
+}
+
+.select-state>img.select-state-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+
+table {
+    margin-top: 10px;
+    margin-left: 10px;
+    border: solid 1px #cccccc;
+    border-collapse:collapse;
+    font-size: 14px;
+}
+
+#table>thead>tr>th:first-child {
+    width: 200px;
+}
+
+#table>thead>tr>th:nth-child(2) {
+    width: 20px;
+    background-color: rgba(255, 99, 71, 0.3);
+}
+
+#table>thead>tr>th:nth-child(3) {
+    width: 20px;
+    background-color: rgba(255, 255, 0, 0.3);
+}
+
+#table>thead>tr>th:nth-child(4) {
+    width: 20px;
+    background-color: rgba(30, 144, 255, 0.3);
+}
+
+#table>thead>tr>th:nth-child(5) {
+    width: 20px;
+    background-color: rgba(148, 0, 211, 0.3);
+}
+
+#table>thead>tr>th:nth-child(6) {
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#table>thead>tr>th:nth-child(7) {
+    width: 20px;
+    background-color: rgba(255, 105, 180, 0.3);
+}
+
+#table>thead>tr>th:nth-child(8) {
+    width: 20px;
+    background-color: rgba(192, 192, 192, 0.3);
+}
+
+
+tr {
+    height: 10px;  /* 折りたたみ時の高さ */
+}
+
+th {
+    padding: 5px;
+    border: solid 1px #cccccc;
+    background-color: #eeeeee;
+}
+
+td {
+    padding: 5px;
+    border: solid 1px #cccccc;
+}
+
+#table>tbody>tr>td:nth-child(2) {
+    background-color: rgba(255, 99, 71, 0.2);
+}
+
+#table>tbody>tr>td:nth-child(2):hover {
+    background-color: rgba(255, 99, 71, 0.4);
+}
+
+#table>tbody>tr>td:nth-child(3) {
+    width: 20px;
+    background-color: rgba(255, 255, 0, 0.2);
+}
+
+#table>tbody>tr>td:nth-child(3):hover {
+    width: 20px;
+    background-color: rgba(255, 255, 0, 0.7);
+}
+
+#table>tbody>tr>td:nth-child(4) {
+    width: 20px;
+    background-color: rgba(30, 144, 255, 0.2);
+}
+
+#table>tbody>tr>td:nth-child(4):hover {
+    width: 20px;
+    background-color: rgba(30, 144, 255, 0.4);
+}
+
+#table>tbody>tr>td:nth-child(5) {
+    width: 20px;
+    background-color: rgba(148, 0, 211, 0.2);
+}
+
+#table>tbody>tr>td:nth-child(5):hover {
+    width: 20px;
+    background-color: rgba(148, 0, 211, 0.4);
+}
+
+#table>tbody>tr>td:nth-child(6) {
+    width: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#table>tbody>tr>td:nth-child(6):hover {
+    width: 20px;
+    background-color: rgba(211, 211, 211, 0.3);
+}
+
+#table>tbody>tr>td:nth-child(7) {
+    width: 20px;
+    background-color: rgba(255, 105, 180, 0.2);
+}
+
+#table>tbody>tr>td:nth-child(7):hover {
+    width: 20px;
+    background-color: rgba(255, 105, 180, 0.4);
+}
+
+#table>tbody>tr>td:nth-child(8) {
+    width: 20px;
+    background-color: rgba(192, 192, 192, 0.2);
+}
+
+#table>tbody>tr>td:nth-child(8):hover {
+    width: 20px;
+    background-color: rgba(192, 192, 192, 0.4);
+}
+
+tr.visible {
+    height: 30px;
+}
+
+#table>tbody>tr>td>.table-action-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    background-color: #aaaaaa;
+    border: solid 2px #aaaaaa;
+    margin: 0 2px 0 2px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#table>tbody>tr>td>.table-state-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#clear-data {
+    width: 80px;
+    height: 20px;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #ff6347;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 3px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}

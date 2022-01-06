@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="author" content="amigurumicats">
+    <meta name="viewport" content="width=900px">
+    <title>Pikmin Bloom デコチェッカー</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" href="./pikmin_bloom_checker.css" type="text/css">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+    <div id="page">
+        <div id="header">
+            <div id="title-icon"><img src="assets/title_icon.svg"></div>
+            <div id="title">Pikmin Bloom デコチェッカー</div>
+        </div>
+
+        <div id="main">
+            <div id="select-state-box">
+                <div id="select-state-0" class="select-state" :class="{ active: selected_state == 0 }" @click="selectState(0)">
+                    <img src="assets/bar.svg" alt="未所持" class="select-state-icon">
+                </div>
+                <div id="select-state-1" class="select-state" :class="{ active: selected_state == 1 }" @click="selectState(1)">
+                    <img src="assets/seed.svg" alt="苗所持" class="select-state-icon">
+                </div>
+                <div id="select-state-2" class="select-state" :class="{ active: selected_state == 2 }" @click="selectState(2)">
+                    <img src="assets/leaf.svg" alt="ピクミン所持" class="select-state-icon">
+                </div>
+                <div id="select-state-3" class="select-state" :class="{ active: selected_state == 3 }" @click="selectState(3)">
+                    <img src="assets/flower.svg" alt="デコピクミン所持" class="select-state-icon">
+                </div>
+            </div>
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th v-for="(title, index) in table_header" :key="index">
+                            {{ title }}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template v-for="(row, i_row) in table_data" :key="row.id">
+                        <template v-if="row.isVisible">
+                            <tr>
+                                <td>{{ row.name }}</td>
+                                <td v-for="(col_state, i_col) in row.state" :key="i_col" @click="changeState(i_row, i_col)">
+                                    <img v-if="col_state == 0" src="assets/bar.svg" alt="未所持" class="table-state-icon">
+                                    <img v-if="col_state == 1" src="assets/seed.svg" alt="苗所持" class="table-state-icon">
+                                    <img v-if="col_state == 2" src="assets/leaf.svg" alt="ピクミン所持" class="table-state-icon">
+                                    <img v-if="col_state == 3" src="assets/flower.svg" alt="デコピクミン所持" class="table-state-icon">
+                                </td>
+                                <td>
+                                    <img src="assets/fold.svg" alt="折りたたむ" class="table-action-icon" @click="changeVisibility(i_row)">
+                                    <img src="assets/check.svg" alt="全て選択" class="table-action-icon" @click="changeStateAll(i_row)">
+                                </td>
+                            </tr>
+                        </template>
+                        <template v-else>
+                            <tr @click="changeVisibility(i_row)">
+                                <td v-for="i of row.state.length + 2" :key="i"></td>
+                            </tr>
+                        </template>
+                    </template>
+
+                </tbody>
+            </table>
+
+            <div id="clear-data" @click="clearData">データ削除</div>
+        </div>
+    </div>
+
+</body>
+<script src="pikmin_bloom_checker.js"></script>
+
+</html>
