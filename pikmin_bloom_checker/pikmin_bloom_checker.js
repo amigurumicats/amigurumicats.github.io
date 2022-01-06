@@ -55,6 +55,7 @@ var vm = new Vue({
             this._saveStateRow(i_row);
         },
         changeStateAll: function (i_row) {
+            if (this.selected_state == -1) return
             for (i_col in this.table_data[i_row].state) {
                 Vue.set(this.table_data[i_row].state, i_col, this.selected_state);
             }
@@ -84,12 +85,34 @@ var vm = new Vue({
     mounted: function () {
         // localstorageから初期状態セット
         this.table_data.forEach((row, i_row) => {
-            ls = localStorage.getItem(row.id);
+            let ls = localStorage.getItem(row.id);
             if (!ls) { return };
-            ls_spl = ls.split(",").slice(0, 7).map(x => parseInt(x));  // 前7つだけとってintにする
+            let ls_spl = ls.split(",").slice(0, 7).map(x => parseInt(x));  // 前7つだけとってintにする
             ls_spl.forEach((col, i_col) => {
                 Vue.set(this.table_data[i_row].state, i_col, col);
             });
         });
+    },
+    computed: {
+        completeRateText: function() {
+            // "所持率: 30% (3/10)"のようなテキストを作る
+            let top = 0;
+            let bottom = 0;
+            for (row of this.table_data) {
+                for (col of row.state) {
+                    if (col == 3) { top += 1; }
+                    bottom += 1;
+                }
+            }
+            let rate = (bottom == 0) ? 0 : (top / bottom * 100).toFixed(2);
+            return `所持率: ${rate}% (${top}/${bottom})`
+        },
+        isCompleted: function () {
+            // computedに引数を渡すためのイディオム
+            // https://qiita.com/wataru65818460/items/f38898236512f654df4c
+            return function (i_row) {
+                return this.table_data[i_row].state.every(x => x == 3)
+            }
+        }
     }
 })

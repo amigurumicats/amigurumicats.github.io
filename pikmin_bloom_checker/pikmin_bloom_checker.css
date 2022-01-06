@@ -91,6 +91,13 @@ body {
     margin-top: 10px;
 }
 
+#display-complete-rate {
+    position: absolute;
+    font-size: 16px;
+    left: 240px;
+    top: 20px;
+}
+
 table {
     margin-top: 10px;
     margin-left: 10px;
@@ -220,6 +227,10 @@ td {
 #table>tbody>tr>td:nth-child(8):hover {
     width: 20px;
     background-color: rgba(192, 192, 192, 0.4);
+}
+
+#table>tbody>tr>td:first-child.complete {
+    background-color: rgba(127, 255, 0, 0.3);
 }
 
 tr.visible {
