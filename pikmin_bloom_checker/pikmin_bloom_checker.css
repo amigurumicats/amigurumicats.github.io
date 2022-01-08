@@ -32,12 +32,11 @@ body {
     position: absolute;
     top: 40px;
     left: 0;
+    padding: 10px;
 }
 
 #select-state-box {
     position: relative;
-    margin-left: 10px;
-    margin-top: 10px;
     height: 40px;
 }
 
@@ -100,7 +99,6 @@ body {
 
 table {
     margin-top: 10px;
-    margin-left: 10px;
     border: solid 1px #cccccc;
     border-collapse:collapse;
     font-size: 14px;
@@ -263,7 +261,6 @@ tr.visible {
     font-size: 14px;
     color: #ffffff;
     background-color: #ff6347;
-    margin-left: 10px;
     margin-top: 10px;
     padding: 3px;
     border-radius: 5px;
