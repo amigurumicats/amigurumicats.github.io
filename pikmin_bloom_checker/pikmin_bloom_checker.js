@@ -30,6 +30,7 @@ const table_master = [
     { id: "chinese_new_year", name: "旧正月", state: [0, 0, 0, -1, -1, -1, -1], isVisible: true },
     { id: "roadside", name: "みちばた", state: [0, 0, 0, 0, 0, 0, 0], isVisible: true },
     { id: "sushi", name: "お寿司屋さん", state: [0, 0, 0, -1, -1, -1, -1], isVisible: true },
+    { id: "mountain", name: "山", state: [0, 0, 0, -1, -1, -1, -1], isVisible: true },
 ]
 
 var vm = new Vue({
@@ -68,6 +69,7 @@ var vm = new Vue({
             { id: "chinese_new_year", name: "旧正月", state: [0, 0, 0, -1, -1, -1, -1], isVisible: true },
             { id: "roadside", name: "みちばた", state: [0, 0, 0, 0, 0, 0, 0], isVisible: true },
             { id: "sushi", name: "お寿司屋さん", state: [0, 0, 0, -1, -1, -1, -1], isVisible: true },
+            { id: "mountain", name: "山", state: [0, 0, 0, -1, -1, -1, -1], isVisible: true },
         ],
         selected_state: -1,
     },
