@@ -18,12 +18,6 @@ TODO:
 - bug
     - info
         - silica_oreのクラフト先がconcrete_furnace(concrete_mixになってほしい)
-    - tooltipまわりの表示
-        - selectedTileのtooltipが表示されない
-        - from・infoが表示されない
-        - key
-            - どうやらto_idがundifinedらしい
-            - from_idもundefined？どうして……
 */
 
 
@@ -232,7 +226,7 @@ const ItemSelectedTile = ({item_id, count, updateCount, deleteItem}) => {
             <button className="inc" onClick={() => _updateCount(count+1)}></button>
             <button className="dec" onClick={() => _updateCount(Math.max(0, count-1))}></button>
             <input type="text" value={local_text} onChange={(e) => onChange(e)} onBlur={() => onBlur()}></input>
-            <ItemTileToolTip id={item_id} />
+            <ItemTileToolTip id={item_id}/>
         </div>
     )
 }
@@ -246,7 +240,7 @@ const ItemSelectTile = ({item_id, onclick}) => {
     return (
         <div className="item_tile item_tile_small" onClick={() => onclick(item_id)}>
             <div className="item_icon">{item_id}</div>
-            <ItemTileToolTip id={item_id} />
+            <ItemTileToolTip id={item_id}/>
         </div>
     )
 }
@@ -265,8 +259,8 @@ const ItemTileToolTip = ({id, info}) => {
             <div>{data[id]["name"]["en"]} / {data[id]["name"]["ja"]}</div>
             <div>Tier: {data[id]["tier"]}</div>
             {data[id]["at"] && data[data[id]["at"]] && <div>Require: {data[data[id]["at"]]["name"]["en"]} / {data[data[id]["at"]]["name"]["ja"]}</div>}
-            {data[id]["from"] && Object.entries(data[id]["from"]).map(({ from_id, count }) => from_id && <div key={from_id}>{from_id} {count}</div>)}
-            {info && !!Object.keys(info).length && Object.entries(info).map(({ to_id, count }) => to_id && <div key={to_id}>{to_id} {count}</div>)}
+            {data[id]["from"] && !!Object.keys(data[id]["from"]).length && Object.entries(data[id]["from"]).map(([ from_id, count ]) => from_id && <div key={`from_${from_id}`}>{from_id} {count}</div>)}
+            {info && !!Object.keys(info).length && Object.entries(info).map(([ to_id, count ]) => to_id && <div key={`to_${to_id}`}>{to_id} {count}</div>)}
         </div>
     )
 }
