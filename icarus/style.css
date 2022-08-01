@@ -1,0 +1,281 @@
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    min-height: 10px;
+    box-sizing: border-box;
+    padding: 5px 5px;
+}
+
+#modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+#modal_content {
+    width: 90%;
+    height: 90%;
+    padding: 10px;
+    background: #fff;
+    z-index: 11;
+    overflow-y: scroll;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#modal_content .search {
+    width: 300px;
+    height: 40px;
+    position: relative;
+    display: flex
+}
+
+#modal_content .search select {
+    width: 100px;
+    height: 100%;
+    border: 1px solid #bbb;
+    box-sizing: border-box;
+}
+
+#modal_content .search .icon_search {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #bbb;
+    border-radius: 5px 0 0 5px;
+}
+
+#modal_content .search .icon_search::before {
+    content: "\e8b6";
+    position: relative;
+    top: 5px;
+    left: 5px;
+    font-size: 30px;
+    font-family: "Material Icons";
+    color: #fff;
+}
+
+#modal_content .search input[type="text"] {
+    width: 160px;
+    height: 100%;
+    position: relative;
+    top: 0;
+    border: 1px solid #bbb;
+    box-sizing: border-box;
+}
+
+#modal_content .list {
+    overflow-y: scroll;
+}
+
+button {
+    cursor: pointer;
+}
+
+button.add {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 0;
+}
+
+button.add::before {
+    content: "\e3c9";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    font-size: 24px;
+    font-family: "Material Icons";
+}
+
+.item_tile {
+    width: 100px;
+    height: 60px;
+    background-color: #666;
+    margin: 5px;
+    position: relative;
+}
+
+.item_tile_small {
+    width: 60px;
+}
+
+.item_tile .item_icon {
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    overflow-wrap: anywhere;
+    color: #ccc;
+    font-size: 8px;
+    background-color: #888;
+}
+
+.item_tile .done {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.item_tile .done::before {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.5);
+    content: "\e876";
+    font-size: 60px;
+    font-family: "Material Icons";
+}
+
+.item_tile input {
+    width: 32px;
+    height: 20px;
+    position: absolute;
+    right: 4px;
+    top: 20px;
+    padding: 1px 2px;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.item_tile .count {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 5px;
+    color: #fff;
+}
+
+.item_tile input:focus {
+    border: 1px solid #5aa8e8;
+}
+
+.item_tile button {
+    height: 16px;
+    width: 32px;
+    position: absolute;
+    right: 4px;
+    border: 0;
+    background-color: #aaa;
+    z-index: 14;
+}
+
+.item_tile button.inc {
+    top: 4px;
+    border-radius: 3px 3px 0 0;
+}
+
+.item_tile button.inc::before {
+    content: "\e316";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 16px;
+    font-family: "Material Icons";
+}
+
+.item_tile button.dec {
+    bottom: 4px;
+    border-radius: 0 0 3px 3px;
+}
+
+.item_tile button.dec::before {
+    content: "\e313";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 16px;
+    font-family: "Material Icons";
+}
+
+.item_tile .item_delete {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #f33;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    z-index: 15;
+    cursor: pointer;
+}
+
+.item_tile .item_delete::before {
+    content: "\e5cd";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 12px;
+    font-family: "Material Icons";
+    color: #fff;
+}
+
+.item_tile .tooltip {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    color: #fff;
+    position: absolute;
+    top: calc(100% + 10px);
+    box-sizing: border-box;
+    padding: 5px;
+    z-index: 100;
+    visibility: hidden;
+    font-size: 12px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.item_tile .tooltip::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    z-index: 100;
+}
+
+.item_tile:hover .tooltip {
+    visibility: visible;
+}
+
+.item_tile .tooltip div {
+    white-space: nowrap;
+}
