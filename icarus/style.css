@@ -279,3 +279,10 @@ button.add::before {
 .item_tile .tooltip div {
     white-space: nowrap;
 }
+
+.item_tile .tooltip hr {
+    border-top: 1px dashed #aaa;
+    border-bottom: 0;
+    border-right: 0;
+    border-left: 0;
+}

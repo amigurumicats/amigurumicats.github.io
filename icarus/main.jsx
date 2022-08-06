@@ -8,16 +8,14 @@ TODO:
     - 最後に端数の調整をする
 - データ作る
 - UI
-    - ItemTileをマウスオーバーで詳細表示(tooltip)
-        - メイン画面のやつは追加でクラフト先とそれぞれ個数も表示する
     - 最上部TODOに済つけたら下も済つけたり、残り個数表示したり、infoの情報変えたりってできる？
     - デザイン
     - ItemTileの数字を、桁が増えても枠に収まるようfont-sizeを小さくする
         - https://kuroeveryday.blogspot.com/2017/05/calculate-element-width-with-offsetwidth.html
         - https://www.bravesoft.co.jp/blog/archives/15492
-- bug
-    - info
-        - silica_oreのクラフト先がconcrete_furnace(concrete_mixになってほしい)
+    - tooltip
+        - 上に表示されてほしい、親要素で見切れないでほしい
+        - 各要素の子要素じゃなくて、独立した1つの要素の値を変えていく方がよい？
 */
 
 
@@ -43,9 +41,10 @@ const merge_resources = (res_a, res_b) => {
             continue
         }
         for (const [id, c] of Object.entries(bv["info"])) {
-            res_a[bk]["info"][id] = res_a[bk]["info"][id] ? res_a[bk]["info"][id]+c : c
+            res_a[bk]["info"][id] = res_a[bk]["info"][id] ? res_a[bk]["info"][id]+c : c;
         }
     }
+    return res_a
 }
 
 
@@ -55,9 +54,9 @@ const calc_resources = (item_id, num) => {
         resources
             {
                 item_id: {  // 必要な素材
-                    sum: int  // 合計必要量
-                    info: {
-                        item_id: int  // クラフト先と個数
+                    "sum": int  // 合計必要量
+                    "info": {
+                        item_id: int  // クラフト先と必要個数
                     }
                 }
             }
@@ -72,19 +71,28 @@ const calc_resources = (item_id, num) => {
 
     if (!d["from"]) {
         // 生素材
-        return [{ [item_id]: { "sum": num, "info": {} } }, new Set()]
+        return [{}, new Set()]
     }
     // クラフト素材
     let at = new Set();
     if (d["at"]) at.add(d["at"]);
-    let res = {[item_id]: {"sum": num, "info": {}}};
-    for (const [id, n] of Object.entries(d["from"])) {
-        let [res_sub, at_sub] = calc_resources(id, n*num);
-        // info
-        // TODO: infoがちょっとうまくいってない(silica_oreのinfo先がconcrete_furnaceになる(concrete_mixになってほしい))
-        for (const id_sub of Object.keys(res_sub)) {
-            res_sub[id_sub]["info"] = {[item_id]: res_sub[id_sub]["sum"]}
+    let res = {};
+    for (const [from_id, from_n] of Object.entries(d["from"])) {
+        if (res[from_id]) {
+            res[from_id]["sum"] += from_n * num;
+            if (res[from_id]["info"][item_id]) {
+                res[from_id]["info"][item_id] += from_n * num;
+            } else {
+                res[from_id]["info"][item_id] = from_n * num;
+            }
+        } else {
+            res[from_id] = {
+                "sum": from_n * num,
+                "info": { [item_id]: from_n * num }
+            }
         }
+
+        let [res_sub, at_sub] = calc_resources(from_id, from_n*num);
         at = union_set(at, at_sub);
         merge_resources(res, res_sub);
     }
@@ -260,6 +268,7 @@ const ItemTileToolTip = ({id, info}) => {
             <div>Tier: {data[id]["tier"]}</div>
             {data[id]["at"] && data[data[id]["at"]] && <div>Require: {data[data[id]["at"]]["name"]["en"]} / {data[data[id]["at"]]["name"]["ja"]}</div>}
             {data[id]["from"] && !!Object.keys(data[id]["from"]).length && Object.entries(data[id]["from"]).map(([ from_id, count ]) => from_id && <div key={`from_${from_id}`}>{from_id} {count}</div>)}
+            {info && !!Object.keys(info).length && <hr />}
             {info && !!Object.keys(info).length && Object.entries(info).map(([ to_id, count ]) => to_id && <div key={`to_${to_id}`}>{to_id} {count}</div>)}
         </div>
     )
