@@ -1,4 +1,46 @@
 
+body {
+    margin: 0;
+}
+
+#header {
+    height: 30px;
+    background-color: #666;
+    color: #ccc;
+    font-size: 14px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.list_container {
+    display: flex;
+}
+
+.list_header {
+    width: 20px;
+    text-align: center;
+}
+
+.list_tier_0 .list_header {
+    background-color: #ddd;
+}
+
+.list_tier_1 .list_header {
+    background-color: #bbb;
+}
+
+.list_tier_2 .list_header {
+    background-color: #999;
+}
+
+.list_tier_3 .list_header {
+    background-color: #777;
+}
+
+.list_tier_4 .list_header {
+    background-color: #555;
+}
+
 .list {
     display: flex;
     flex-wrap: wrap;
@@ -8,6 +50,10 @@
     box-sizing: border-box;
     padding: 5px 5px;
 }
+
+
+
+
 
 #modal_overlay {
     position: fixed;
@@ -51,6 +97,7 @@
     width: 40px;
     height: 40px;
     position: relative;
+    margin-left: 10px;
     box-sizing: border-box;
     background-color: #bbb;
     border-radius: 5px 0 0 5px;
@@ -121,6 +168,7 @@ button.add::before {
     color: #ccc;
     font-size: 8px;
     background-color: #888;
+    pointer-events: none;
 }
 
 .item_tile .done {
@@ -169,6 +217,7 @@ button.add::before {
     margin: auto;
     right: 5px;
     color: #fff;
+    pointer-events: none;
 }
 
 .item_tile input:focus {
@@ -243,7 +292,7 @@ button.add::before {
     color: #fff;
 }
 
-.item_tile .tooltip {
+.tooltip {
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
     color: #fff;
@@ -252,13 +301,14 @@ button.add::before {
     box-sizing: border-box;
     padding: 5px;
     z-index: 100;
-    visibility: hidden;
     font-size: 12px;
     width: fit-content;
     height: fit-content;
+    z-index: 100;
+    pointer-events: none;
 }
 
-.item_tile .tooltip::before {
+.tooltip::before {
     content: "";
     width: 0;
     height: 0;
@@ -272,15 +322,11 @@ button.add::before {
     z-index: 100;
 }
 
-.item_tile:hover .tooltip {
-    visibility: visible;
-}
-
-.item_tile .tooltip div {
+.tooltip div {
     white-space: nowrap;
 }
 
-.item_tile .tooltip hr {
+.tooltip hr {
     border-top: 1px dashed #aaa;
     border-bottom: 0;
     border-right: 0;

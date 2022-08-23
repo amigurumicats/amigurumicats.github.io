@@ -1,11 +1,9 @@
 "use strict";
 
-const { useState } = React
+const { createContext, useContext, useState } = React
 
 /*
 TODO:
-- make_require
-    - 最後に端数の調整をする
 - データ作る
 - UI
     - 最上部TODOに済つけたら下も済つけたり、残り個数表示したり、infoの情報変えたりってできる？
@@ -13,10 +11,26 @@ TODO:
     - ItemTileの数字を、桁が増えても枠に収まるようfont-sizeを小さくする
         - https://kuroeveryday.blogspot.com/2017/05/calculate-element-width-with-offsetwidth.html
         - https://www.bravesoft.co.jp/blog/archives/15492
-    - tooltip
-        - 上に表示されてほしい、親要素で見切れないでほしい
-        - 各要素の子要素じゃなくて、独立した1つの要素の値を変えていく方がよい？
 */
+
+// データチェック
+for (const [id, d] of Object.entries(data)) {
+    if (!("tier" in d)) { console.log(`${id}: invalid tier`); }
+    if (!d["name"]["en"] || !d["name"]["ja"]) { console.log(`${id}: invalid name`); }
+    if (d["at"] && !(d["at"] in data)) { console.log(`${id}: invalid at`); }
+    if (d["from"]) {
+        let flag = false
+        for (const [from_id, count] of Object.entries(d["from"])) {
+            if (!(from_id in data) || count < 1) {
+                flag = true;
+                continue
+            }
+        }
+        if (flag) {
+            console.log(`${id}: invalid from`);
+        }
+    }
+}
 
 
 // util
@@ -101,6 +115,18 @@ const calc_resources = (item_id, num) => {
 
 
 const make_require = (todo) => {
+    /*
+    Returns:
+        resources
+            {
+                item_id: {  // 必要な素材
+                    "sum": int  // 合計必要量
+                    "info": {
+                        item_id: int  // クラフト先と必要個数
+                    }
+                }
+            }
+    */
     let res = {};
     let ats = new Set();
     for (const [id, count] of Object.entries(todo)){
@@ -134,53 +160,110 @@ const make_require = (todo) => {
         merge_resources(res, res_at);
     }
 
-    // TODO: 最後に端数の調整をする
+    // 最後に端数の調整をする
+    let task = [];
+    for (const [id, v] of Object.entries(data)) {
+        if (!("craft_unit" in v) || v["craft_unit"] == 1) continue;
+        if (!(id in res)) continue;
+        const n = res[id]["sum"];  // 必要な製造後部品の数
+        const m = Math.ceil(n / v["craft_unit"]);  // 本当に必要な材料の数
+        // n個必要なら、本当はm:=ceil(n/craft_unit)個の材料でよいが、n*s個として一旦計算してしまっている => n*s-m個分の材料を引く
+        if (!("from" in v)) {
+            console.log(`error: invalid from ${id}`);
+            continue;
+        }
+        for (const [sub_id, sub_n] of Object.entries(v["from"])) {
+            task.push([id, sub_id, sub_n * n - m]);  // [parent_id, child_id, n]: parent_idに必要なchild_idをn個減らす
+        }
+    }
+    while (task.length > 0) {
+        let new_task = [];
 
-    console.log(res);  // DEBUG
+        for (const [parent_id, child_id, n] of task) {
+            res[child_id]["sum"] -= n;
+            res[child_id]["info"][parent_id] -= n;
+            if (!("from" in data[child_id])) continue;
+            for (const [sub_id, sub_n] of Object.entries(data[child_id]["from"])) {
+                new_task.push([child_id, sub_id, n * sub_n]);
+            }
+        }
+
+        task = new_task;
+    }
+
+    // console.log(res);  // DEBUG
 
     return res
 }
 
+const ToolTipContext = createContext();
 
 const App = () => {
     const [todo, setTodo] = useState({});
     const [modalisshow, setModalisshow] = useState(false);
+    const [tooltip, setTooltip] = useState({"id": null, "info": null, "position": {"top": 0, "left": 0}});
 
     const require = make_require(todo);
 
     // tierごとに分ける
-    let todo_by_tier = {0: [], 1: [], 2: [], 3: [], 4:[]};
-    for (const id of Object.keys(require)) todo_by_tier[data[id]["tier"]].push(id);
+    let todo_by_tier = {0: {}, 1: {}, 2: {}, 3: {}, 4:{}};
+    for (const [id, v] of Object.entries(require)) {
+        todo_by_tier[data[id]["tier"]][id] = v;
+    }
 
     return (
         <>
-            <Modal isshow={modalisshow} setIsshow={setModalisshow} todo={todo} setTodo={setTodo} />
+            <ToolTipContext.Provider value={setTooltip}>
+                <Modal isshow={modalisshow} setIsshow={setModalisshow} todo={todo} setTodo={setTodo} />
 
-            <div className="list">
-                {Object.entries(todo).map(([id, count]) => (
-                    <ItemListTile key={id} item_id={id} item_count={count} />
-                ))}
-                <button className="add" onClick={() => setModalisshow(true)}></button>
-            </div>
+                <div className="list list_todo">
+                    {Object.entries(todo).map(([id, count]) => (
+                        <ItemListTile key={id} item_id={id} item_count={count} />
+                    ))}
+                    <button className="add" onClick={() => setModalisshow(true)}></button>
+                </div>
 
-            {
-                [4,3,2,1,0].map((tier) => (
-                    <div className="list" key={tier}>
-                        {
-                            todo_by_tier[tier].map((id) => (
-                                <ItemListTile
-                                    key={id}
-                                    item_id={id}
-                                    item_count={require[id]["sum"]}
-                                    info={require[id]["info"]}
-                                />
-                            ))
-                        }
-                    </div>
-                ))
-            }
+                {
+                    [4,3,2,1,0].map((tier) => (
+                        <ItemList key={`item_list_${tier}`} items={todo_by_tier[tier]} tier={tier} />
+                    ))
+                }
+            </ToolTipContext.Provider>
+
+            <ItemTileToolTip id={tooltip["id"]} info={tooltip["info"]} position={tooltip["position"]}></ItemTileToolTip>
         </>
     );
+}
+
+
+const ItemList = ({items, tier}) => {
+    /*
+    メイン画面のアイテムリスト
+    */
+    const [isopen, setIsopen] = useState(true);
+
+    if (Object.keys(items).length == 0) return null;
+
+
+    // TODO: 開閉
+
+    return (
+        <div className={`list_container list_tier_${tier}`}>
+            <div className="list_header">{tier}</div>
+            <div className="list">
+                {
+                    Object.entries(items).map(([id, v]) => (
+                        <ItemListTile
+                            key={id}
+                            item_id={id}
+                            item_count={v["sum"]}
+                            info={v["info"]}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    )
 }
 
 
@@ -190,11 +273,25 @@ const ItemListTile = ({item_id, item_count, info}) => {
     */
     const [isdone, setIsdone] = useState(false);
 
+    const setTooltip = useContext(ToolTipContext);
+    const onMouseEnter = (e) => {
+        const top = e.target.offsetTop + e.target.clientTop + e.target.clientHeight + 10;
+        const left = e.target.offsetLeft + e.target.clientLeft;
+        setTooltip({"id": item_id, "info": info, "position": {"top": top, "left": left}})
+    }
+
+    const onMouseLeave = () => {
+        setTooltip({ "id": null, "info": {}, "position": { "top": 0, "left": 0}})
+    }
+
     return (
-        <div className="item_tile" onClick={() => setIsdone(!isdone)}>
+        <div className="item_tile"
+            onClick={() => setIsdone(!isdone)}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+        >
             <div className="item_icon">{item_id}</div>
             <span className="count">{item_count}</span>
-            <ItemTileToolTip id={item_id} info={info}/>
             {isdone && <div className="done"></div>}
         </div>
     )
@@ -234,7 +331,6 @@ const ItemSelectedTile = ({item_id, count, updateCount, deleteItem}) => {
             <button className="inc" onClick={() => _updateCount(count+1)}></button>
             <button className="dec" onClick={() => _updateCount(Math.max(0, count-1))}></button>
             <input type="text" value={local_text} onChange={(e) => onChange(e)} onBlur={() => onBlur()}></input>
-            <ItemTileToolTip id={item_id}/>
         </div>
     )
 }
@@ -248,12 +344,11 @@ const ItemSelectTile = ({item_id, onclick}) => {
     return (
         <div className="item_tile item_tile_small" onClick={() => onclick(item_id)}>
             <div className="item_icon">{item_id}</div>
-            <ItemTileToolTip id={item_id}/>
         </div>
     )
 }
 
-const ItemTileToolTip = ({id, info}) => {
+const ItemTileToolTip = ({id, info, position}) => {
     /*
     id: ツールチップを表示するアイテムID
     info: 詳細情報。クラフト先とその個数
@@ -263,7 +358,7 @@ const ItemTileToolTip = ({id, info}) => {
     */
     if (!id || !data[id]) return null
     return (
-        <div className="tooltip">
+        <div className="tooltip" style={{ top: position["top"] || 0, left: position["left"] || 0}}>
             <div>{data[id]["name"]["en"]} / {data[id]["name"]["ja"]}</div>
             <div>Tier: {data[id]["tier"]}</div>
             {data[id]["at"] && data[data[id]["at"]] && <div>Require: {data[data[id]["at"]]["name"]["en"]} / {data[data[id]["at"]]["name"]["ja"]}</div>}

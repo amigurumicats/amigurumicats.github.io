@@ -348,7 +348,8 @@ const data = {
         "name": {
             "en": "Cocoa Seed",
             "ja": "カカオの実"
-        }
+        },
+        "tier": 0
     },
     "coffee_bean": {
         "name": {
@@ -366,13 +367,22 @@ const data = {
         "at": "fabricator",
         "from": {"steel_ingot": 12, "steel_screw": 2, "carbon_fiber": 2, "epoxy": 4}
     },
+    "composites": {
+        "name": {
+            "en": "Composites",
+            "ja": "コンポジット材料"
+        },
+        "tier": 4,
+        "at": "electric_furnace",
+        "from": {"composite_paste": 1}
+    },
     "composite_paste": {
         "name": {
             "en": "Composite Paste",
             "ja": "コンポジットペースト"
         },
         "tier": 4,
-        "at": "material_procesor",
+        "at": "material_processor",
         "from": {"iron_ore": 2, "silica_ore": 1, "organic_resin": 1, "gold_ore": 1}
     },
     "concrete_mix": {
@@ -389,7 +399,7 @@ const data = {
             "en": "Copper Ingot",
             "ja": "銅インゴット"
         },
-        "tier": 3,
+        "tier": 2,
         "at": "stone_furnace",
         "from": {"copper_ore": 2}
     },
@@ -400,7 +410,8 @@ const data = {
         },
         "tier": 2,
         "at": "anvil_bench",
-        "from": {"copper_ore": 0.1}
+        "from": {"copper_ore": 1},
+        "craft_unit": 10
     },
     "copper_ore": {
         "name": {
@@ -733,7 +744,8 @@ const data = {
         },
         "tier": 2,
         "at": "anvil_bench",
-        "from": {"iron_ingot": 0.1}
+        "from": {"iron_ingot": 1},
+        "craft_unit": 10
     },
     "iron_ore": {
         "name": {
@@ -1179,7 +1191,8 @@ const data = {
         },
         "tier": 3,
         "at": "machining_bench",
-        "from": {"steel_ingot": 0.1}
+        "from": {"steel_ingot": 1},
+        "craft_unit": 10
     },
     "steel_screw": {
         "name": {
@@ -1188,7 +1201,8 @@ const data = {
         },
         "tier": 3,
         "at": "machining_bench",
-        "from": {"steel_ingot": 0.01}
+        "from": {"steel_ingot": 1},
+        "craft_unit": 100
     },
     "stick": {
         "name": {
