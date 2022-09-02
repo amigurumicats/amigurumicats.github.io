@@ -11,6 +11,7 @@ TODO:
     - ItemTileの数字を、桁が増えても枠に収まるようfont-sizeを小さくする
         - https://kuroeveryday.blogspot.com/2017/05/calculate-element-width-with-offsetwidth.html
         - https://www.bravesoft.co.jp/blog/archives/15492
+    - マウスオーバーすると、生成先や生成元が線で表示される
 */
 
 // データチェック
@@ -130,6 +131,7 @@ const make_require = (todo) => {
     let res = {};
     let ats = new Set();
     for (const [id, count] of Object.entries(todo)){
+        res[id] = {"sum": count, "info": {}};
         const [res_sub, ats_sub] = calc_resources(id, count);
         ats = union_set(ats, ats_sub);
         merge_resources(res, res_sub);
@@ -155,7 +157,8 @@ const make_require = (todo) => {
     }
     // atの分の素材を足す
     for (const at of ats.keys()) {
-        if (res[at]) continue
+        if (at in res) continue
+        res[at] = {"sum": 1, "info": {}}
         const [res_at, _] = calc_resources(at, 1);
         merge_resources(res, res_at);
     }
@@ -244,24 +247,24 @@ const ItemList = ({items, tier}) => {
 
     if (Object.keys(items).length == 0) return null;
 
-
-    // TODO: 開閉
-
     return (
         <div className={`list_container list_tier_${tier}`}>
-            <div className="list_header">{tier}</div>
-            <div className="list">
-                {
-                    Object.entries(items).map(([id, v]) => (
-                        <ItemListTile
-                            key={id}
-                            item_id={id}
-                            item_count={v["sum"]}
-                            info={v["info"]}
-                        />
-                    ))
-                }
-            </div>
+            <div className="list_header" onClick={() => setIsopen(!isopen)}>{tier}</div>
+            {
+                isopen &&
+                <div className="list">
+                    {
+                        Object.entries(items).map(([id, v]) => (
+                            <ItemListTile
+                                key={id}
+                                item_id={id}
+                                item_count={v["sum"]}
+                                info={v["info"]}
+                            />
+                        ))
+                    }
+                </div>
+            }
         </div>
     )
 }
