@@ -14,31 +14,53 @@ body {
 
 .list_container {
     display: flex;
+    transition: all 0.2s;
 }
 
 .list_header {
     width: 20px;
     text-align: center;
+    cursor: pointer;
+}
+
+.list_tier_0 {
+    background-color: #9eceff;
 }
 
 .list_tier_0 .list_header {
-    background-color: #ddd;
+    background-color: #7fbfff;
+}
+
+.list_tier_1 {
+    background-color: #9e9eff;
 }
 
 .list_tier_1 .list_header {
-    background-color: #bbb;
+    background-color: #7f7fff;
+}
+
+.list_tier_2 {
+    background-color: #ce9eff;
 }
 
 .list_tier_2 .list_header {
-    background-color: #999;
+    background-color: #bf7fff;
+}
+
+.list_tier_3 {
+    background-color: #ff9ece;
 }
 
 .list_tier_3 .list_header {
-    background-color: #777;
+    background-color: #ff7fbf;
+}
+
+.list_tier_4 {
+    background-color: #ff9e9e;
 }
 
 .list_tier_4 .list_header {
-    background-color: #555;
+    background-color: #ff7f7f;
 }
 
 .list {
@@ -47,12 +69,10 @@ body {
     align-items: flex-start;
     align-content: flex-start;
     min-height: 10px;
+    max-width: calc(100% - 20px);
     box-sizing: border-box;
     padding: 5px 5px;
 }
-
-
-
 
 
 #modal_overlay {
