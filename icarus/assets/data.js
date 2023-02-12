@@ -1,4 +1,13 @@
 const data = {
+    "00_buckshot_shell": {
+        "name": {
+            "en": "00 Buckshot Shell",
+            "ja": ""
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {"copper_ingot": 1, "epoxy": 1, "gunpowder": 6}
+    },
     "alpha_wolf_head": {
         "name": {
             "en": "Alpha Wolf Head",
@@ -6,6 +15,51 @@ const data = {
         },
         "tier": 0,
         "at": "taxidermy_knife"
+    },
+    "aluminium_arrow": {
+        "name": {
+            "en": "Aluminium Arrow",
+            "ja": ""
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": { "copper_ingot": 1, "aluminium_ingot": 4, "epoxy": 1}
+    },
+    "aluminium_beam": {
+        "name": {
+            "en": "Aluminium Beam",
+            "ja": ""
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": { "aluminum_ore": 2, "wood": 2, "steel_screw": 2 }
+    },
+    "aluminium_door": {
+        "name": {
+            "en": "Aluminium Door",
+            "ja": ""
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": { "aluminum_ore": 4, "wood": 6, "steel_screw": 4 }
+    },
+    "aluminium_floor": {
+        "name": {
+            "en": "Aluminium Floor",
+            "ja": ""
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": { "aluminum_ore": 4, "wood": 6, "steel_screw": 4 }
+    },
+    "aluminium_floor_trapdoor": {
+        "name": {
+            "en": "Aluminium Floor Trapdoor",
+            "ja": ""
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": { "aluminum_ore": 4, "wood": 6, "steel_screw": 4 }
     },
     "aluminium_ingot": {
         "name": {
@@ -22,6 +76,33 @@ const data = {
             "ja": "アルミニウム鉱石"
         },
         "tier": 0
+    },
+    "aluminium_roof_corner": {
+        "name": {
+            "en": "Aluminium Roof Corner",
+            "ja": ""
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": { "aluminum_ore": 2, "wood": 6, "steel_screw": 4 }
+    },
+    "aluminium_roof_ramp": {
+        "name": {
+            "en": "Aluminium Roof/Ramp",
+            "ja": ""
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": { "aluminum_ore": 4, "wood": 6, "steel_screw": 4 }
+    },
+    "aluminium_trapdoor": {
+        "name": {
+            "en": "Aluminium Trapdoor",
+            "ja": ""
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": { "aluminum_ore": 4, "wood": 6, "steel_screw": 4 }
     },
     "animal_fat": {
         "name": {
@@ -128,7 +209,7 @@ const data = {
     "biofuel_composter": {
         "name": {
             "en": "Biofuel Composter",
-            "ja": ""
+            "ja": "バイオ燃料用コンポスター"
         },
         "tier": 3,
         "at": "machining_bench",
@@ -322,7 +403,7 @@ const data = {
     "chemistry_bench": {
         "name": {
             "en": "Chemistry Bench",
-            "ja": ""
+            "ja": "化学作業台"
         },
         "tier": 4,
         "at": "fabricator",
@@ -338,7 +419,7 @@ const data = {
     "concrete_furnace": {
         "name": {
             "en": "Concrete Furnace",
-            "ja": ""
+            "ja": "コンクリートの溶炉"
         },
         "tier": 3,
         "at": "machining_bench",
@@ -388,7 +469,7 @@ const data = {
     "concrete_mix": {
         "name": {
             "en": "Concrete Mix",
-            "ja": "コンクリート混合物"
+            "ja": "コンクリートの混合物"
         },
         "tier": 3,
         "at": "cement_mixer",
@@ -438,7 +519,7 @@ const data = {
     "crafting_bench": {
         "name": {
             "en": "Crafting Bench",
-            "ja": ""
+            "ja": "製造台"
         },
         "tier": 2,
         "from": {"fiber": 60, "wood": 50, "stone": 12, "leather": 20}
@@ -546,14 +627,14 @@ const data = {
             "en": "Epoxy",
             "ja": "エポキシ樹脂"
         },
-        "tier": 1,
+        "tier": 2,
         "at": "mortar_and_pestle",
         "from": {"sulfur": 2, "tree_sap": 4}
     },
     "fabricator": {
         "name": {
             "en": "Fabricator",
-            "ja": ""
+            "ja": "加工台"
         },
         "tier": 4,
         "at": "machining_bench",
@@ -704,7 +785,7 @@ const data = {
     "iron_axe": {
         "name": {
             "en": "Iron Axe",
-            "ja": ""
+            "ja": "鉄の斧"
         },
         "tier": 2,
         "at": "anvil_bench",
@@ -713,7 +794,7 @@ const data = {
     "iron_hammer": {
         "name": {
             "en": "Iron Hammer",
-            "ja": ""
+            "ja": "アイアンハンマー"
         },
         "tier": 2,
         "at": "anvil_bench",
@@ -731,7 +812,7 @@ const data = {
     "iron_knife": {
         "name": {
             "en": "Iron Knife",
-            "ja": ""
+            "ja": "鉄のナイフ"
         },
         "tier": 2,
         "at": "anvil_bench",
@@ -740,7 +821,7 @@ const data = {
     "iron_nail": {
         "name": {
             "en": "Iron Nail",
-            "ja": ""
+            "ja": "鉄の釘"
         },
         "tier": 2,
         "at": "anvil_bench",
@@ -757,7 +838,7 @@ const data = {
     "iron_pickaxe": {
         "name": {
             "en": "Iron Pickaxe",
-            "ja": ""
+            "ja": "鉄のつるはし"
         },
         "tier": 2,
         "at": "anvil_bench",
@@ -766,7 +847,7 @@ const data = {
     "iron_sickle": {
         "name": {
             "en": "Iron Sickle",
-            "ja": ""
+            "ja": "鉄の鎌"
         },
         "tier": 2,
         "at": "anvil_bench",
@@ -1133,7 +1214,7 @@ const data = {
     "steel_axe": {
         "name": {
             "en": "Steel Axe",
-            "ja": ""
+            "ja": "鋼の斧"
         },
         "tier": 3,
         "at": "anvil_bench",
@@ -1151,7 +1232,7 @@ const data = {
     "steel_hammer": {
         "name": {
             "en": "Steel Hammer",
-            "ja": ""
+            "ja": "スチールハンマー"
         },
         "tier": 2,
         "at": "anvil_bench",
@@ -1169,7 +1250,7 @@ const data = {
     "steel_knife": {
         "name": {
             "en": "Steel Knife",
-            "ja": ""
+            "ja": "鋼のナイフ"
         },
         "tier": 2,
         "at": "anvil_bench",
@@ -1178,7 +1259,7 @@ const data = {
     "steel_pickaxe": {
         "name": {
             "en": "Steel Pickaxe",
-            "ja": ""
+            "ja": "鋼のつるはし"
         },
         "tier": 2,
         "at": "anvil_bench",
@@ -1187,7 +1268,7 @@ const data = {
     "steel_rebar": {
         "name": {
             "en": "Steel Rebar",
-            "ja": ""
+            "ja": "鉄筋"
         },
         "tier": 3,
         "at": "machining_bench",
@@ -1197,7 +1278,7 @@ const data = {
     "steel_screw": {
         "name": {
             "en": "Steel Screw",
-            "ja": ""
+            "ja": "鋼の釘"
         },
         "tier": 3,
         "at": "machining_bench",
@@ -1261,7 +1342,7 @@ const data = {
     "taxidermy_knife": {
         "name": {
             "en": "Taxidermy Knife",
-            "ja": ""
+            "ja": "剥製用ナイフ"
         },
         "tier": 2,
         "at": "anvil_bench",
@@ -1286,7 +1367,7 @@ const data = {
     "titanium_axe": {
         "name": {
             "en": "Titanium Axe",
-            "ja": ""
+            "ja": "チタニウムの斧"
         },
         "tier": 4,
         "at": "fabricator",
@@ -1295,7 +1376,7 @@ const data = {
     "titanium_hammer": {
         "name": {
             "en": "Titanium Hammer",
-            "ja": ""
+            "ja": "チタニウムハンマー"
         },
         "tier": 4,
         "at": "fabricator",
@@ -1313,7 +1394,7 @@ const data = {
     "titanium_knife": {
         "name": {
             "en": "Titanium Knife",
-            "ja": ""
+            "ja": "チタニウムのナイフ"
         },
         "tier": 4,
         "at": "fabricator",
@@ -1329,7 +1410,7 @@ const data = {
     "titanium_pickaxe": {
         "name": {
             "en": "Titanium Pickaxe",
-            "ja": ""
+            "ja": "チタニウムのつるはし"
         },
         "tier": 4,
         "at": "fabricator",
@@ -1338,7 +1419,7 @@ const data = {
     "titanium_sickle": {
         "name": {
             "en": "Titanium Sickle",
-            "ja": ""
+            "ja": "チタニウムの鎌"
         },
         "tier": 4,
         "at": "fabricator",
@@ -1372,7 +1453,7 @@ const data = {
     "water_pipe_tool": {
         "name": {
             "en": "Water Pipe Tool",
-            "ja": ""
+            "ja": "水道管ツール"
         },
         "tier": 4,
         "at": "fabricator",
@@ -1448,7 +1529,8 @@ const data = {
         },
         "tier": null,
         "at": null,
-        "from": {}
+        "from": {},
+        "craft_unit": 1
     }
     */
 }
