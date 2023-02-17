@@ -1,0 +1,239 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+#app {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    .time {
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 4rem;
+        border: 1px dashed #888;
+    }
+
+    .button_start_stop {
+        width: 250px;
+        height: 40px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        user-select: none;
+
+        &.start {
+            background-color: #0c0;
+        }
+
+        &.stop {
+            background-color: #f33;
+        }
+    }
+
+    .info {
+        width: 300px;
+        display: flex;
+        justify-content: space-around;
+        font-size: 1.5rem;
+    }
+
+    .clear {
+        display: flex;
+        font-size: 1.4rem;
+
+        a.button_tweet {
+            display: flex;
+            background-color: #1d9bf0;
+            border-radius: 3px;
+            margin-left: 8px;
+            padding: 2px 6px;
+            font-size: 1.3rem;
+            color: #fff;
+
+            img {
+                width: 20px;
+                height: 20px;
+                margin-right: 2px;
+            }
+        }
+    }
+
+    .categories {
+        display: flex;
+        margin-top: 5px;
+
+        .category {
+            height: 28px;
+            width: 77px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+            user-select: none;
+            border-top: 1px solid #888;
+            border-bottom: 1px solid #888;
+            border-left: 1px solid #888;
+
+            &.active {
+                background-color: #9f6;
+
+                &.disabled {
+                    background-color: #bbb;
+                }
+            }
+
+            &.disabled {
+                background-color: #eee;
+            }
+
+            &.clickable { cursor: pointer; }
+
+            &:first-child {
+                border-radius: 3px 0 0 3px;
+            }
+
+            &:last-child {
+                border-radius: 0 3px 3px 0;
+                border-right: 1px solid #888;
+            }
+        }
+    }
+
+    .options {
+        display: flex;
+        margin-top: 5px;
+
+        .option {
+            height: 25px;
+            width: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: 1.4rem;
+            user-select: none;
+            border-top: 1px solid #888;
+            border-bottom: 1px solid #888;
+            border-left: 1px solid #888;
+
+            &.active {
+                background-color: #9f6;
+
+                &.disabled {
+                    background-color: #bbb;
+                }
+            }
+
+            &.disabled {
+                background-color: #eee;
+            }
+
+            &.clickable { cursor: pointer; }
+
+            &:first-child {
+                border-radius: 3px 0 0 3px;
+            }
+
+            &:last-child {
+                border-radius: 0 3px 3px 0;
+                border-right: 1px solid #888;
+            }
+        }
+    }
+
+    table.board {
+        width: 400px;
+        margin-top: 5px;
+        table-layout: fixed;
+        border-collapse: collapse;
+        border: 2px solid #666;
+
+        tbody {
+            tr {
+                text-align: center;
+                vertical-align: middle;
+
+                td {
+                    font-size: 1.4rem;
+                    border: 1px dashed #888;
+
+                    &.active_1 { background-color: #99ff66; }
+                    &.active_2 { background-color: #73e659; }
+                    &.active_3 { background-color: #4dcc4d; }
+                    &.active_4 { background-color: #26b340; }
+                    &.active_5 { background-color: #009933; }
+                    &.active_now { background-color: #ff9900; }
+                    &.active_new { animation: glowing_circle 0.3s ease-in forwards; }
+
+                    &.rainbow_0 { animation: rainbow 5s -4.0s infinite; }
+                    &.rainbow_1 { animation: rainbow 5s -3.5s infinite; }
+                    &.rainbow_2 { animation: rainbow 5s -3.0s infinite; }
+                    &.rainbow_3 { animation: rainbow 5s -2.5s infinite; }
+                    &.rainbow_4 { animation: rainbow 5s -2.0s infinite; }
+                    &.rainbow_5 { animation: rainbow 5s -1.5s infinite; }
+                    &.rainbow_6 { animation: rainbow 5s -1.0s infinite; }
+                    &.rainbow_7 { animation: rainbow 5s -0.5s infinite; }
+                    &.rainbow_8 { animation: rainbow 5s 0s infinite; }
+                }
+            }
+        }
+    }
+
+}
+
+
+@keyframes glowing_circle {
+    0% { background: radial-gradient(0px, #ff9900 50%, transparent 50%); }
+    10% { background: radial-gradient(5px, #ff9900 50%, transparent 50%); }
+    20% { background: radial-gradient(10px, #ff9900 50%, transparent 50%); }
+    30% { background: radial-gradient(15px, #ff9900 50%, transparent 50%); }
+    40% { background: radial-gradient(20px, #ff9900 50%, transparent 50%); }
+    50% { background: radial-gradient(25px, #ff9900 50%, transparent 50%); }
+    60% { background: radial-gradient(30px, #ff9900 50%, transparent 50%); }
+    70% { background: radial-gradient(35px, #ff9900 50%, transparent 50%); }
+    80% { background: radial-gradient(40px, #ff9900 50%, transparent 50%); }
+    90% { background: radial-gradient(45px, #ff9900 50%, transparent 50%); }
+    100% { background: radial-gradient(50px, #ff9900 50%, transparent 50%); }
+}
+
+@keyframes rainbow {
+    0% { background-color: #ff53bd; }
+    12% { background-color: #ff5353; }
+    24% { background-color: #ffcf53; }
+    36% { background-color: #e8ff53; }
+    48% { background-color: #53ff5d; }
+    60% { background-color: #53ffbc; }
+    72% { background-color: #5393ff; }
+    84% { background-color: #ca53ff; }
+    100% { background-color: #ff53bd; }
+}

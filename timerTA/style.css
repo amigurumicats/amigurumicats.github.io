@@ -1,0 +1,365 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#app {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+#app .time {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  border: 1px dashed #888;
+}
+#app .button_start_stop {
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+#app .button_start_stop.start {
+  background-color: #0c0;
+}
+#app .button_start_stop.stop {
+  background-color: #f33;
+}
+#app .info {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5rem;
+}
+#app .clear {
+  display: flex;
+  font-size: 1.4rem;
+}
+#app .clear a.button_tweet {
+  display: flex;
+  background-color: #1d9bf0;
+  border-radius: 3px;
+  margin-left: 8px;
+  padding: 2px 6px;
+  font-size: 1.3rem;
+  color: #fff;
+}
+#app .clear a.button_tweet img {
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+}
+#app .categories {
+  display: flex;
+  margin-top: 5px;
+}
+#app .categories .category {
+  height: 28px;
+  width: 77px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
+  border-left: 1px solid #888;
+}
+#app .categories .category.active {
+  background-color: #9f6;
+}
+#app .categories .category.active.disabled {
+  background-color: #bbb;
+}
+#app .categories .category.disabled {
+  background-color: #eee;
+}
+#app .categories .category.clickable {
+  cursor: pointer;
+}
+#app .categories .category:first-child {
+  border-radius: 3px 0 0 3px;
+}
+#app .categories .category:last-child {
+  border-radius: 0 3px 3px 0;
+  border-right: 1px solid #888;
+}
+#app .options {
+  display: flex;
+  margin-top: 5px;
+}
+#app .options .option {
+  height: 25px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 1.4rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
+  border-left: 1px solid #888;
+}
+#app .options .option.active {
+  background-color: #9f6;
+}
+#app .options .option.active.disabled {
+  background-color: #bbb;
+}
+#app .options .option.disabled {
+  background-color: #eee;
+}
+#app .options .option.clickable {
+  cursor: pointer;
+}
+#app .options .option:first-child {
+  border-radius: 3px 0 0 3px;
+}
+#app .options .option:last-child {
+  border-radius: 0 3px 3px 0;
+  border-right: 1px solid #888;
+}
+#app table.board {
+  width: 400px;
+  margin-top: 5px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 2px solid #666;
+}
+#app table.board tbody tr {
+  text-align: center;
+  vertical-align: middle;
+}
+#app table.board tbody tr td {
+  font-size: 1.4rem;
+  border: 1px dashed #888;
+}
+#app table.board tbody tr td.active_1 {
+  background-color: #99ff66;
+}
+#app table.board tbody tr td.active_2 {
+  background-color: #73e659;
+}
+#app table.board tbody tr td.active_3 {
+  background-color: #4dcc4d;
+}
+#app table.board tbody tr td.active_4 {
+  background-color: #26b340;
+}
+#app table.board tbody tr td.active_5 {
+  background-color: #009933;
+}
+#app table.board tbody tr td.active_now {
+  background-color: #ff9900;
+}
+#app table.board tbody tr td.active_new {
+  -webkit-animation: glowing_circle 0.3s ease-in forwards;
+          animation: glowing_circle 0.3s ease-in forwards;
+}
+#app table.board tbody tr td.rainbow_0 {
+  -webkit-animation: rainbow 5s -4s infinite;
+          animation: rainbow 5s -4s infinite;
+}
+#app table.board tbody tr td.rainbow_1 {
+  -webkit-animation: rainbow 5s -3.5s infinite;
+          animation: rainbow 5s -3.5s infinite;
+}
+#app table.board tbody tr td.rainbow_2 {
+  -webkit-animation: rainbow 5s -3s infinite;
+          animation: rainbow 5s -3s infinite;
+}
+#app table.board tbody tr td.rainbow_3 {
+  -webkit-animation: rainbow 5s -2.5s infinite;
+          animation: rainbow 5s -2.5s infinite;
+}
+#app table.board tbody tr td.rainbow_4 {
+  -webkit-animation: rainbow 5s -2s infinite;
+          animation: rainbow 5s -2s infinite;
+}
+#app table.board tbody tr td.rainbow_5 {
+  -webkit-animation: rainbow 5s -1.5s infinite;
+          animation: rainbow 5s -1.5s infinite;
+}
+#app table.board tbody tr td.rainbow_6 {
+  -webkit-animation: rainbow 5s -1s infinite;
+          animation: rainbow 5s -1s infinite;
+}
+#app table.board tbody tr td.rainbow_7 {
+  -webkit-animation: rainbow 5s -0.5s infinite;
+          animation: rainbow 5s -0.5s infinite;
+}
+#app table.board tbody tr td.rainbow_8 {
+  -webkit-animation: rainbow 5s 0s infinite;
+          animation: rainbow 5s 0s infinite;
+}
+
+@-webkit-keyframes glowing_circle {
+  0% {
+    background: radial-gradient(0px, #ff9900 50%, transparent 50%);
+  }
+  10% {
+    background: radial-gradient(5px, #ff9900 50%, transparent 50%);
+  }
+  20% {
+    background: radial-gradient(10px, #ff9900 50%, transparent 50%);
+  }
+  30% {
+    background: radial-gradient(15px, #ff9900 50%, transparent 50%);
+  }
+  40% {
+    background: radial-gradient(20px, #ff9900 50%, transparent 50%);
+  }
+  50% {
+    background: radial-gradient(25px, #ff9900 50%, transparent 50%);
+  }
+  60% {
+    background: radial-gradient(30px, #ff9900 50%, transparent 50%);
+  }
+  70% {
+    background: radial-gradient(35px, #ff9900 50%, transparent 50%);
+  }
+  80% {
+    background: radial-gradient(40px, #ff9900 50%, transparent 50%);
+  }
+  90% {
+    background: radial-gradient(45px, #ff9900 50%, transparent 50%);
+  }
+  100% {
+    background: radial-gradient(50px, #ff9900 50%, transparent 50%);
+  }
+}
+
+@keyframes glowing_circle {
+  0% {
+    background: radial-gradient(0px, #ff9900 50%, transparent 50%);
+  }
+  10% {
+    background: radial-gradient(5px, #ff9900 50%, transparent 50%);
+  }
+  20% {
+    background: radial-gradient(10px, #ff9900 50%, transparent 50%);
+  }
+  30% {
+    background: radial-gradient(15px, #ff9900 50%, transparent 50%);
+  }
+  40% {
+    background: radial-gradient(20px, #ff9900 50%, transparent 50%);
+  }
+  50% {
+    background: radial-gradient(25px, #ff9900 50%, transparent 50%);
+  }
+  60% {
+    background: radial-gradient(30px, #ff9900 50%, transparent 50%);
+  }
+  70% {
+    background: radial-gradient(35px, #ff9900 50%, transparent 50%);
+  }
+  80% {
+    background: radial-gradient(40px, #ff9900 50%, transparent 50%);
+  }
+  90% {
+    background: radial-gradient(45px, #ff9900 50%, transparent 50%);
+  }
+  100% {
+    background: radial-gradient(50px, #ff9900 50%, transparent 50%);
+  }
+}
+@-webkit-keyframes rainbow {
+  0% {
+    background-color: #ff53bd;
+  }
+  12% {
+    background-color: #ff5353;
+  }
+  24% {
+    background-color: #ffcf53;
+  }
+  36% {
+    background-color: #e8ff53;
+  }
+  48% {
+    background-color: #53ff5d;
+  }
+  60% {
+    background-color: #53ffbc;
+  }
+  72% {
+    background-color: #5393ff;
+  }
+  84% {
+    background-color: #ca53ff;
+  }
+  100% {
+    background-color: #ff53bd;
+  }
+}
+@keyframes rainbow {
+  0% {
+    background-color: #ff53bd;
+  }
+  12% {
+    background-color: #ff5353;
+  }
+  24% {
+    background-color: #ffcf53;
+  }
+  36% {
+    background-color: #e8ff53;
+  }
+  48% {
+    background-color: #53ff5d;
+  }
+  60% {
+    background-color: #53ffbc;
+  }
+  72% {
+    background-color: #5393ff;
+  }
+  84% {
+    background-color: #ca53ff;
+  }
+  100% {
+    background-color: #ff53bd;
+  }
+}/*# sourceMappingURL=style.css.map */
