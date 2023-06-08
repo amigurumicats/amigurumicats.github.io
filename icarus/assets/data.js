@@ -696,7 +696,7 @@ const data = {
             "en": "Flour",
             "ja": "小麦粉"
         },
-        "tier": "TODO",
+        "tier": "2",
         "at": "mortar_and_pestle",
         "from": {"wheat": 10}
     },
@@ -745,8 +745,8 @@ const data = {
             "ja": ""
         },
         "tier": 4,
-        "at": "TODO",
-        "from": {}
+        "at": "chemistry_bench",
+        "from": {"silica_ore": 1, "basic_fertilizer": 1}
     },
     "gunpowder": {
         "name": {
@@ -772,8 +772,8 @@ const data = {
             "ja": ""
         },
         "tier": 4,
-        "at": "TODO",
-        "from": {}
+        "at": "chemistry_bench",
+        "from": {"sulfur": 1, "basic_fertilizer": 5}
     },
     "ice": {
         "name": {
@@ -985,8 +985,8 @@ const data = {
             "ja": "ペストリー"
         },
         "tier": 3,
-        "at": "TODO",
-        "from": {}
+        "at": "kitchen_bench",
+        "from": { "animal_fat": 1, "flour": 1}
     },
     "platinum_axe": {
         "name": {
@@ -994,7 +994,7 @@ const data = {
             "ja": "プラチナの斧"
         },
         "tier": 3,
-        "at": "main",
+        "at": "machining_bench",
         "from": {"wood": 2, "leather": 4, "platinum_ingot": 12}
     },
     "platinum_hammer": {
