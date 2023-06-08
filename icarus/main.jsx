@@ -11,7 +11,7 @@ TODO:
     - ItemTileの数字を、桁が増えても枠に収まるようfont-sizeを小さくする
         - https://kuroeveryday.blogspot.com/2017/05/calculate-element-width-with-offsetwidth.html
         - https://www.bravesoft.co.jp/blog/archives/15492
-    - マウスオーバーすると、生成先や生成元が線で表示される
+    - TODO編集ボタンを左固定にする
 */
 
 // データチェック
@@ -20,7 +20,7 @@ for (const [id, d] of Object.entries(data)) {
     if (!d["name"]["en"] || !d["name"]["ja"]) { console.log(`${id}: invalid name`); }
     if (d["at"] && !(d["at"] in data)) { console.log(`${id}: invalid at`); }
     if (d["from"]) {
-        let flag = false
+        let flag = false;
         for (const [from_id, count] of Object.entries(d["from"])) {
             if (!(from_id in data) || count < 1) {
                 flag = true;
@@ -220,10 +220,11 @@ const App = () => {
                 <Modal isshow={modalisshow} setIsshow={setModalisshow} todo={todo} setTodo={setTodo} />
 
                 <div className="list list_todo">
+                    <button className="add" onClick={() => setModalisshow(true)}></button>
+
                     {Object.entries(todo).map(([id, count]) => (
                         <ItemListTile key={id} item_id={id} item_count={count} />
                     ))}
-                    <button className="add" onClick={() => setModalisshow(true)}></button>
                 </div>
 
                 {
@@ -360,14 +361,44 @@ const ItemTileToolTip = ({id, info, position}) => {
         }
     */
     if (!id || !data[id]) return null
+
+    const at_jsx = (() => {
+        if (!data[id]["at"]) return null
+        const at = data[id]["at"];
+        if (!data[at]) return null
+        return (<div>At: {data[at]["name"]["en"]} / {data[at]["name"]["ja"]}</div>)
+    })();
+
+    const from_jsx = (() => {
+        if (!data[id]["from"]) return null
+        if (Object.keys(data[id]["from"]).length <= 0) return null
+        return (
+            <>
+                <hr />
+                From:
+                {Object.entries(data[id]["from"]).map(([from_id, count]) => <div key={`from_${from_id}`}>{data[from_id]["name"]["en"]} / {data[from_id]["name"]["ja"]} : {count}</div>)}
+            </>
+        )
+    })();
+
+    const to_jsx = (() => {
+        if (!info || Object.keys(info).length <= 0) return null;
+        return (
+            <>
+                <hr />
+                To:
+                {Object.entries(info).map(([to_id, count]) => <div key={`to_${to_id}`}>{data[to_id]["name"]["en"]} / {data[to_id]["name"]["ja"]} : {count}</div>)}
+            </>
+        )
+    })();
+
     return (
         <div className="tooltip" style={{ top: position["top"] || 0, left: position["left"] || 0}}>
             <div>{data[id]["name"]["en"]} / {data[id]["name"]["ja"]}</div>
             <div>Tier: {data[id]["tier"]}</div>
-            {data[id]["at"] && data[data[id]["at"]] && <div>Require: {data[data[id]["at"]]["name"]["en"]} / {data[data[id]["at"]]["name"]["ja"]}</div>}
-            {data[id]["from"] && !!Object.keys(data[id]["from"]).length && Object.entries(data[id]["from"]).map(([ from_id, count ]) => from_id && <div key={`from_${from_id}`}>{from_id} {count}</div>)}
-            {info && !!Object.keys(info).length && <hr />}
-            {info && !!Object.keys(info).length && Object.entries(info).map(([ to_id, count ]) => to_id && <div key={`to_${to_id}`}>{to_id} {count}</div>)}
+            {at_jsx}
+            {from_jsx}
+            {to_jsx}
         </div>
     )
 }
