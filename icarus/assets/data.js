@@ -11,7 +11,7 @@ const data = {
     "alpha_wolf_head": {
         "name": {
             "en": "Alpha Wolf Head",
-            "ja": ""
+            "ja": "アルファウルフの頭"
         },
         "tier": 0,
         "at": "taxidermy_knife"
@@ -32,7 +32,7 @@ const data = {
         },
         "tier": 3,
         "at": "machining_bench",
-        "from": { "aluminum_ore": 2, "wood": 2, "steel_screw": 2 }
+        "from": { "aluminium_ore": 2, "wood": 2, "steel_screw": 2 }
     },
     "aluminium_door": {
         "name": {
@@ -41,7 +41,7 @@ const data = {
         },
         "tier": 3,
         "at": "machining_bench",
-        "from": { "aluminum_ore": 4, "wood": 6, "steel_screw": 4 }
+        "from": { "aluminium_ore": 4, "wood": 6, "steel_screw": 4 }
     },
     "aluminium_floor": {
         "name": {
@@ -50,7 +50,7 @@ const data = {
         },
         "tier": 3,
         "at": "machining_bench",
-        "from": { "aluminum_ore": 4, "wood": 6, "steel_screw": 4 }
+        "from": { "aluminium_ore": 4, "wood": 6, "steel_screw": 4 }
     },
     "aluminium_floor_trapdoor": {
         "name": {
@@ -59,7 +59,7 @@ const data = {
         },
         "tier": 3,
         "at": "machining_bench",
-        "from": { "aluminum_ore": 4, "wood": 6, "steel_screw": 4 }
+        "from": { "aluminium_ore": 4, "wood": 6, "steel_screw": 4 }
     },
     "aluminium_ingot": {
         "name": {
@@ -84,7 +84,7 @@ const data = {
         },
         "tier": 3,
         "at": "machining_bench",
-        "from": { "aluminum_ore": 2, "wood": 6, "steel_screw": 4 }
+        "from": { "aluminium_ore": 2, "wood": 6, "steel_screw": 4 }
     },
     "aluminium_roof_ramp": {
         "name": {
@@ -93,7 +93,7 @@ const data = {
         },
         "tier": 3,
         "at": "machining_bench",
-        "from": { "aluminum_ore": 4, "wood": 6, "steel_screw": 4 }
+        "from": { "aluminium_ore": 4, "wood": 6, "steel_screw": 4 }
     },
     "aluminium_trapdoor": {
         "name": {
@@ -102,7 +102,7 @@ const data = {
         },
         "tier": 3,
         "at": "machining_bench",
-        "from": { "aluminum_ore": 4, "wood": 6, "steel_screw": 4 }
+        "from": { "aluminium_ore": 4, "wood": 6, "steel_screw": 4 }
     },
     "animal_fat": {
         "name": {
@@ -183,7 +183,7 @@ const data = {
     "bear_head": {
         "name": {
             "en": "Bear Head",
-            "ja": ""
+            "ja": "熊の頭"
         },
         "tier": 0,
         "at": "taxidermy_knife"
@@ -191,7 +191,7 @@ const data = {
     "binoculars": {
         "name": {
             "en": "Binoculars",
-            "ja": ""
+            "ja": "双眼鏡"
         },
         "tier": 3,
         "at": "machining_bench",
@@ -245,7 +245,7 @@ const data = {
     "biofuel_stove": {
         "name": {
             "en": "Biofuel Stove",
-            "ja": ""
+            "ja": "バイオ燃料ストーブ"
         },
         "tier": 3,
         "at": "machining_bench",
@@ -271,7 +271,7 @@ const data = {
     "black_jaguar_head": {
         "name": {
             "en": "Black Jaguar Head",
-            "ja": ""
+            "ja": "ブラックジャガーの頭"
         },
         "tier": 0,
         "at": "taxidermy_knife"
@@ -286,7 +286,7 @@ const data = {
     "bone_knife": {
         "name": {
             "en": "Bone Knife",
-            "ja": ""
+            "ja": "骨のナイフ"
         },
         "tier": 1,
         "from": {"wood": 2, "leather": 2, "bone": 20}
@@ -311,7 +311,7 @@ const data = {
     "buffalo_head": {
         "name": {
             "en": "Baffalo Head",
-            "ja": ""
+            "ja": "バッファローの頭"
         },
         "tier": 0,
         "at": "taxidermy_knife"
@@ -327,7 +327,7 @@ const data = {
     "campfire": {
         "name": {
             "en": "Campfire",
-            "ja": ""
+            "ja": "たき火"
         },
         "tier": 1,
         "from": {"stone": 24, "fiber": 8, "stick": 8}
@@ -353,7 +353,7 @@ const data = {
     "carpentry_bench": {
         "name": {
             "en": "Carpentry Bench",
-            "ja": ""
+            "ja": "石工台"
         },
         "tier": 2,
         "at": "crafting_bench",
@@ -511,7 +511,7 @@ const data = {
     "cougar_head": {
         "name": {
             "en": "Cougar Head",
-            "ja": ""
+            "ja": "クーガーの頭"
         },
         "tier": 0,
         "at": "taxidermy_knife"
@@ -536,7 +536,7 @@ const data = {
     "deep_mining_ore_scanner": {
         "name": {
             "en": "Deep Mining Ore Scanner",
-            "ja": ""
+            "ja": "深層鉱床採掘スキャナー"
         },
         "tier": 4,
         "at": "fabricator",
@@ -545,7 +545,7 @@ const data = {
     "deer_head": {
         "name": {
             "en": "Deer Head",
-            "ja": ""
+            "ja": "鹿の頭"
         },
         "tier": 0,
         "at": "taxidermy_knife"
@@ -553,7 +553,7 @@ const data = {
     "electric_carpentry_bench": {
         "name": {
             "en": "Electric Carpentry Bench",
-            "ja": ""
+            "ja": "電動石工台"
         },
         "tier": 4,
         "at": "fabricator",
@@ -562,7 +562,7 @@ const data = {
     "electric_composter": {
         "name": {
             "en": "Electric Composter",
-            "ja": ""
+            "ja": "電動コンポスター"
         },
         "tier": 4,
         "at": "fabricator",
@@ -571,7 +571,7 @@ const data = {
     "electric_extractor": {
         "name": {
             "en": "Electric Extractor",
-            "ja": ""
+            "ja": "電動抽出器"
         },
         "tier": 4,
         "at": "fabricator",
@@ -580,7 +580,7 @@ const data = {
     "electric_furnace": {
         "name": {
             "en": "Electric Furnace",
-            "ja": ""
+            "ja": "電気炉"
         },
         "tier": 4,
         "at": "fabricator",
@@ -589,7 +589,7 @@ const data = {
     "electric_masonry_bench": {
         "name": {
             "en": "Electric Masonry Bench",
-            "ja": ""
+            "ja": "電動石工台"
         },
         "tier": 4,
         "at": "fabricator",
@@ -598,7 +598,7 @@ const data = {
     "electric_radar": {
         "name": {
             "en": "Electric Radar",
-            "ja": ""
+            "ja": "電動レーダー"
         },
         "tier": 4,
         "at": "fabricator",
@@ -607,7 +607,7 @@ const data = {
     "electricity_tool": {
         "name": {
             "en": "Electricity Tool",
-            "ja": ""
+            "ja": "電力ツール"
         },
         "tier": 4,
         "at": "fabricator",
@@ -685,7 +685,7 @@ const data = {
     "flashlight": {
         "name": {
             "en": "Flashlight",
-            "ja": ""
+            "ja": "懐中電灯"
         },
         "tier": 4,
         "at": "fabricator",
@@ -719,7 +719,7 @@ const data = {
     "glassworking_bench": {
         "name": {
             "en": "Glassworking Bench",
-            "ja": ""
+            "ja": "ガラス加工台"
         },
         "tier": 3,
         "at": "machining_bench",
@@ -760,7 +760,7 @@ const data = {
     "herbalism_bench": {
         "name": {
             "en": "Herbalism Bench",
-            "ja": ""
+            "ja": "製薬台"
         },
         "tier": 2,
         "at": "crafting_bench",
@@ -856,7 +856,7 @@ const data = {
     "jaguar_head": {
         "name": {
             "en": "Jaguar Head",
-            "ja": ""
+            "ja": "ジャガーの頭"
         },
         "tier": 0,
         "at": "taxidermy_knife"
@@ -864,7 +864,7 @@ const data = {
     "lantern": {
         "name": {
             "en": "Lantern",
-            "ja": ""
+            "ja": "提灯"
         },
         "tier": 2,
         "at": "crafting_bench",
@@ -880,7 +880,7 @@ const data = {
     "leather_backpack": {
         "name": {
             "en": "Leather Backpack",
-            "ja": ""
+            "ja": "皮革バックパック"
         },
         "tier": 2,
         "at": "textiles_bench",
@@ -896,7 +896,7 @@ const data = {
     "machete": {
         "name": {
             "en": "Machete",
-            "ja": ""
+            "ja": "マチェット"
         },
         "tier": 4,
         "at": "fabricator",
@@ -914,7 +914,7 @@ const data = {
     "mammoth_head": {
         "name": {
             "en": "Mammoth Head",
-            "ja": ""
+            "ja": "マンモスの頭"
         },
         "tier": 0,
         "at": "taxidermy_knife"
@@ -931,7 +931,7 @@ const data = {
     "material_processor": {
         "name": {
             "en": "Material Processor",
-            "ja": ""
+            "ja": "マテリアルプロセッサー"
         },
         "tier": 4,
         "at": "fabricator",
@@ -964,7 +964,7 @@ const data = {
     "oxygen_bladder": {
         "name": {
             "en": "Oxygen Bladder",
-            "ja": ""
+            "ja": "酸素袋"
         },
         "tier": 2,
         "at": "crafting_bench",
@@ -973,7 +973,7 @@ const data = {
     "oxygen_tank": {
         "name": {
             "en": "Oxygen Tank",
-            "ja": ""
+            "ja": "酸素タンク"
         },
         "tier": 3,
         "at": "machining_bench",
@@ -991,7 +991,7 @@ const data = {
     "platinum_axe": {
         "name": {
             "en": "Platinum Axe",
-            "ja": ""
+            "ja": "プラチナの斧"
         },
         "tier": 3,
         "at": "main",
@@ -1000,7 +1000,7 @@ const data = {
     "platinum_hammer": {
         "name": {
             "en": "Platinum Hammer",
-            "ja": ""
+            "ja": "プラチナハンマー"
         },
         "tier": 3,
         "at": "machining_bench",
@@ -1018,7 +1018,7 @@ const data = {
     "platinum_knife": {
         "name": {
             "en": "Platinum Knife",
-            "ja": ""
+            "ja": "プラチナナイフ"
         },
         "tier": 3,
         "at": "machining_bench",
@@ -1034,7 +1034,7 @@ const data = {
     "platinum_pickaxe": {
         "name": {
             "en": "Platinum Pickaxe",
-            "ja": ""
+            "ja": "プラチナのつるはし"
         },
         "tier": 3,
         "at": "machining_bench",
@@ -1043,7 +1043,7 @@ const data = {
     "platinum_sickle": {
         "name": {
             "en": "Platinum Sickle",
-            "ja": ""
+            "ja": "プラチナの鎌"
         },
         "tier": 3,
         "at": "machining_bench",
@@ -1061,7 +1061,7 @@ const data = {
     "polar_bear_head": {
         "name": {
             "en": "Polar Bear Head",
-            "ja": ""
+            "ja": "北極熊の頭"
         },
         "tier": 0,
         "at": "taxidermy_knife"
@@ -1076,7 +1076,7 @@ const data = {
     "portable_beacon": {
         "name": {
             "en": "Portable Beacon",
-            "ja": ""
+            "ja": "携帯用ビーコン"
         },
         "tier": 4,
         "at": "fabricator",
@@ -1113,7 +1113,7 @@ const data = {
     "refined_gold": {
         "name": {
             "en": "Refined Gold",
-            "ja": ""
+            "ja": "精製ゴールド"
         },
         "tier": 3,
         "at": "concrete_furnace",
@@ -1162,7 +1162,7 @@ const data = {
     "skinning_bench": {
         "name": {
             "en": "Skinning Bench",
-            "ja": ""
+            "ja": "皮剥ぎ台"
         },
         "tier": 2,
         "at": "crafting_bench",
@@ -1171,7 +1171,7 @@ const data = {
     "snow_leopard_head": {
         "name": {
             "en": "Snow Leopard Head",
-            "ja": ""
+            "ja": "ユキヒョウの頭"
         },
         "tier": 0,
         "at": "taxidermy_knife"
@@ -1193,14 +1193,14 @@ const data = {
     "spoiled_plants": {
         "name": {
             "en": "Spoiled Plants",
-            "ja": ""
+            "ja": "腐った植物"
         },
         "tier": 0
     },
     "sponge": {
         "name": {
             "en": "Sponge",
-            "ja": ""
+            "ja": "スポンジ"
         },
         "tier": 0
     },
@@ -1302,7 +1302,7 @@ const data = {
     "stone_axe": {
         "name": {
             "en": "Stone Axe",
-            "ja": ""
+            "ja": "石の斧"
         },
         "tier": 1,
         "from": {"fiber": 10, "stick": 4, "stone": 6}
@@ -1310,7 +1310,7 @@ const data = {
     "stone_furnace": {
         "name": {
             "en": "Stone Furnace",
-            "ja": ""
+            "ja": "石の溶炉"
         },
         "tier": 2,
         "at": "crafting_bench",
@@ -1319,7 +1319,7 @@ const data = {
     "stone_knife": {
         "name": {
             "en": "Stone Knife",
-            "ja": ""
+            "ja": "石のナイフ"
         },
         "tier": 1,
         "from": {"fiber": 2, "stick": 2, "stone": 4}
@@ -1327,7 +1327,7 @@ const data = {
     "stone_pickaxe": {
         "name": {
             "en": "Stone Pickaxe",
-            "ja": ""
+            "ja": "石のつるはし"
         },
         "tier": 1,
         "from": {"fiber": 10, "stick": 4, "stone": 6}
@@ -1428,7 +1428,7 @@ const data = {
     "tree_sap": {
         "name": {
             "en": "Tree Sap",
-            "ja": ""
+            "ja": "樹液"
         },
         "tier": 2,
         "at": "mortar_and_pestle",
@@ -1437,7 +1437,7 @@ const data = {
     "trophy_bench": {
         "name": {
             "en": "Trophy Bench",
-            "ja": ""
+            "ja": "トロフィー台"
         },
         "tier": 2,
         "at": "crafting_bench",
@@ -1476,14 +1476,14 @@ const data = {
     "wood": {
         "name": {
             "en": "Wood",
-            "ja": ""
+            "ja": "木材"
         },
         "tier": 0
     },
     "wood_composter": {
         "name": {
             "en": "Wood Composter",
-            "ja": ""
+            "ja": "木材用コンポスター"
         },
         "tier": 2,
         "at": "crafting_bench",
@@ -1492,7 +1492,7 @@ const data = {
     "wood_rag_torch": {
         "name": {
             "en": "Wood Rag Torch",
-            "ja": ""
+            "ja": "ウッドラグトーチ"
         },
         "tier": 1,
         "from": {"fiber": 40, "stick": 8}
@@ -1508,7 +1508,7 @@ const data = {
     "wood_torch": {
         "name": {
             "en": "Wood Torch",
-            "ja": ""
+            "ja": "木のトーチ"
         },
         "tier": 1,
         "from": {"fiber": 40, "stick": 8, "sulfur": 8}
