@@ -6,12 +6,10 @@ const { createContext, useContext, useState } = React
 TODO:
 - データ作る
 - UI
-    - 最上部TODOに済つけたら下も済つけたり、残り個数表示したり、infoの情報変えたりってできる？
     - デザイン
     - ItemTileの数字を、桁が増えても枠に収まるようfont-sizeを小さくする
         - https://kuroeveryday.blogspot.com/2017/05/calculate-element-width-with-offsetwidth.html
         - https://www.bravesoft.co.jp/blog/archives/15492
-    - TODO編集ボタンを左固定にする
 */
 
 // データチェック
@@ -288,13 +286,18 @@ const ItemListTile = ({item_id, item_count, info}) => {
         setTooltip({ "id": null, "info": {}, "position": { "top": 0, "left": 0}})
     }
 
+    const image_jsx = ("image" in data[item_id]) ? <img className="item_icon_img" src={"assets/image/" + data[item_id].image} /> : null;
+
     return (
         <div className="item_tile"
             onClick={() => setIsdone(!isdone)}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
         >
-            <div className="item_icon">{item_id}</div>
+            <div className="item_icon_box">
+                {image_jsx}
+                <div className="item_icon_text">{item_id}</div>
+            </div>
             <span className="count">{item_count}</span>
             {isdone && <div className="done"></div>}
         </div>
@@ -328,9 +331,14 @@ const ItemSelectedTile = ({item_id, count, updateCount, deleteItem}) => {
         updateCount(value);
     }
 
+    const image_jsx = ("image" in data[item_id]) ? <img className="item_icon_img" src={"assets/image/" + data[item_id].image} /> : null;
+
     return (
         <div className="item_tile">
-            <div className="item_icon">{item_id}</div>
+            <div className="item_icon_box">
+                {image_jsx}
+                <div className="item_icon_text">{item_id}</div>
+            </div>
             <div className="item_delete" onClick={deleteItem}></div>
             <button className="inc" onClick={() => _updateCount(count+1)}></button>
             <button className="dec" onClick={() => _updateCount(Math.max(0, count-1))}></button>
@@ -345,9 +353,14 @@ const ItemSelectTile = ({item_id, onclick}) => {
     モーダル中下のアイテム一覧表示
     これをクリックするとtodoにアイテムが追加される
     */
+    const image_jsx = ("image" in data[item_id]) ? <img className="item_icon_img" src={"assets/image/" + data[item_id].image}></img> : null;
+
     return (
         <div className="item_tile item_tile_small" onClick={() => onclick(item_id)}>
-            <div className="item_icon">{item_id}</div>
+            <div className="item_icon_box">
+                {image_jsx}
+                <div className="item_icon_text">{item_id}</div>
+            </div>
         </div>
     )
 }
