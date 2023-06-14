@@ -1,16 +1,23 @@
+/*
+TODO
+    - 言語切り替え
+    - ツリーにat表示？
+        - 表示だけなら簡単だが、チェックの同期がめんどくさい
+        - 1回だけ頑張ってatのリストを作り、そのリストをContextなりPropなりで渡す？
+        - そもそもチェックの同期をしない？
+        - う〜ん、なんかあんまりいい表示方法が思いつかない
+            - 素材リストの一番上でも下でもあんまりしっくりこない
+    - 次に必要な素材 or まだ足りてない素材の一覧？
+    - 種別アイコン？
+        - 採取素材、武器・道具、設備、家具・壁、中間生成物、薬・料理
+    - データ追加、データ修正
+
+*/
+
 "use strict";
 
-const { createContext, useContext, useState } = React
+const { createContext, useContext, useState, useEffect } = React
 
-/*
-TODO:
-- データ作る
-- UI
-    - デザイン
-    - ItemTileの数字を、桁が増えても枠に収まるようfont-sizeを小さくする
-        - https://kuroeveryday.blogspot.com/2017/05/calculate-element-width-with-offsetwidth.html
-        - https://www.bravesoft.co.jp/blog/archives/15492
-*/
 
 // データチェック
 for (const [id, d] of Object.entries(data)) {
@@ -18,408 +25,145 @@ for (const [id, d] of Object.entries(data)) {
     if (!d["name"]["en"] || !d["name"]["ja"]) { console.log(`${id}: invalid name`); }
     if (d["at"] && !(d["at"] in data)) { console.log(`${id}: invalid at`); }
     if (d["from"]) {
-        let flag = false;
         for (const [from_id, count] of Object.entries(d["from"])) {
             if (!(from_id in data) || count < 1) {
-                flag = true;
-                continue
+                console.log(`${id}: invalid from: ${from_id}`);
             }
         }
-        if (flag) {
-            console.log(`${id}: invalid from`);
-        }
     }
-}
+};
 
 
 // util
 const union_set = (set_a, set_b) => {
-    let _union = new Set(set_a);
-    for (const el of set_b) _union.add(el);
-    return _union
-}
-
-
-const merge_resources = (res_a, res_b) => {
-    // 破壊的
-    for (const [bk, bv] of Object.entries(res_b)) {
-        if (!res_a[bk]) {
-            res_a[bk] = bv;
-            continue
-        }
-        res_a[bk]["sum"] += bv["sum"];
-        if (!bv["info"]) continue
-        if (!res_a[bk]["info"]) {
-            res_a[bk]["info"] = bv["info"];
-            continue
-        }
-        for (const [id, c] of Object.entries(bv["info"])) {
-            res_a[bk]["info"][id] = res_a[bk]["info"][id] ? res_a[bk]["info"][id]+c : c;
-        }
-    }
-    return res_a
+    let result = new Set(set_a);
+    for (const el of set_b) result.add(el);
+    return result
 }
 
 
 const calc_resources = (item_id, num) => {
     /*
+    Args:
+        item_id: string
+        num: int
+
     Returns:
-        resources
-            {
+        resources: {
                 item_id: {  // 必要な素材
-                    "sum": int  // 合計必要量
-                    "info": {
-                        item_id: int  // クラフト先と必要個数
-                    }
+                    "id": str,
+                    "count": int,  // 合計必要量
+                    "from": { ... }?
+                    "at": str?
                 }
             }
         at: Set[item_id]
     */
 
-    const d = data[item_id];
-    if (!d) {
-        console.log(`[error] ${item_id}`);
-        return [{}, new Set()]
+    if (!(item_id in data)) {
+        console.log(`error item_id: {item_id}`);
+        return {}
     }
 
-    if (!d["from"]) {
+    const item = data[item_id];
+
+    if (!("from" in item)) {
         // 生素材
-        return [{}, new Set()]
+        const res = {"id": item_id, "name": item["name"], "count": num, "tier": item["tier"]};
+        return [res, new Set()]
     }
-    // クラフト素材
-    let at = new Set();
-    if (d["at"]) at.add(d["at"]);
-    let res = {};
-    for (const [from_id, from_n] of Object.entries(d["from"])) {
-        if (res[from_id]) {
-            res[from_id]["sum"] += from_n * num;
-            if (res[from_id]["info"][item_id]) {
-                res[from_id]["info"][item_id] += from_n * num;
-            } else {
-                res[from_id]["info"][item_id] = from_n * num;
-            }
-        } else {
-            res[from_id] = {
-                "sum": from_n * num,
-                "info": { [item_id]: from_n * num }
-            }
-        }
 
-        let [res_sub, at_sub] = calc_resources(from_id, from_n*num);
-        at = union_set(at, at_sub);
-        merge_resources(res, res_sub);
+    let res = { "id": item_id, "name": item["name"], "count": num, "tier": item["tier"], "from": {}};
+    if ("at" in item) res["at"] = item["at"];
+    let at = new Set();
+
+    for (const [from_id, from_num] of Object.entries(item["from"])) {
+        const n = ("craft_unit" in item) ? Math.ceil(from_num * num / item["craft_unit"]) : from_num * num;
+        const[from_res, from_at] = calc_resources(from_id, n);
+        res["from"][from_id] = from_res;
+        at = union_set(at, from_at);
     }
+
+    if ("at" in item) {
+        res["at"] = item["at"];
+        at.add(item["at"]);
+    }
+
     return [res, at]
 }
 
 
 const make_require = (todo) => {
     /*
+    Args:
+        todo: {
+            item_id: int
+        }
+
     Returns:
-        resources
-            {
-                item_id: {  // 必要な素材
-                    "sum": int  // 合計必要量
-                    "info": {
-                        item_id: int  // クラフト先と必要個数
-                    }
-                }
+        resources: {
+            item_id: {
+                "count": int,
+                "from": { ... }
             }
+        }
     */
+
     let res = {};
-    let ats = new Set();
-    for (const [id, count] of Object.entries(todo)){
-        res[id] = {"sum": count, "info": {}};
-        const [res_sub, ats_sub] = calc_resources(id, count);
-        ats = union_set(ats, ats_sub);
-        merge_resources(res, res_sub);
+    let now_ats = new Set();
+
+    for (const [item_id, item_num] of Object.entries(todo)) {
+        const [item_res, item_at] = calc_resources(item_id, item_num);
+        res[item_id] = item_res;
+        now_ats = union_set(now_ats, item_at);
     }
 
-    // atを全部洗い出す
-    let new_ats = new Set(ats);
     while (true) {
-        let now_ats = new Set(new_ats);
-        new_ats.clear()
+        let next_ats = new Set();
         for (const now_at of now_ats.keys()) {
-            if (!data[now_at]) {
-                console.log(`[error] ${now_at}`);
-                continue;
-            }
-            let new_at = data[now_at]["at"];
-            if (new_at && (!ats.has(new_at))) {
-                ats.add(new_at);
-                new_ats.add(new_at);
-            }
+            if (now_at in res) continue;
+            const [res_at, new_at] = calc_resources(now_at, 1);
+            res[now_at] = res_at;
+            next_ats = union_set(next_ats, new_at);
         }
-        if (new_ats.size === 0) break;
+        if (next_ats.size === 0) break;
+        now_ats = next_ats;
     }
-    // atの分の素材を足す
-    for (const at of ats.keys()) {
-        if (at in res) continue
-        res[at] = {"sum": 1, "info": {}}
-        const [res_at, _] = calc_resources(at, 1);
-        merge_resources(res, res_at);
-    }
-
-    // 最後に端数の調整をする
-    let task = [];
-    for (const [id, v] of Object.entries(data)) {
-        if (!("craft_unit" in v) || v["craft_unit"] == 1) continue;
-        if (!(id in res)) continue;
-        const n = res[id]["sum"];  // 必要な製造後部品の数
-        const m = Math.ceil(n / v["craft_unit"]);  // 本当に必要な材料の数
-        // n個必要なら、本当はm:=ceil(n/craft_unit)個の材料でよいが、n*s個として一旦計算してしまっている => n*s-m個分の材料を引く
-        if (!("from" in v)) {
-            console.log(`error: invalid from ${id}`);
-            continue;
-        }
-        for (const [sub_id, sub_n] of Object.entries(v["from"])) {
-            task.push([id, sub_id, sub_n * n - m]);  // [parent_id, child_id, n]: parent_idに必要なchild_idをn個減らす
-        }
-    }
-    while (task.length > 0) {
-        let new_task = [];
-
-        for (const [parent_id, child_id, n] of task) {
-            res[child_id]["sum"] -= n;
-            res[child_id]["info"][parent_id] -= n;
-            if (!("from" in data[child_id])) continue;
-            for (const [sub_id, sub_n] of Object.entries(data[child_id]["from"])) {
-                new_task.push([child_id, sub_id, n * sub_n]);
-            }
-        }
-
-        task = new_task;
-    }
-
-    // console.log(res);  // DEBUG
 
     return res
-}
+};
 
-const ToolTipContext = createContext();
+
 
 const App = () => {
+
+    const [isShowModal, setIsShowModal] = useState(false);
     const [todo, setTodo] = useState({});
-    const [modalisshow, setModalisshow] = useState(false);
-    const [tooltip, setTooltip] = useState({"id": null, "info": null, "position": {"top": 0, "left": 0}});
 
-    const require = make_require(todo);
+    const [resource, setResource] = useState({});
 
-    // tierごとに分ける
-    let todo_by_tier = {0: {}, 1: {}, 2: {}, 3: {}, 4:{}};
-    for (const [id, v] of Object.entries(require)) {
-        todo_by_tier[data[id]["tier"]][id] = v;
-    }
+    useEffect(() => {
+        setResource(make_require(todo));
+    }, [todo]);
 
     return (
         <>
-            <ToolTipContext.Provider value={setTooltip}>
-                <Modal isshow={modalisshow} setIsshow={setModalisshow} todo={todo} setTodo={setTodo} />
-
-                <div className="list list_todo">
-                    <button className="add" onClick={() => setModalisshow(true)}></button>
-
-                    {Object.entries(todo).map(([id, count]) => (
-                        <ItemListTile key={id} item_id={id} item_count={count} />
-                    ))}
-                </div>
-
-                {
-                    [4,3,2,1,0].map((tier) => (
-                        <ItemList key={`item_list_${tier}`} items={todo_by_tier[tier]} tier={tier} />
-                    ))
-                }
-            </ToolTipContext.Provider>
-
-            <ItemTileToolTip id={tooltip["id"]} info={tooltip["info"]} position={tooltip["position"]}></ItemTileToolTip>
+            <div id="header">
+                <div className="header_text">ICARUS resource calculator</div>
+                <button className="edit_todo" onClick={() => setIsShowModal(true)}></button>
+            </div>
+            <Modal isShow={isShowModal} setIsShow={setIsShowModal} todo={todo} setTodo={setTodo} />
+            <ResourceTree resource={resource} setResource={setResource} />
+            <div className="buffer"></div>
         </>
-    );
-}
-
-
-const ItemList = ({items, tier}) => {
-    /*
-    メイン画面のアイテムリスト
-    */
-    const [isopen, setIsopen] = useState(true);
-
-    if (Object.keys(items).length == 0) return null;
-
-    return (
-        <div className={`list_container list_tier_${tier}`}>
-            <div className="list_header" onClick={() => setIsopen(!isopen)}>{tier}</div>
-            {
-                isopen &&
-                <div className="list">
-                    {
-                        Object.entries(items).map(([id, v]) => (
-                            <ItemListTile
-                                key={id}
-                                item_id={id}
-                                item_count={v["sum"]}
-                                info={v["info"]}
-                            />
-                        ))
-                    }
-                </div>
-            }
-        </div>
     )
 }
 
-
-const ItemListTile = ({item_id, item_count, info}) => {
-    /*
-    メイン画面のアイテムタイル
-    */
-    const [isdone, setIsdone] = useState(false);
-
-    const setTooltip = useContext(ToolTipContext);
-    const onMouseEnter = (e) => {
-        const top = e.target.offsetTop + e.target.clientTop + e.target.clientHeight + 10;
-        const left = e.target.offsetLeft + e.target.clientLeft;
-        setTooltip({"id": item_id, "info": info, "position": {"top": top, "left": left}})
-    }
-
-    const onMouseLeave = () => {
-        setTooltip({ "id": null, "info": {}, "position": { "top": 0, "left": 0}})
-    }
-
-    const image_jsx = ("image" in data[item_id]) ? <img className="item_icon_img" src={"assets/image/" + data[item_id].image} /> : null;
-
-    return (
-        <div className="item_tile"
-            onClick={() => setIsdone(!isdone)}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-        >
-            <div className="item_icon_box">
-                {image_jsx}
-                <div className="item_icon_text">{item_id}</div>
-            </div>
-            <span className="count">{item_count}</span>
-            {isdone && <div className="done"></div>}
-        </div>
-    )
-}
-
-
-const ItemSelectedTile = ({item_id, count, updateCount, deleteItem}) => {
-    /*
-    モーダル中一番上のtodoリストに反映されるべきアイテム
-    アイテムの必要個数を変えたり、削除したりできる
-    */
-    const [prev_local_count, setPrevLocalCount] = useState(count);
-    const [local_text, setLocalText] = useState(count);
-
-    const onChange = (e) => { setLocalText(e.target.value); }
-
-    const onBlur = () => {
-        let value = Math.trunc(Number(local_text));
-        if (value >= 0) {
-            updateCount(value);
-        } else {
-            // 入力が不適なときは以前の有効な入力に戻す
-            setLocalText(prev_local_count);
-        }
-    }
-
-    const _updateCount = (value) => {
-        setLocalText(value);
-        setPrevLocalCount(value);
-        updateCount(value);
-    }
-
-    const image_jsx = ("image" in data[item_id]) ? <img className="item_icon_img" src={"assets/image/" + data[item_id].image} /> : null;
-
-    return (
-        <div className="item_tile">
-            <div className="item_icon_box">
-                {image_jsx}
-                <div className="item_icon_text">{item_id}</div>
-            </div>
-            <div className="item_delete" onClick={deleteItem}></div>
-            <button className="inc" onClick={() => _updateCount(count+1)}></button>
-            <button className="dec" onClick={() => _updateCount(Math.max(0, count-1))}></button>
-            <input type="text" value={local_text} onChange={(e) => onChange(e)} onBlur={() => onBlur()}></input>
-        </div>
-    )
-}
-
-
-const ItemSelectTile = ({item_id, onclick}) => {
-    /*
-    モーダル中下のアイテム一覧表示
-    これをクリックするとtodoにアイテムが追加される
-    */
-    const image_jsx = ("image" in data[item_id]) ? <img className="item_icon_img" src={"assets/image/" + data[item_id].image}></img> : null;
-
-    return (
-        <div className="item_tile item_tile_small" onClick={() => onclick(item_id)}>
-            <div className="item_icon_box">
-                {image_jsx}
-                <div className="item_icon_text">{item_id}</div>
-            </div>
-        </div>
-    )
-}
-
-const ItemTileToolTip = ({id, info, position}) => {
-    /*
-    id: ツールチップを表示するアイテムID
-    info: 詳細情報。クラフト先とその個数
-        {
-            item_id: count
-        }
-    */
-    if (!id || !data[id]) return null
-
-    const at_jsx = (() => {
-        if (!data[id]["at"]) return null
-        const at = data[id]["at"];
-        if (!data[at]) return null
-        return (<div>At: {data[at]["name"]["en"]} / {data[at]["name"]["ja"]}</div>)
-    })();
-
-    const from_jsx = (() => {
-        if (!data[id]["from"]) return null
-        if (Object.keys(data[id]["from"]).length <= 0) return null
-        return (
-            <>
-                <hr />
-                From:
-                {Object.entries(data[id]["from"]).map(([from_id, count]) => <div key={`from_${from_id}`}>{data[from_id]["name"]["en"]} / {data[from_id]["name"]["ja"]} : {count}</div>)}
-            </>
-        )
-    })();
-
-    const to_jsx = (() => {
-        if (!info || Object.keys(info).length <= 0) return null;
-        return (
-            <>
-                <hr />
-                To:
-                {Object.entries(info).map(([to_id, count]) => <div key={`to_${to_id}`}>{data[to_id]["name"]["en"]} / {data[to_id]["name"]["ja"]} : {count}</div>)}
-            </>
-        )
-    })();
-
-    return (
-        <div className="tooltip" style={{ top: position["top"] || 0, left: position["left"] || 0}}>
-            <div>{data[id]["name"]["en"]} / {data[id]["name"]["ja"]}</div>
-            <div>Tier: {data[id]["tier"]}</div>
-            {at_jsx}
-            {from_jsx}
-            {to_jsx}
-        </div>
-    )
-}
-
-
-const Modal = ({isshow, setIsshow, todo, setTodo}) => {
+const Modal = ({ isShow, setIsShow, todo, setTodo }) => {
     /*
     todoリストを編集するモーダル
+
+    TODO: リスト2つのデザイン(素材アイコンを消すので)
     */
     // モーダルを閉じたときに反映されるようにする
     const [nowtodo, setNowtodo] = useState(todo);
@@ -430,7 +174,7 @@ const Modal = ({isshow, setIsshow, todo, setTodo}) => {
         setTodo(nowtodo);
         setSearchtier(-1);
         setSearchtext("");
-        setIsshow(false);
+        setIsShow(false);
     }
 
     const updateCount = (id, count) => {
@@ -453,7 +197,7 @@ const Modal = ({isshow, setIsshow, todo, setTodo}) => {
         showItems = showItems.filter((id) => id.includes(searchtext) || data[id]["name"]["en"].includes(searchtext) || data[id]["name"]["ja"].includes(searchtext));
     }
 
-    if (!isshow) return;
+    if (!isShow) return;
 
     return (
         <div id="modal_overlay" onClick={closeModal} >
@@ -486,7 +230,7 @@ const Modal = ({isshow, setIsshow, todo, setTodo}) => {
                         <ItemSelectTile
                             key={id}
                             item_id={id}
-                            onclick={(id) => {
+                            onClick={() => {
                                 const newtodo = Object.assign({}, nowtodo);
                                 if (!newtodo[id]) {
                                     newtodo[id] = 1;
@@ -496,10 +240,195 @@ const Modal = ({isshow, setIsshow, todo, setTodo}) => {
                         />
                     ))}
                 </div>
+                <div className="buffer"></div>
             </div>
         </div>
     )
 }
+
+const ItemSelectedTile = ({ item_id, count, updateCount, deleteItem }) => {
+    /*
+    モーダル中一番上のtodoリストに反映されるべきアイテム
+    アイテムの必要個数を変えたり、削除したりできる
+    */
+
+    const item = data[item_id];
+
+    const [prev_local_count, setPrevLocalCount] = useState(count);
+    const [local_text, setLocalText] = useState(count);
+
+    // const onChange = (e) => { setLocalText(e.target.value); }
+
+    const onBlur = () => {
+        // 入力終了時の処理
+        let value = Math.trunc(Number(local_text));
+        if (value >= 0) {
+            updateCount(value);
+        } else {
+            // 入力が不適なときは以前の有効な入力に戻す
+            setLocalText(prev_local_count);
+        }
+    }
+
+    const _updateCount = (value) => {
+        setLocalText(value);
+        setPrevLocalCount(value);
+        updateCount(value);
+    }
+
+
+    return (
+        <div className={`item_selected_tile tier${item["tier"]}`}>
+            <div className="item_text">{item["name"]["ja"]}</div>
+            <button className="dec" onClick={() => _updateCount(Math.max(0, count-1))}></button>
+            <input type="text" value={local_text} onChange={(e) => { setLocalText(e.target.value) }} onBlur={() => onBlur()}></input>
+            <button className="inc" onClick={() => _updateCount(count + 1)}></button>
+            <button className="delete_item" onClick={deleteItem}></button>
+        </div>
+    )
+}
+
+const ItemSelectTile = ({ item_id, onClick }) => {
+    /*
+    モーダル中下のアイテム一覧表示
+    これをクリックするとtodoにアイテムが追加される
+    */
+    const item = data[item_id];
+
+    const [isShowTooltip, setIsShowTooltip] = useState(false);
+
+    return (
+        <div
+            className={`item_tile tier${item["tier"]}`}
+            onClick={onClick}
+            onMouseEnter={() => setIsShowTooltip(true)}
+            onMouseLeave={() => setIsShowTooltip(false)}
+        >
+            {item["name"]["ja"]}
+            {isShowTooltip && <ToolTip item_id={item_id} />}
+        </div>
+    )
+
+}
+
+
+const ResourceTree = ({ resource, setResource }) => {
+
+    const onCheckChild = (item_id, item_resource) => {
+        let new_resource = Object.assign({}, resource);
+        new_resource[item_id] = item_resource;
+        setResource(new_resource);
+    }
+
+    // tier順(昇順)に並べる
+    const sorted_resource = Object.values(resource).sort((a, b) => a["tier"] - b["tier"]);
+
+    return (
+        <div className="resource_tree">
+            {sorted_resource.map((node) => <ResourceNode key={node["id"]} node={node} onCheckFrom={onCheckChild} />)}
+        </div>
+    )
+}
+
+const ResourceNode = ({ node, onCheckFrom }) => {
+
+    const onCheck = () => {
+        let new_resource = Object.assign({}, node);
+        new_resource["done"] = ("done" in new_resource) ? !new_resource["done"] : true;
+        onCheckFrom(node.id, new_resource);
+    }
+
+    const onCheckChild = (child_id, new_child) => {
+        let new_resource = Object.assign({}, node);
+        new_resource["from"][child_id] = new_child;
+        onCheckFrom(node.id, new_resource);
+    }
+
+    const [isShowTooltip, setIsShowTooltip] = useState(false);
+
+    if ("from" in node && !node["done"]) {
+        // tier順(昇順)に並べる
+        const sorted_node = Object.values(node["from"]).sort((a, b) => a["tier"] - b["tier"]);
+
+        return (
+            <div className="tree_node_container">
+                <div className="tree_node">
+                    <div
+                        className={`tree_node_inner tier${node["tier"]}`}
+                        onMouseEnter={() => setIsShowTooltip(true)}
+                        onMouseLeave={() => setIsShowTooltip(false)}
+                    >
+                        <div className="tree_node_text">
+                            {node["name"]["ja"]}
+                        </div>
+                        <div className="tree_node_count">
+                            {node["count"]}
+                        </div>
+                        <div className={`icon_check ${node["done"] ? "checked" : ""}`} onClick={onCheck}></div>
+                        {isShowTooltip && <ToolTip item_id={node["id"]} />}
+                    </div>
+                    {Object.entries(sorted_node).map(([from_id, from_node]) => <ResourceNode key={from_id} node={from_node} onCheckFrom={onCheckChild} />)}
+                </div>
+            </div>
+        )
+    }
+
+    return (
+        <div className="tree_node_container">
+            <div className="tree_node">
+                <div
+                    className={`tree_node_inner tier${node["tier"]}`}
+                    onMouseEnter={() => setIsShowTooltip(true)}
+                    onMouseLeave={() => setIsShowTooltip(false)}
+                >
+                    <div className="tree_node_text">
+                        {node["name"]["ja"]}
+                    </div>
+                    <div className="tree_node_count">
+                        {node["count"]}
+                    </div>
+                    <div className={`icon_check ${node["done"] ? "checked" : ""}`} onClick={onCheck}></div>
+                    {isShowTooltip && <ToolTip item_id={node["id"]} />}
+                </div>
+            </div>
+        </div>
+    )
+}
+
+const ToolTip = ({ item_id }) => {
+
+    if (!item_id || !data[item_id]) return null
+    const item = data[item_id];
+
+    const at_jsx = (() => {
+        if (!item["at"]) return null
+        const at_id = item["at"];
+        if (!data[at_id]) return null
+        return (<div className="tooltip_text">At: {data[at_id]["name"]["en"]} / {data[at_id]["name"]["ja"]}</div>)
+    })();
+
+    const from_jsx = (() => {
+        if (!item["from"]) return null
+        if (Object.keys(item["from"]).length <= 0) return null
+        return (
+            <>
+                <hr />
+                From:
+                {Object.entries(item["from"]).map(([from_id, count]) => <div className="tooltip_text" key={`from_${from_id}`}>{data[from_id]["name"]["en"]} / {data[from_id]["name"]["ja"]} : {count}</div>)}
+            </>
+        )
+    })();
+
+    return (
+        <div className="tooltip">
+            <div className="tooltip_text">{item["name"]["en"]} / {item["name"]["ja"]}</div>
+            <div className="tooltip_text">Tier: {item["tier"]}</div>
+            {at_jsx}
+            {from_jsx}
+        </div>
+    )
+}
+
 
 
 const domContainer = document.querySelector("#app");

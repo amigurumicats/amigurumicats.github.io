@@ -178,7 +178,7 @@ const data = {
         },
         "tier": 2,
         "at": "wood_composter",
-        "from": {"spoiled_splants": 10}
+        "from": {"spoiled_plants": 10}
     },
     "bear_head": {
         "name": {
@@ -1414,7 +1414,7 @@ const data = {
         },
         "tier": 4,
         "at": "fabricator",
-        "from": {"carbon": 4, "steel_screw": 8, "epoxy": 4, "titanium_ingot": 12}
+        "from": {"carbon_fiber": 4, "steel_screw": 8, "epoxy": 4, "titanium_ingot": 12}
     },
     "titanium_sickle": {
         "name": {

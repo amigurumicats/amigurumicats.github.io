@@ -1,371 +1,369 @@
-
 body {
-    margin: 0;
+  margin: 0;
 }
 
 #header {
-    height: 30px;
-    background-color: #666;
-    color: #ccc;
-    font-size: 14px;
-    padding: 5px;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  background-color: #666;
+  box-sizing: border-box;
 }
-
-.list_container {
-    display: flex;
-    transition: all 0.2s;
+#header .header_text {
+  color: #ccc;
+  font-size: 14px;
+  padding: 5px;
+  margin-right: 16px;
 }
-
-.list_header {
-    width: 20px;
-    text-align: center;
-    cursor: pointer;
+#header button.edit_todo {
+  position: relative;
+  border-radius: 3px;
+  width: 24px;
+  height: 24px;
+  border: 0;
 }
-
-.list_tier_0 {
-    background-color: #9eceff;
+#header button.edit_todo::before {
+  content: "\e3c9";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 20px;
+  font-family: "Material Icons";
 }
-
-.list_tier_0 .list_header {
-    background-color: #7fbfff;
-}
-
-.list_tier_1 {
-    background-color: #9e9eff;
-}
-
-.list_tier_1 .list_header {
-    background-color: #7f7fff;
-}
-
-.list_tier_2 {
-    background-color: #ce9eff;
-}
-
-.list_tier_2 .list_header {
-    background-color: #bf7fff;
-}
-
-.list_tier_3 {
-    background-color: #ff9ece;
-}
-
-.list_tier_3 .list_header {
-    background-color: #ff7fbf;
-}
-
-.list_tier_4 {
-    background-color: #ff9e9e;
-}
-
-.list_tier_4 .list_header {
-    background-color: #ff7f7f;
-}
-
-.list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: flex-start;
-    min-height: 10px;
-    max-width: calc(100% - 20px);
-    box-sizing: border-box;
-    padding: 5px 5px;
-}
-
 
 #modal_overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+#modal_overlay #modal_content {
+  width: 90%;
+  height: 90%;
+  padding: 10px;
+  background: #fff;
+  z-index: 11;
+  overflow-y: scroll;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+#modal_overlay #modal_content .list {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 4px;
+  gap: 4px 6px;
+}
+#modal_overlay #modal_content .list .item_selected_tile {
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  overflow: hidden;
+}
+#modal_overlay #modal_content .list .item_selected_tile.tier0 {
+  background-color: #9eceff;
+}
+#modal_overlay #modal_content .list .item_selected_tile.tier1 {
+  background-color: #9e9eff;
+}
+#modal_overlay #modal_content .list .item_selected_tile.tier2 {
+  background-color: #ce9eff;
+}
+#modal_overlay #modal_content .list .item_selected_tile.tier3 {
+  background-color: #ff9eff;
+}
+#modal_overlay #modal_content .list .item_selected_tile.tier4 {
+  background-color: #ff9e9e;
+}
+#modal_overlay #modal_content .list .item_selected_tile .item_text {
+  margin: 2px 6px;
+  font-size: 16px;
+}
+#modal_overlay #modal_content .list .item_selected_tile button {
+  border: 0;
+  position: relative;
+  cursor: pointer;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.dec, #modal_overlay #modal_content .list .item_selected_tile button.inc {
+  height: 20px;
+  width: 16px;
+  background-color: #aaa;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.dec {
+  margin-right: 0;
+  border-radius: 3px 0 0 3px;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.dec::before {
+  font-family: "Material Icons";
+  content: "\e15b";
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 20px;
+  color: #fff;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.inc {
+  margin-left: 0;
+  border-radius: 0 3px 3px 0;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.inc::before {
+  font-family: "Material Icons";
+  content: "\e145";
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 20px;
+  color: #fff;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.delete_item {
+  background-color: #f63;
+  height: 100%;
+  width: 16px;
+  margin-left: 6px;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.delete_item::before {
+  content: "\e5cd";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 28px;
+  text-align: center;
+  margin: auto;
+  font-size: 12px;
+  font-family: "Material Icons";
+  color: #fff;
+}
+#modal_overlay #modal_content .list .item_selected_tile input {
+  width: 32px;
+  height: 20px;
+  position: relative;
+  border: 0;
+  box-sizing: border-box;
+}
+#modal_overlay #modal_content .list .item_tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+#modal_overlay #modal_content .list .item_tile.tier0 {
+  background-color: #9eceff;
+}
+#modal_overlay #modal_content .list .item_tile.tier1 {
+  background-color: #9e9eff;
+}
+#modal_overlay #modal_content .list .item_tile.tier2 {
+  background-color: #ce9eff;
+}
+#modal_overlay #modal_content .list .item_tile.tier3 {
+  background-color: #ff9eff;
+}
+#modal_overlay #modal_content .list .item_tile.tier4 {
+  background-color: #ff9e9e;
+}
+#modal_overlay #modal_content .search {
+  position: relative;
+  display: flex;
+}
+#modal_overlay #modal_content .search select {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #bbb;
+  box-sizing: border-box;
+}
+#modal_overlay #modal_content .search .icon_search {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-left: 10px;
+  box-sizing: border-box;
+  background-color: #bbb;
+  border-radius: 5px 0 0 5px;
+}
+#modal_overlay #modal_content .search .icon_search::before {
+  content: "\e8b6";
+  position: relative;
+  top: 2px;
+  left: 2px;
+  font-size: 26px;
+  font-family: "Material Icons";
+  color: #fff;
+}
+#modal_overlay #modal_content .search input[type=text] {
+  width: 160px;
+  height: 30px;
+  position: relative;
+  top: 0;
+  border: 1px solid #bbb;
+  box-sizing: border-box;
 }
 
-#modal_content {
-    width: 90%;
-    height: 90%;
-    padding: 10px;
-    background: #fff;
-    z-index: 11;
-    overflow-y: scroll;
-    border-radius: 5px;
-    box-sizing: border-box;
+.tree_node_container {
+  display: flex;
+  box-sizing: border-box;
+}
+.tree_node_container .tree_node {
+  display: block;
+  position: relative;
+  padding: 5px 0 5px 22px;
+  box-sizing: border-box;
+}
+.tree_node_container .tree_node::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  border-right: 1px solid #666;
+}
+.tree_node_container .tree_node::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 10px;
+  height: 18px;
+  margin: auto;
+  border-bottom: 1px solid #666;
+}
+.tree_node_container .tree_node .tree_node_inner {
+  display: flex;
+  align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+.tree_node_container .tree_node .tree_node_inner.tier0 {
+  background-color: #9eceff;
+}
+.tree_node_container .tree_node .tree_node_inner.tier1 {
+  background-color: #9e9eff;
+}
+.tree_node_container .tree_node .tree_node_inner.tier2 {
+  background-color: #ce9eff;
+}
+.tree_node_container .tree_node .tree_node_inner.tier3 {
+  background-color: #ff9eff;
+}
+.tree_node_container .tree_node .tree_node_inner.tier4 {
+  background-color: #ff9e9e;
+}
+.tree_node_container .tree_node .tree_node_inner .tree_node_text {
+  font-size: 16px;
+}
+.tree_node_container .tree_node .tree_node_inner .tree_node_count {
+  margin: 1px 4px 0 4px;
+  font-size: 14px;
+  color: #333;
+}
+.tree_node_container .tree_node .tree_node_inner .tree_node_count::before {
+  content: "(";
+}
+.tree_node_container .tree_node .tree_node_inner .tree_node_count::after {
+  content: ")";
+}
+.tree_node_container .tree_node .tree_node_inner .icon_check {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px dashed #ddd;
+  cursor: pointer;
+}
+.tree_node_container .tree_node .tree_node_inner .icon_check::before {
+  content: "\e876";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 16px;
+  font-family: "Material Icons";
+  color: #ddd;
+}
+.tree_node_container .tree_node .tree_node_inner .icon_check.checked {
+  background-color: #3c6;
+  border: 1px #3c6 solid;
+}
+.tree_node_container .tree_node .tree_node_inner .icon_check.checked::before {
+  color: #eee;
+}
+.tree_node_container .tree_node .tree_node_inner .tooltip {
+  top: 42px;
+  left: 22px;
+}
+.tree_node_container:last-child > .tree_node::before {
+  height: 18px;
 }
 
-#modal_content .search {
-    width: 300px;
-    height: 40px;
-    position: relative;
-    display: flex
+.resource_tree > .tree_node_container > .tree_node::before {
+  content: none;
 }
-
-#modal_content .search select {
-    width: 100px;
-    height: 100%;
-    border: 1px solid #bbb;
-    box-sizing: border-box;
-}
-
-#modal_content .search .icon_search {
-    width: 40px;
-    height: 40px;
-    position: relative;
-    margin-left: 10px;
-    box-sizing: border-box;
-    background-color: #bbb;
-    border-radius: 5px 0 0 5px;
-}
-
-#modal_content .search .icon_search::before {
-    content: "\e8b6";
-    position: relative;
-    top: 5px;
-    left: 5px;
-    font-size: 30px;
-    font-family: "Material Icons";
-    color: #fff;
-}
-
-#modal_content .search input[type="text"] {
-    width: 160px;
-    height: 100%;
-    position: relative;
-    top: 0;
-    border: 1px solid #bbb;
-    box-sizing: border-box;
-}
-
-#modal_content .list {
-    overflow-y: scroll;
-}
-
-button {
-    cursor: pointer;
-}
-
-button.add {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    border: 0;
-}
-
-button.add::before {
-    content: "\e3c9";
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    font-size: 24px;
-    font-family: "Material Icons";
-}
-
-.item_tile {
-    width: 112px;
-    height: 60px;
-    background-color: #666;
-    margin: 5px;
-    position: relative;
-}
-
-.item_tile_small {
-    width: 60px;
-}
-
-.item_tile .item_icon_box {
-    width: 52px;
-    height: 52px;
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    background-color: #888;
-    pointer-events: none;
-    user-select: none;
-}
-
-.item_tile .item_icon_img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.item_tile .item_icon_text {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow-wrap: anywhere;
-    color: #ccc;
-    font-size: 8px;
-    pointer-events: none;
-    user-select: none;
-}
-
-.item_tile .done {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-.item_tile .done::before {
-    width: fit-content;
-    height: fit-content;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    pointer-events: none;
-    color: rgba(255, 255, 255, 0.5);
-    content: "\e876";
-    font-size: 60px;
-    font-family: "Material Icons";
-}
-
-.item_tile input {
-    width: 32px;
-    height: 20px;
-    position: absolute;
-    left: 60px;
-    top: 20px;
-    padding: 1px 2px;
-    border: 0;
-    box-sizing: border-box;
-}
-
-.item_tile .count {
-    width: fit-content;
-    height: fit-content;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    right: 5px;
-    color: #fff;
-    pointer-events: none;
-    user-select: none;
-}
-
-.item_tile input:focus {
-    border: 1px solid #5aa8e8;
-}
-
-.item_tile button {
-    height: 16px;
-    width: 32px;
-    position: absolute;
-    left: 60px;
-    border: 0;
-    background-color: #aaa;
-    z-index: 14;
-}
-
-.item_tile button.inc {
-    top: 4px;
-    border-radius: 3px 3px 0 0;
-}
-
-.item_tile button.inc::before {
-    content: "\e316";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    font-size: 16px;
-    font-family: "Material Icons";
-}
-
-.item_tile button.dec {
-    bottom: 4px;
-    border-radius: 0 0 3px 3px;
-}
-
-.item_tile button.dec::before {
-    content: "\e313";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    font-size: 16px;
-    font-family: "Material Icons";
-}
-
-.item_tile .item_delete {
-    width: 16px;
-    height: 60px;
-    background-color: #f63;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 15;
-    cursor: pointer;
-}
-
-.item_tile .item_delete::before {
-    content: "\e5cd";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    line-height: 60px;
-    text-align: center;
-    margin: auto;
-    font-size: 12px;
-    font-family: "Material Icons";
-    color: #fff;
+.resource_tree > .tree_node_container > .tree_node::after {
+  content: none;
 }
 
 .tooltip {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    color: #fff;
-    position: absolute;
-    top: calc(100% + 10px);
-    box-sizing: border-box;
-    padding: 5px;
-    z-index: 100;
-    font-size: 12px;
-    width: fit-content;
-    height: fit-content;
-    z-index: 100;
-    pointer-events: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  color: #fff;
+  top: 38px;
+  left: 0;
+  box-sizing: border-box;
+  padding: 5px;
+  z-index: 100;
+  font-size: 12px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  z-index: 100;
+  pointer-events: none;
 }
-
 .tooltip::before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 10px solid rgba(0, 0, 0, 0.7);
-    position: absolute;
-    top: -20px;
-    left: 10px;
-    z-index: 100;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  z-index: 100;
 }
-
-.tooltip div {
-    white-space: nowrap;
+.tooltip .tooltip_text {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
-
 .tooltip hr {
-    border-top: 1px dashed #aaa;
-    border-bottom: 0;
-    border-right: 0;
-    border-left: 0;
+  border-top: 1px dashed #aaa;
+  border-bottom: 0;
+  border-right: 0;
+  border-left: 0;
 }
+
+.buffer {
+  height: 200px;
+}/*# sourceMappingURL=style.css.map */
