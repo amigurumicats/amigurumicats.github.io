@@ -1,0 +1,369 @@
+body {
+  margin: 0;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  background-color: #666;
+  box-sizing: border-box;
+}
+#header .header_text {
+  color: #ccc;
+  font-size: 14px;
+  padding: 5px;
+  margin-right: 16px;
+}
+#header button.edit_todo {
+  position: relative;
+  border-radius: 3px;
+  width: 24px;
+  height: 24px;
+  border: 0;
+}
+#header button.edit_todo::before {
+  content: "\e3c9";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 20px;
+  font-family: "Material Icons";
+}
+
+#modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+#modal_overlay #modal_content {
+  width: 90%;
+  height: 90%;
+  padding: 10px;
+  background: #fff;
+  z-index: 11;
+  overflow-y: scroll;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+#modal_overlay #modal_content .list {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 4px;
+  gap: 4px 6px;
+}
+#modal_overlay #modal_content .list .item_selected_tile {
+  display: flex;
+  align-items: center;
+  border-radius: 3px;
+  overflow: hidden;
+}
+#modal_overlay #modal_content .list .item_selected_tile.tier0 {
+  background-color: #9eceff;
+}
+#modal_overlay #modal_content .list .item_selected_tile.tier1 {
+  background-color: #9e9eff;
+}
+#modal_overlay #modal_content .list .item_selected_tile.tier2 {
+  background-color: #ce9eff;
+}
+#modal_overlay #modal_content .list .item_selected_tile.tier3 {
+  background-color: #ff9eff;
+}
+#modal_overlay #modal_content .list .item_selected_tile.tier4 {
+  background-color: #ff9e9e;
+}
+#modal_overlay #modal_content .list .item_selected_tile .item_text {
+  margin: 2px 6px;
+  font-size: 16px;
+}
+#modal_overlay #modal_content .list .item_selected_tile button {
+  border: 0;
+  position: relative;
+  cursor: pointer;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.dec, #modal_overlay #modal_content .list .item_selected_tile button.inc {
+  height: 20px;
+  width: 16px;
+  background-color: #aaa;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.dec {
+  margin-right: 0;
+  border-radius: 3px 0 0 3px;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.dec::before {
+  font-family: "Material Icons";
+  content: "\e15b";
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 20px;
+  color: #fff;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.inc {
+  margin-left: 0;
+  border-radius: 0 3px 3px 0;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.inc::before {
+  font-family: "Material Icons";
+  content: "\e145";
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 20px;
+  color: #fff;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.delete_item {
+  background-color: #f63;
+  height: 100%;
+  width: 16px;
+  margin-left: 6px;
+}
+#modal_overlay #modal_content .list .item_selected_tile button.delete_item::before {
+  content: "\e5cd";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 28px;
+  text-align: center;
+  margin: auto;
+  font-size: 12px;
+  font-family: "Material Icons";
+  color: #fff;
+}
+#modal_overlay #modal_content .list .item_selected_tile input {
+  width: 32px;
+  height: 20px;
+  position: relative;
+  border: 0;
+  box-sizing: border-box;
+}
+#modal_overlay #modal_content .list .item_tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+#modal_overlay #modal_content .list .item_tile.tier0 {
+  background-color: #9eceff;
+}
+#modal_overlay #modal_content .list .item_tile.tier1 {
+  background-color: #9e9eff;
+}
+#modal_overlay #modal_content .list .item_tile.tier2 {
+  background-color: #ce9eff;
+}
+#modal_overlay #modal_content .list .item_tile.tier3 {
+  background-color: #ff9eff;
+}
+#modal_overlay #modal_content .list .item_tile.tier4 {
+  background-color: #ff9e9e;
+}
+#modal_overlay #modal_content .search {
+  position: relative;
+  display: flex;
+}
+#modal_overlay #modal_content .search select {
+  width: 100px;
+  height: 30px;
+  border: 1px solid #bbb;
+  box-sizing: border-box;
+}
+#modal_overlay #modal_content .search .icon_search {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-left: 10px;
+  box-sizing: border-box;
+  background-color: #bbb;
+  border-radius: 5px 0 0 5px;
+}
+#modal_overlay #modal_content .search .icon_search::before {
+  content: "\e8b6";
+  position: relative;
+  top: 2px;
+  left: 2px;
+  font-size: 26px;
+  font-family: "Material Icons";
+  color: #fff;
+}
+#modal_overlay #modal_content .search input[type=text] {
+  width: 160px;
+  height: 30px;
+  position: relative;
+  top: 0;
+  border: 1px solid #bbb;
+  box-sizing: border-box;
+}
+
+.tree_node_container {
+  display: flex;
+  box-sizing: border-box;
+}
+.tree_node_container .tree_node {
+  display: block;
+  position: relative;
+  padding: 5px 0 5px 22px;
+  box-sizing: border-box;
+}
+.tree_node_container .tree_node::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  border-right: 1px solid #666;
+}
+.tree_node_container .tree_node::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 10px;
+  height: 18px;
+  margin: auto;
+  border-bottom: 1px solid #666;
+}
+.tree_node_container .tree_node .tree_node_inner {
+  display: flex;
+  align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+.tree_node_container .tree_node .tree_node_inner.tier0 {
+  background-color: #9eceff;
+}
+.tree_node_container .tree_node .tree_node_inner.tier1 {
+  background-color: #9e9eff;
+}
+.tree_node_container .tree_node .tree_node_inner.tier2 {
+  background-color: #ce9eff;
+}
+.tree_node_container .tree_node .tree_node_inner.tier3 {
+  background-color: #ff9eff;
+}
+.tree_node_container .tree_node .tree_node_inner.tier4 {
+  background-color: #ff9e9e;
+}
+.tree_node_container .tree_node .tree_node_inner .tree_node_text {
+  font-size: 16px;
+}
+.tree_node_container .tree_node .tree_node_inner .tree_node_count {
+  margin: 1px 4px 0 4px;
+  font-size: 14px;
+  color: #333;
+}
+.tree_node_container .tree_node .tree_node_inner .tree_node_count::before {
+  content: "(";
+}
+.tree_node_container .tree_node .tree_node_inner .tree_node_count::after {
+  content: ")";
+}
+.tree_node_container .tree_node .tree_node_inner .icon_check {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px dashed #ddd;
+  cursor: pointer;
+}
+.tree_node_container .tree_node .tree_node_inner .icon_check::before {
+  content: "\e876";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 16px;
+  font-family: "Material Icons";
+  color: #ddd;
+}
+.tree_node_container .tree_node .tree_node_inner .icon_check.checked {
+  background-color: #3c6;
+  border: 1px #3c6 solid;
+}
+.tree_node_container .tree_node .tree_node_inner .icon_check.checked::before {
+  color: #eee;
+}
+.tree_node_container .tree_node .tree_node_inner .tooltip {
+  top: 42px;
+  left: 22px;
+}
+.tree_node_container:last-child > .tree_node::before {
+  height: 18px;
+}
+
+.resource_tree > .tree_node_container > .tree_node::before {
+  content: none;
+}
+.resource_tree > .tree_node_container > .tree_node::after {
+  content: none;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  color: #fff;
+  top: 38px;
+  left: 0;
+  box-sizing: border-box;
+  padding: 5px;
+  z-index: 100;
+  font-size: 12px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  z-index: 100;
+  pointer-events: none;
+}
+.tooltip::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  z-index: 100;
+}
+.tooltip .tooltip_text {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.tooltip hr {
+  border-top: 1px dashed #aaa;
+  border-bottom: 0;
+  border-right: 0;
+  border-left: 0;
+}
+
+.buffer {
+  height: 200px;
+}/*# sourceMappingURL=style.css.map */
