@@ -1,0 +1,119 @@
+$base_white: #f1f6f9;
+$base_dark: #0d4c92;
+$base: #59c1bd;
+$base_light: #a0e4cb;
+$base_lighter: #cff5e7;
+
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    overflow: hidden;
+}
+
+body {
+    background-color: $base_white;
+    color: $base_dark;
+}
+
+input[type="text"] {
+    font-size: 16px;
+    appearance: none;
+    outline: none;
+    height: 30px;
+    width: 400px;
+    margin-top: 3px;
+    border: 0;
+    border-bottom: 2px solid $base_lighter;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+
+    &:focus {
+        border-bottom: 2px solid $base_light;
+    }
+}
+
+.icon_search {
+    display: inline;
+    top: 7px;
+    right: 28px;
+
+    &:after {
+        content: "\e8b6";
+        position: relative;
+        font-family: "Material Icons";
+        font-size: 24px;
+        color: $base_light;
+    }
+}
+
+
+.content_container {
+    margin-top: 10px;
+    display: flex;
+    border-radius: 5px;
+    transition: 0.3s;
+
+    &:hover {
+        .content_container_inner {
+            background-color: $base_light;
+        }
+    }
+
+    .content_jump {
+        position: relative;
+        background-color: $base;
+        width: 30px;
+        height: 100%;
+        border-radius: 5px 0 0 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon_jump:before {
+            position: relative;
+            content: "\e879";
+            font-family: "Material Icons";
+            font-size: 24px;
+            color: $base_white;
+        }
+    }
+
+    .content_container_inner {
+        position: relative;
+        border: 1px dashed $base;
+        border-left: 0;
+        border-radius: 0 5px 5px 0;
+        padding: 5px 10px;
+        width: 100%;
+
+        .content_name {
+            font-size: 16px;
+        }
+
+        .content_text {
+            font-size: 12px;
+        }
+    }
+}
+
+.tags {
+    margin-top: 3px;
+    display: flex;
+    gap: 2px 5px;
+
+    .tag {
+        font-size: 12px;
+        padding: 1px 3px;
+        border: 1px dashed $base;
+        border-radius: 5px;
+
+        &.active {
+            background-color: $base_light;
+        }
+    }
+}

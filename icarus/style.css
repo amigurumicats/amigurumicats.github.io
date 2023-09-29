@@ -245,7 +245,6 @@ body {
 .tree_node_container .tree_node .tree_node_inner {
   display: flex;
   align-items: center;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding: 1px 6px;
@@ -330,10 +329,8 @@ body {
   padding: 5px;
   z-index: 100;
   font-size: 12px;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   z-index: 100;
@@ -353,7 +350,6 @@ body {
   z-index: 100;
 }
 .tooltip .tooltip_text {
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }

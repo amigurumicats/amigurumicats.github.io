@@ -47,7 +47,6 @@ li {
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 #app .button_start_stop.start {
@@ -95,7 +94,6 @@ li {
   font-size: 1.5rem;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   border-top: 1px solid #888;
   border-bottom: 1px solid #888;
@@ -135,7 +133,6 @@ li {
   font-size: 1.4rem;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   border-top: 1px solid #888;
   border-bottom: 1px solid #888;
@@ -194,80 +191,34 @@ li {
   background-color: #ff9900;
 }
 #app table.board tbody tr td.active_new {
-  -webkit-animation: glowing_circle 0.3s ease-in forwards;
-          animation: glowing_circle 0.3s ease-in forwards;
+  animation: glowing_circle 0.3s ease-in forwards;
 }
 #app table.board tbody tr td.rainbow_0 {
-  -webkit-animation: rainbow 5s -4s infinite;
-          animation: rainbow 5s -4s infinite;
+  animation: rainbow 5s -4s infinite;
 }
 #app table.board tbody tr td.rainbow_1 {
-  -webkit-animation: rainbow 5s -3.5s infinite;
-          animation: rainbow 5s -3.5s infinite;
+  animation: rainbow 5s -3.5s infinite;
 }
 #app table.board tbody tr td.rainbow_2 {
-  -webkit-animation: rainbow 5s -3s infinite;
-          animation: rainbow 5s -3s infinite;
+  animation: rainbow 5s -3s infinite;
 }
 #app table.board tbody tr td.rainbow_3 {
-  -webkit-animation: rainbow 5s -2.5s infinite;
-          animation: rainbow 5s -2.5s infinite;
+  animation: rainbow 5s -2.5s infinite;
 }
 #app table.board tbody tr td.rainbow_4 {
-  -webkit-animation: rainbow 5s -2s infinite;
-          animation: rainbow 5s -2s infinite;
+  animation: rainbow 5s -2s infinite;
 }
 #app table.board tbody tr td.rainbow_5 {
-  -webkit-animation: rainbow 5s -1.5s infinite;
-          animation: rainbow 5s -1.5s infinite;
+  animation: rainbow 5s -1.5s infinite;
 }
 #app table.board tbody tr td.rainbow_6 {
-  -webkit-animation: rainbow 5s -1s infinite;
-          animation: rainbow 5s -1s infinite;
+  animation: rainbow 5s -1s infinite;
 }
 #app table.board tbody tr td.rainbow_7 {
-  -webkit-animation: rainbow 5s -0.5s infinite;
-          animation: rainbow 5s -0.5s infinite;
+  animation: rainbow 5s -0.5s infinite;
 }
 #app table.board tbody tr td.rainbow_8 {
-  -webkit-animation: rainbow 5s 0s infinite;
-          animation: rainbow 5s 0s infinite;
-}
-
-@-webkit-keyframes glowing_circle {
-  0% {
-    background: radial-gradient(0px, #ff9900 50%, transparent 50%);
-  }
-  10% {
-    background: radial-gradient(5px, #ff9900 50%, transparent 50%);
-  }
-  20% {
-    background: radial-gradient(10px, #ff9900 50%, transparent 50%);
-  }
-  30% {
-    background: radial-gradient(15px, #ff9900 50%, transparent 50%);
-  }
-  40% {
-    background: radial-gradient(20px, #ff9900 50%, transparent 50%);
-  }
-  50% {
-    background: radial-gradient(25px, #ff9900 50%, transparent 50%);
-  }
-  60% {
-    background: radial-gradient(30px, #ff9900 50%, transparent 50%);
-  }
-  70% {
-    background: radial-gradient(35px, #ff9900 50%, transparent 50%);
-  }
-  80% {
-    background: radial-gradient(40px, #ff9900 50%, transparent 50%);
-  }
-  90% {
-    background: radial-gradient(45px, #ff9900 50%, transparent 50%);
-  }
-  100% {
-    background: radial-gradient(50px, #ff9900 50%, transparent 50%);
-  }
+  animation: rainbow 5s 0s infinite;
 }
 
 @keyframes glowing_circle {
@@ -303,35 +254,6 @@ li {
   }
   100% {
     background: radial-gradient(50px, #ff9900 50%, transparent 50%);
-  }
-}
-@-webkit-keyframes rainbow {
-  0% {
-    background-color: #ff53bd;
-  }
-  12% {
-    background-color: #ff5353;
-  }
-  24% {
-    background-color: #ffcf53;
-  }
-  36% {
-    background-color: #e8ff53;
-  }
-  48% {
-    background-color: #53ff5d;
-  }
-  60% {
-    background-color: #53ffbc;
-  }
-  72% {
-    background-color: #5393ff;
-  }
-  84% {
-    background-color: #ca53ff;
-  }
-  100% {
-    background-color: #ff53bd;
   }
 }
 @keyframes rainbow {
