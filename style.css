@@ -98,4 +98,8 @@ input[type=text]:focus {
 }
 .tags .tag.active {
   background-color: #a0e4cb;
+}
+
+.search_tags .tag {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
