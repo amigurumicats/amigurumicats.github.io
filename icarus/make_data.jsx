@@ -62,7 +62,7 @@ const pretifyItems = (items) => {
         };
 
         if (0 < item["at"].length) {
-            pretified_item["at"] = item["craft_unit"];
+            pretified_item["at"] = item["at"];
         }
 
         const from = item["from"].filter(([item_id, count]) => 0 < item_id.length && 0 < count);
@@ -135,6 +135,7 @@ const App = () => {
 
     const checkData = (items) => {
         // チェックして、エラーのあるitemのidをerrorItemSetにerrorItemSetに反映する
+        console.log("check ...");
 
         let errorSet = new Set();
         let idCount = {};
@@ -150,20 +151,39 @@ const App = () => {
             if (!item["item_id"] || item["item_id"].length <= 0) continue;
 
             // item_idの重複チェック
-            if (2 <= idCount[item["item_id"]]) errorSet.add(id);
+            if (2 <= idCount[item["item_id"]]) {
+                errorSet.add(id);
+                console.log(id, "id duplicated");
+            }
 
             for (const lang of langs) {
                 if (item["name"][lang] && 0 < item["name"][lang].length) continue;
                 errorSet.add(id);
+                console.log(id, "name empty");
             }
-            if (item["craft_unit"] < 1) errorSet.add(id);
-            if (item["at"] && 0 < item["at"].length && !(item["at"] in idCount)) errorSet.add(id);
+            if (item["craft_unit"] < 1) {
+                errorSet.add(id);
+                console.log(id, "craft_unit < 1")
+            }
+            if (item["at"] && 0 < item["at"].length && !(item["at"] in idCount)) {
+                errorSet.add(id);
+                console.log(id, item["at"], "at invalid");
+            }
             for (const [from_id, from_count] of item["from"]) {
                 if (from_id.length < 1) continue;
-                if (!(from_id in idCount)) errorSet.add(id);
-                if (from_count < 1) errorSet.add(id);
+                if (!(from_id in idCount)) {
+                    errorSet.add(id);
+                    console.log(id, from_id, "from_id invalid")
+                }
+                if (from_count < 1) {
+                    errorSet.add(id);
+                    console.log(id, from_id, "from_count < 1")
+                }
             }
-            if (item["search_tags"].filter((tag) => 0 < tag.length).length < 1) errorSet.add(id);
+            if (item["search_tags"].filter((tag) => 0 < tag.length).length < 1) {
+                errorSet.add(id);
+                console.log(id, "search_tags empty");
+            }
         }
 
         setErrorItemSet(errorSet);
@@ -195,7 +215,6 @@ const App = () => {
             display_item_set = new Set([...display_item_set].filter((id) => errorItemSet.has(id)));
         }
         setDisplayItemSet(display_item_set);
-        console.log(display_item_set.size, searchText, isShowOnlyError);
     }
 
     const _setSearchText = (newSearchText) => {
