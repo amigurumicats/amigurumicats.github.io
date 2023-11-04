@@ -1,0 +1,3764 @@
+{
+    "00_buckshot_shell": {
+        "name": {
+            "en": "00 Buckshot Shell",
+            "ja": "00バックショットシェル"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "ammo_casing": 1,
+            "epoxy": 1,
+            "gunpowder": 6,
+            "copper_nail": "5"
+        },
+        "search_tags": [
+            "00 buckshot shell",
+            "00バックショットシェル",
+            "00ばっくしょっとしぇる"
+        ]
+    },
+    "alpha_wolf_head": {
+        "name": {
+            "en": "Alpha Wolf Head",
+            "ja": "アルファウルフの頭"
+        },
+        "tier": "0",
+        "at": "taxidermy_knife",
+        "search_tags": [
+            "alpha wolf head",
+            "アルファウルフの頭",
+            "あるふぁうるふのあたま"
+        ]
+    },
+    "aluminium_arrow": {
+        "name": {
+            "en": "Aluminium Arrow",
+            "ja": "アルミの矢"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "copper_ingot": 1,
+            "aluminium_ingot": "1",
+            "epoxy": 1
+        },
+        "craft_unit": "6",
+        "search_tags": [
+            "aluminium arrow",
+            "アルミの矢",
+            "あるみのや"
+        ]
+    },
+    "aluminium_ingot": {
+        "name": {
+            "en": "Aluminium Ingot",
+            "ja": "アルミニウムインゴット"
+        },
+        "tier": 3,
+        "at": "concrete_furnace",
+        "from": {
+            "aluminium_ore": 1
+        },
+        "search_tags": [
+            "aluminium ingot",
+            "アルミニウムインゴット"
+        ]
+    },
+    "aluminium_ore": {
+        "name": {
+            "en": "Alminium Ore",
+            "ja": "アルミニウム鉱石"
+        },
+        "tier": 0,
+        "search_tags": [
+            "alminium ore",
+            "アルミニウム鉱石"
+        ]
+    },
+    "ammo_casing": {
+        "name": {
+            "en": "Ammo Casing",
+            "ja": "弾薬ケーシング"
+        },
+        "tier": "3",
+        "at": "machining_bench",
+        "from": {
+            "iron_ingot": 1
+        },
+        "craft_unit": "5",
+        "search_tags": [
+            "ammo casing",
+            "弾薬ケーシング",
+            "だんやくけーしんぐ"
+        ]
+    },
+    "animal_fat": {
+        "name": {
+            "en": "Animal Fat",
+            "ja": "動物性脂肪"
+        },
+        "tier": 2,
+        "search_tags": [
+            "animal fat",
+            "動物性脂肪"
+        ]
+    },
+    "anti_parasitic_paste": {
+        "name": {
+            "en": "Anti-Parasitic Paste",
+            "ja": "抗寄生虫ペースト"
+        },
+        "tier": 1,
+        "from": {
+            "reed_flower": 1,
+            "sulfur": 1,
+            "charcoal": 1
+        },
+        "search_tags": [
+            "anti-parasitic paste",
+            "抗寄生虫ペースト",
+            "こうきせいちゅうぺーすと"
+        ]
+    },
+    "anti_parasitic_tonic": {
+        "name": {
+            "en": "Anti-Parasitic Tonic",
+            "ja": "抗寄生虫トニック"
+        },
+        "tier": 2,
+        "at": "herbalism_bench",
+        "from": {
+            "reed_flower": 1,
+            "organic_resin": 1,
+            "charcoal": 3
+        },
+        "search_tags": [
+            "anti-parasitic tonic",
+            "抗寄生虫トニック",
+            "こうきせいちゅうとにっく"
+        ]
+    },
+    "anti_poison_paste": {
+        "name": {
+            "en": "Anti-Poison Paste",
+            "ja": "抗毒ペースト"
+        },
+        "tier": 1,
+        "from": {
+            "fiber": 1,
+            "spoiled_meat": 1,
+            "charcoal": 1
+        },
+        "search_tags": [
+            "anti-poison paste",
+            "抗毒ペースト",
+            "こうどくぺーすと"
+        ]
+    },
+    "anti_poison_tonic": {
+        "name": {
+            "en": "Anti-Poison Tonic",
+            "ja": "抗毒トニック"
+        },
+        "tier": 2,
+        "at": "herbalism_bench",
+        "from": {
+            "fiber": 1,
+            "poison_paste": 1,
+            "charcoal": 3
+        },
+        "search_tags": [
+            "anti-poison tonic",
+            "抗毒トニック",
+            "こうどくとにっく"
+        ]
+    },
+    "antibiotic_paste": {
+        "name": {
+            "en": "Antibiotic Paste",
+            "ja": "抗生物質ペースト"
+        },
+        "tier": 1,
+        "from": {
+            "yeast": 1,
+            "silica_ore": 1,
+            "charcoal": 1
+        },
+        "search_tags": [
+            "antibiotic paste",
+            "抗生物質ペースト",
+            "こうせいぶっしつぺーすと"
+        ]
+    },
+    "antibiotic_tonic": {
+        "name": {
+            "en": "Antibiotic Tonic",
+            "ja": "抗生物質トニック"
+        },
+        "tier": 2,
+        "at": "herbalism_bench",
+        "from": {
+            "yeast": 1,
+            "epoxy": 1,
+            "charcoal": 3
+        },
+        "search_tags": [
+            "antibiotic tonic",
+            "抗生物質トニック",
+            "こうせいぶっしつとにっく"
+        ]
+    },
+    "anvil_bench": {
+        "name": {
+            "en": "Anvil Bench",
+            "ja": "金床台"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "iron_ingot": 40,
+            "wood": 20,
+            "stone": 10
+        },
+        "search_tags": [
+            "anvil bench",
+            "金床台",
+            "かなとこだい"
+        ]
+    },
+    "basic_bandage": {
+        "name": {
+            "en": "Basic Bandage",
+            "ja": "基本的な包帯"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "40"
+        },
+        "search_tags": [
+            "basic bandage",
+            "基本的な包帯",
+            "きほんてきなほうたい"
+        ]
+    },
+    "basic_fertilizer": {
+        "name": {
+            "en": "Basic Fertilizer",
+            "ja": "基本肥料"
+        },
+        "tier": 2,
+        "at": "wood_composter",
+        "from": {
+            "spoiled_plants": 10
+        },
+        "search_tags": [
+            "basic fertilizer",
+            "基本肥料",
+            "きほんひりょう"
+        ]
+    },
+    "basic_fishing_rod": {
+        "name": {
+            "en": "Basic Fishing Rod",
+            "ja": "普通の釣り竿"
+        },
+        "tier": "1",
+        "from": {
+            "stick": "25",
+            "fiber": "10"
+        },
+        "search_tags": [
+            "basic fishing rod",
+            "普通の釣り竿",
+            "ふつうのつりざお"
+        ]
+    },
+    "bear_head": {
+        "name": {
+            "en": "Bear Head",
+            "ja": "熊の頭"
+        },
+        "tier": 0,
+        "at": "taxidermy_knife",
+        "search_tags": [
+            "bear head",
+            "熊の頭"
+        ]
+    },
+    "bedroll": {
+        "name": {
+            "en": "Bedroll",
+            "ja": "携帯用寝具"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "20",
+            "stick": "10",
+            "fur": "20",
+            "leather": "10"
+        },
+        "search_tags": [
+            "bedroll",
+            "携帯用寝具",
+            "けいたいようしんぐ"
+        ]
+    },
+    "binoculars": {
+        "name": {
+            "en": "Binoculars",
+            "ja": "双眼鏡"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "rope": 4,
+            "glass": 6,
+            "aluminium_ingot": 6,
+            "epoxy": 2
+        },
+        "search_tags": [
+            "binoculars",
+            "双眼鏡"
+        ]
+    },
+    "biofuel_can": {
+        "name": {
+            "en": "Biofuel Can",
+            "ja": "バイオ燃料缶"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "iron_ingot": 25
+        },
+        "search_tags": [
+            "biofuel can",
+            "バイオ燃料缶"
+        ]
+    },
+    "biofuel_composter": {
+        "name": {
+            "en": "Biofuel Composter",
+            "ja": "バイオ燃料用コンポスター"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "iron_ingot": 20,
+            "copper_ingot": 8,
+            "concrete_mix": 12,
+            "steel_screw": 20
+        },
+        "search_tags": [
+            "biofuel composter",
+            "バイオ燃料用コンポスター"
+        ]
+    },
+    "biofuel_extractor": {
+        "name": {
+            "en": "Biofuel Extractor",
+            "ja": "バイオ燃料抽出機"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "iron_ingot": 15,
+            "refined_gold": 5,
+            "copper_nail": 10
+        },
+        "search_tags": [
+            "biofuel extractor",
+            "バイオ燃料抽出機"
+        ]
+    },
+    "biofuel_lamp": {
+        "name": {
+            "en": "Biofuel Lamp",
+            "ja": "バイオ燃料ランプ"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "rope": 4,
+            "glass": 12,
+            "aluminium_ingot": 8,
+            "epoxy": 4
+        },
+        "search_tags": [
+            "biofuel lamp",
+            "バイオ燃料ランプ"
+        ]
+    },
+    "biofuel_radar": {
+        "name": {
+            "en": "Biofuel Radar",
+            "ja": "バイオ燃料レーダー"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "iron_ingot": 12,
+            "glass": 2,
+            "copper_ingot": 12,
+            "iron_nail": 8,
+            "refined_gold": 10
+        },
+        "search_tags": [
+            "biofuel radar",
+            "バイオ燃料レーダー"
+        ]
+    },
+    "biofuel_stove": {
+        "name": {
+            "en": "Biofuel Stove",
+            "ja": "バイオ燃料ストーブ"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "refined_wood": 30,
+            "epoxy": 20,
+            "copper_nail": 4,
+            "steel_ingot": 24,
+            "steel_screw": 8
+        },
+        "search_tags": [
+            "biofuel stove",
+            "バイオ燃料ストーブ"
+        ]
+    },
+    "black_jaguar_head": {
+        "name": {
+            "en": "Black Jaguar Head",
+            "ja": "ブラックジャガーの頭"
+        },
+        "tier": 0,
+        "at": "taxidermy_knife",
+        "search_tags": [
+            "black jaguar head",
+            "ブラックジャガーの頭"
+        ]
+    },
+    "blood_thinning_paste": {
+        "name": {
+            "en": "Blood Thinning Paste",
+            "ja": "血液サラサラペースト"
+        },
+        "tier": 1,
+        "from": {
+            "lily": 1,
+            "stick": 10,
+            "charcoal": 1
+        },
+        "search_tags": [
+            "blood thinning paste",
+            "血液サラサラペースト",
+            "けつえきさらさらぺーすと"
+        ]
+    },
+    "blood_thinning_tonic": {
+        "name": {
+            "en": "Blood Thinning Tonic",
+            "ja": "血液サラサラトニック"
+        },
+        "tier": 2,
+        "at": "herbalism_bench",
+        "from": {
+            "lily": 1,
+            "tree_sap": 1,
+            "charcoal": 3
+        },
+        "search_tags": [
+            "blood thinning tonic",
+            "血液サラサラトニック",
+            "けつえきさらさらとにっく"
+        ]
+    },
+    "bone": {
+        "name": {
+            "en": "Bone",
+            "ja": "骨"
+        },
+        "tier": 0,
+        "search_tags": [
+            "bone",
+            "骨",
+            "ほね"
+        ]
+    },
+    "bone_arm_armor": {
+        "name": {
+            "en": "Bone Arm Armor",
+            "ja": "ボーンアームアーマー"
+        },
+        "tier": "1",
+        "from": {
+            "bone": "15",
+            "leather": "8"
+        },
+        "search_tags": [
+            "bone arm armor",
+            "ボーンアームアーマー",
+            "ぼーんあーむあーまー"
+        ]
+    },
+    "bone_arrow": {
+        "name": {
+            "en": "Bone Arrow",
+            "ja": "骨の矢"
+        },
+        "tier": "1",
+        "from": {
+            "stick": "1",
+            "leather": "1",
+            "bone": "1"
+        },
+        "search_tags": [
+            "bone arrow",
+            "骨の矢",
+            "ほねのや"
+        ]
+    },
+    "bone_chest_armor": {
+        "name": {
+            "en": "Bone Chest Armor",
+            "ja": "ボーンチェストアーマー"
+        },
+        "tier": "1",
+        "from": {
+            "bone": "60",
+            "leather": "15"
+        },
+        "search_tags": [
+            "bone chest armor",
+            "ボーンチェストアーマー",
+            "ぼーんちぇすとあーまー"
+        ]
+    },
+    "bone_feet_armor": {
+        "name": {
+            "en": "Bone Feet Armor",
+            "ja": "ボーンフットアーマー"
+        },
+        "tier": "1",
+        "from": {
+            "bone": "15",
+            "leather": "8"
+        },
+        "search_tags": [
+            "bone feet armor",
+            "ボーンフットアーマー",
+            "ぼーんふっとあーまー"
+        ]
+    },
+    "bone_head_armor": {
+        "name": {
+            "en": "Bone Head Armor",
+            "ja": "ボーンヘッドアーマー"
+        },
+        "tier": "1",
+        "from": {
+            "bone": "20",
+            "leather": "5"
+        },
+        "search_tags": [
+            "bone head armor",
+            "ボーンヘッドアーマー",
+            "ぼーんへっどあーまー"
+        ]
+    },
+    "bone_knife": {
+        "name": {
+            "en": "Bone Knife",
+            "ja": "骨のナイフ"
+        },
+        "tier": 1,
+        "from": {
+            "wood": 2,
+            "leather": 2,
+            "bone": 20
+        },
+        "search_tags": [
+            "bone knife",
+            "骨のナイフ",
+            "ほねのないふ"
+        ]
+    },
+    "bone_leg_armor": {
+        "name": {
+            "en": "Bone Leg Armor",
+            "ja": "ボーンレッグアーマー"
+        },
+        "tier": "1",
+        "from": {
+            "bone": "40",
+            "leather": "12"
+        },
+        "search_tags": [
+            "bone leg armor",
+            "ボーンレッグアーマー",
+            "ぼーんれっぐあーまー"
+        ]
+    },
+    "bone_shield": {
+        "name": {
+            "en": "Bone Shield",
+            "ja": "ボーンシールド"
+        },
+        "tier": "1",
+        "from": {
+            "bone": "25",
+            "leather": "15"
+        },
+        "search_tags": [
+            "bone shield",
+            "ボーンシールド",
+            "ぼーんしーるど"
+        ]
+    },
+    "bone_sickle": {
+        "name": {
+            "en": "Bone Sickle",
+            "ja": "骨の鎌"
+        },
+        "tier": 1,
+        "from": {
+            "wood": 2,
+            "leather": 2,
+            "bone": 20
+        },
+        "search_tags": [
+            "bone sickle",
+            "骨の鎌",
+            "ほねのかま"
+        ]
+    },
+    "bone_spear": {
+        "name": {
+            "en": "Bone Spear",
+            "ja": "骨の槍"
+        },
+        "tier": "1",
+        "from": {
+            "wood": "16",
+            "leather": "4",
+            "bone": "40"
+        },
+        "search_tags": [
+            "bone spear",
+            "骨の槍",
+            "ほねのやり"
+        ]
+    },
+    "bread_dough": {
+        "name": {
+            "en": "Bread Dough",
+            "ja": "パン生地"
+        },
+        "tier": 3,
+        "at": "kitchen_bench",
+        "from": {
+            "flour": 5,
+            "yeast": 1
+        },
+        "search_tags": [
+            "bread dough",
+            "パン生地"
+        ]
+    },
+    "buffalo_head": {
+        "name": {
+            "en": "Baffalo Head",
+            "ja": "バッファローの頭"
+        },
+        "tier": 0,
+        "at": "taxidermy_knife",
+        "search_tags": [
+            "baffalo head",
+            "バッファローの頭"
+        ]
+    },
+    "c0nt4ct_device": {
+        "name": {
+            "en": "C0NT4CT Device",
+            "ja": "C0NT4CTデバイス"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "wood": "10",
+            "rope": "8",
+            "iron_ingot": "15"
+        },
+        "search_tags": [
+            "c0nt4ct device",
+            "c0nt4ctデバイス",
+            "こんたくとでばいす"
+        ]
+    },
+    "campfire": {
+        "name": {
+            "en": "Campfire",
+            "ja": "たき火"
+        },
+        "tier": 1,
+        "from": {
+            "stone": 24,
+            "fiber": 8,
+            "stick": 8
+        },
+        "search_tags": [
+            "campfire",
+            "たき火",
+            "たきび"
+        ]
+    },
+    "carbon_fiber": {
+        "name": {
+            "en": "Carbon Fiber",
+            "ja": "カーボン繊維"
+        },
+        "tier": 3,
+        "at": "concrete_furnace",
+        "from": {
+            "carbon_paste": 1
+        },
+        "search_tags": [
+            "carbon fiber",
+            "カーボン繊維"
+        ]
+    },
+    "carbon_paste": {
+        "name": {
+            "en": "Carbon Paste",
+            "ja": "カーボンペースト"
+        },
+        "tier": 2,
+        "at": "mortar_and_pestle",
+        "from": {
+            "silica_ore": 1,
+            "aluminium_ingot": 1,
+            "organic_resin": 4,
+            "epoxy": 2
+        },
+        "search_tags": [
+            "carbon paste",
+            "カーボンペースト"
+        ]
+    },
+    "carpentry_bench": {
+        "name": {
+            "en": "Carpentry Bench",
+            "ja": "石工台"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "fiber": 12,
+            "rope": 12,
+            "copper_nail": 120
+        },
+        "search_tags": [
+            "carpentry bench",
+            "石工台"
+        ]
+    },
+    "carrot": {
+        "name": {
+            "en": "Carrot",
+            "ja": "ニンジン"
+        },
+        "tier": 0,
+        "search_tags": [
+            "carrot",
+            "ニンジン"
+        ]
+    },
+    "cave_scanner": {
+        "name": {
+            "en": "Cave Scanner",
+            "ja": "洞窟スキャナー"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "iron_ingot": 10,
+            "refined_gold": 5,
+            "iron_nail": 12,
+            "copper_ingot": 5
+        },
+        "search_tags": [
+            "cave scanner",
+            "洞窟スキャナー"
+        ]
+    },
+    "cement_mixer": {
+        "name": {
+            "en": "Cement Mixer",
+            "ja": "セメントミキサー"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "wood": 50,
+            "stone": 40,
+            "iron_ingot": 20,
+            "rope": 8,
+            "iron_nail": 8
+        },
+        "search_tags": [
+            "cement mixer",
+            "セメントミキサー"
+        ]
+    },
+    "charcoal": {
+        "name": {
+            "en": "Charcoal",
+            "ja": "木炭"
+        },
+        "tier": 0,
+        "search_tags": [
+            "charcoal",
+            "木炭"
+        ]
+    },
+    "chemistry_bench": {
+        "name": {
+            "en": "Chemistry Bench",
+            "ja": "化学作業台"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "steel_ingot": 20,
+            "wood": 30,
+            "electronics": 8,
+            "composites": 10,
+            "glass": 10
+        },
+        "search_tags": [
+            "chemistry bench",
+            "化学作業台"
+        ]
+    },
+    "cloth_arm_armor": {
+        "name": {
+            "en": "Cloth Arm Armor",
+            "ja": "クロスアームアーマー"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "80"
+        },
+        "search_tags": [
+            "cloth arm armor",
+            "クロスアームアーマー",
+            "くろすあーむあーまー"
+        ]
+    },
+    "cloth_chest_armor": {
+        "name": {
+            "en": "Cloth Chest Armor",
+            "ja": "クロスチェストアーマー"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "120"
+        },
+        "search_tags": [
+            "cloth chest armor",
+            "クロスチェストアーマー",
+            "くろすちぇすとあーまー"
+        ]
+    },
+    "cloth_feet_armor": {
+        "name": {
+            "en": "Cloth Feet Armor",
+            "ja": "クロスフットアーマー"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "40"
+        },
+        "search_tags": [
+            "cloth feet armor",
+            "クロスフットアーマー",
+            "くろすふっとあーまー"
+        ]
+    },
+    "cloth_head_armor": {
+        "name": {
+            "en": "Cloth Head Armor",
+            "ja": "クロスヘッドアーマー"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "80"
+        },
+        "search_tags": [
+            "cloth head armor",
+            "クロスヘッドアーマー",
+            "くろすへっどあーまー"
+        ]
+    },
+    "cloth_leg_armor": {
+        "name": {
+            "en": "Cloth Leg Armor",
+            "ja": "クロスレッグアーマー"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "120"
+        },
+        "search_tags": [
+            "cloth leg armor",
+            "クロスレッグアーマー",
+            "くろすれっぐあーまー"
+        ]
+    },
+    "coal_ore": {
+        "name": {
+            "en": "Coal Ore",
+            "ja": "石炭"
+        },
+        "tier": 0,
+        "search_tags": [
+            "coal ore",
+            "石炭"
+        ]
+    },
+    "cocoa_seed": {
+        "name": {
+            "en": "Cocoa Seed",
+            "ja": "カカオの実"
+        },
+        "tier": 0,
+        "search_tags": [
+            "cocoa seed",
+            "カカオの実"
+        ]
+    },
+    "coffee_bean": {
+        "name": {
+            "en": "Coffee Bean",
+            "ja": "コーヒー豆"
+        },
+        "tier": 0,
+        "search_tags": [
+            "coffee bean",
+            "コーヒー豆"
+        ]
+    },
+    "combat_knife": {
+        "name": {
+            "en": "Combat Knife",
+            "ja": "コンバットナイフ"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "steel_ingot": 12,
+            "steel_screw": 2,
+            "carbon_fiber": 2,
+            "epoxy": 4
+        },
+        "search_tags": [
+            "combat knife",
+            "コンバットナイフ",
+            "こんばっとないふ"
+        ]
+    },
+    "composite_paste": {
+        "name": {
+            "en": "Composite Paste",
+            "ja": "コンポジットペースト"
+        },
+        "tier": 4,
+        "at": "material_processor",
+        "from": {
+            "iron_ore": 2,
+            "silica_ore": 1,
+            "organic_resin": 1,
+            "gold_ore": 1
+        },
+        "search_tags": [
+            "composite paste",
+            "コンポジットペースト"
+        ]
+    },
+    "composites": {
+        "name": {
+            "en": "Composites",
+            "ja": "コンポジット材料"
+        },
+        "tier": 4,
+        "at": "electric_furnace",
+        "from": {
+            "composite_paste": 1
+        },
+        "search_tags": [
+            "composites",
+            "コンポジット材料"
+        ]
+    },
+    "concrete_furnace": {
+        "name": {
+            "en": "Concrete Furnace",
+            "ja": "コンクリートの溶炉"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "iron_ingot": 12,
+            "rope": 8,
+            "epoxy": 12,
+            "concrete_mix": 20
+        },
+        "search_tags": [
+            "concrete furnace",
+            "コンクリートの溶炉"
+        ]
+    },
+    "concrete_mix": {
+        "name": {
+            "en": "Concrete Mix",
+            "ja": "コンクリートの混合物"
+        },
+        "tier": 3,
+        "at": "cement_mixer",
+        "from": {
+            "tree_sap": 1,
+            "stone": 8,
+            "silica_ore": 4
+        },
+        "search_tags": [
+            "concrete mix",
+            "コンクリートの混合物"
+        ]
+    },
+    "cooking_station": {
+        "name": {
+            "en": "Cooking Station",
+            "ja": "調理台"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "fiber": "8",
+            "stick": "8",
+            "stone": "24",
+            "iron_ingot": "4"
+        },
+        "search_tags": [
+            "cooking station",
+            "調理台",
+            "ちょうりだい"
+        ]
+    },
+    "cooling_bandage": {
+        "name": {
+            "en": "Cooling Bandage",
+            "ja": "冷却包帯"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "40",
+            "oxite": "4",
+            "charcoal": "10"
+        },
+        "search_tags": [
+            "cooling bandage",
+            "冷却包帯",
+            "れいきゃくほうたい"
+        ]
+    },
+    "copper_bolt": {
+        "name": {
+            "en": "copper_bolt",
+            "ja": "銅のボルト"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "wood": "1",
+            "copper_ingot": 1
+        },
+        "craft_unit": "5",
+        "search_tags": [
+            "copper bolt",
+            "銅のボルト",
+            "どうのぼると"
+        ]
+    },
+    "copper_ingot": {
+        "name": {
+            "en": "Copper Ingot",
+            "ja": "銅インゴット"
+        },
+        "tier": 2,
+        "at": "stone_furnace",
+        "from": {
+            "copper_ore": 2
+        },
+        "search_tags": [
+            "copper ingot",
+            "銅インゴット",
+            "どういんごっと"
+        ]
+    },
+    "copper_nail": {
+        "name": {
+            "en": "Copper Nail",
+            "ja": "銅の釘"
+        },
+        "tier": 2,
+        "at": "anvil_bench",
+        "from": {
+            "copper_ore": 1
+        },
+        "craft_unit": 10,
+        "search_tags": [
+            "copper nail",
+            "銅の釘",
+            "どうのくぎ"
+        ]
+    },
+    "copper_ore": {
+        "name": {
+            "en": "Copper Ore",
+            "ja": "銅鉱石"
+        },
+        "tier": 0,
+        "search_tags": [
+            "copper ore",
+            "銅鉱石",
+            "どうこうせき"
+        ]
+    },
+    "corn": {
+        "name": {
+            "en": "Corn",
+            "ja": "コーン"
+        },
+        "tier": 0,
+        "search_tags": [
+            "corn",
+            "コーン"
+        ]
+    },
+    "cougar_head": {
+        "name": {
+            "en": "Cougar Head",
+            "ja": "クーガーの頭"
+        },
+        "tier": 0,
+        "at": "taxidermy_knife",
+        "search_tags": [
+            "cougar head",
+            "クーガーの頭"
+        ]
+    },
+    "crafting_bench": {
+        "name": {
+            "en": "Crafting Bench",
+            "ja": "製造台"
+        },
+        "tier": 2,
+        "from": {
+            "fiber": 60,
+            "wood": 50,
+            "stone": 12,
+            "leather": 20
+        },
+        "search_tags": [
+            "crafting bench",
+            "製造台",
+            "せいぞうだい"
+        ]
+    },
+    "crossbow": {
+        "name": {
+            "en": "Crossbow",
+            "ja": "クロスボウ"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "wood": "18",
+            "leather": "12",
+            "iron_ingot": "12",
+            "iron_nail": "2"
+        },
+        "search_tags": [
+            "crossbow",
+            "クロスボウ",
+            "くろすぼう"
+        ]
+    },
+    "crushed_bone": {
+        "name": {
+            "en": "Crushed Bone",
+            "ja": "砕いた骨"
+        },
+        "tier": 2,
+        "at": "mortar_and_pestle",
+        "from": {
+            "bone": 2
+        },
+        "search_tags": [
+            "crushed bone",
+            "砕いた骨",
+            "くだいたほね"
+        ]
+    },
+    "deep_mining_ore_scanner": {
+        "name": {
+            "en": "Deep Mining Ore Scanner",
+            "ja": "深層鉱床採掘スキャナー"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "steel_ingot": 10,
+            "electronics": 4,
+            "steel_screw": 16,
+            "copper_ingot": 5
+        },
+        "search_tags": [
+            "deep mining ore scanner",
+            "深層鉱床採掘スキャナー"
+        ]
+    },
+    "deer_head": {
+        "name": {
+            "en": "Deer Head",
+            "ja": "鹿の頭"
+        },
+        "tier": 0,
+        "at": "taxidermy_knife",
+        "search_tags": [
+            "deer head",
+            "鹿の頭"
+        ]
+    },
+    "drying_rack": {
+        "name": {
+            "en": "Drying Rack",
+            "ja": "乾燥ラック"
+        },
+        "tier": "1",
+        "from": {
+            "wood": "50",
+            "stick": "25",
+            "fiber": "50"
+        },
+        "search_tags": [
+            "drying rack",
+            "乾燥ラック",
+            "かんそうらっく"
+        ]
+    },
+    "electric_carpentry_bench": {
+        "name": {
+            "en": "Electric Carpentry Bench",
+            "ja": "電動石工台"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "steel_ingot": 60,
+            "composites": 6,
+            "iron_ingot": 40,
+            "steel_screw": 10,
+            "electronics": 8
+        },
+        "search_tags": [
+            "electric carpentry bench",
+            "電動石工台"
+        ]
+    },
+    "electric_composter": {
+        "name": {
+            "en": "Electric Composter",
+            "ja": "電動コンポスター"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "composites": 20,
+            "steel_ingot": 60,
+            "electronics": 10,
+            "concrete_mix": 100,
+            "steel_screw": 20
+        },
+        "search_tags": [
+            "electric composter",
+            "電動コンポスター"
+        ]
+    },
+    "electric_extractor": {
+        "name": {
+            "en": "Electric Extractor",
+            "ja": "電動抽出器"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "iron_ingot": 20,
+            "electronics": 5
+        },
+        "search_tags": [
+            "electric extractor",
+            "電動抽出器"
+        ]
+    },
+    "electric_furnace": {
+        "name": {
+            "en": "Electric Furnace",
+            "ja": "電気炉"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "steel_ingot": 30,
+            "glass": 4,
+            "electronics": 60,
+            "concrete_mix": 80,
+            "steel_screw": 8
+        },
+        "search_tags": [
+            "electric furnace",
+            "電気炉"
+        ]
+    },
+    "electric_masonry_bench": {
+        "name": {
+            "en": "Electric Masonry Bench",
+            "ja": "電動石工台"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "steel_ingot": 60,
+            "composites": 6,
+            "concrete_mix": 100,
+            "steel_screw": 10,
+            "electronics": 8
+        },
+        "search_tags": [
+            "electric masonry bench",
+            "電動石工台"
+        ]
+    },
+    "electric_radar": {
+        "name": {
+            "en": "Electric Radar",
+            "ja": "電動レーダー"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "composites": 12,
+            "glass": 2,
+            "electronics": 10,
+            "steel_screw": 8,
+            "steel_ingot": 12
+        },
+        "search_tags": [
+            "electric radar",
+            "電動レーダー"
+        ]
+    },
+    "electricity_tool": {
+        "name": {
+            "en": "Electricity Tool",
+            "ja": "電力ツール"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "copper_ingot": 20,
+            "refined_gold": 8,
+            "carbon_fiber": 4
+        },
+        "search_tags": [
+            "electricity tool",
+            "電力ツール"
+        ]
+    },
+    "electronics": {
+        "name": {
+            "en": "Electronics",
+            "ja": "電子回路"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "refined_gold": 1,
+            "copper_ingot": 3,
+            "organic_resin": 2,
+            "epoxy": 2
+        },
+        "search_tags": [
+            "electronics",
+            "電子回路"
+        ]
+    },
+    "epoxy": {
+        "name": {
+            "en": "Epoxy",
+            "ja": "エポキシ樹脂"
+        },
+        "tier": 2,
+        "at": "mortar_and_pestle",
+        "from": {
+            "sulfur": 2,
+            "tree_sap": 4
+        },
+        "search_tags": [
+            "epoxy",
+            "エポキシ樹脂",
+            "えぽきしじゅし"
+        ]
+    },
+    "fabricator": {
+        "name": {
+            "en": "Fabricator",
+            "ja": "加工台"
+        },
+        "tier": 4,
+        "at": "machining_bench",
+        "from": {
+            "steel_ingot": 8,
+            "aluminium_ingot": 40,
+            "electronics": 60,
+            "steel_screw": 30,
+            "concrete_mix": 30,
+            "carbon_fiber": 8
+        },
+        "search_tags": [
+            "fabricator",
+            "加工台"
+        ]
+    },
+    "fiber": {
+        "name": {
+            "en": "Fiber",
+            "ja": "繊維"
+        },
+        "tier": 0,
+        "search_tags": [
+            "fiber",
+            "繊維"
+        ]
+    },
+    "fire_arrow": {
+        "name": {
+            "en": "Fire Arrow",
+            "ja": "火の矢"
+        },
+        "tier": "1",
+        "from": {
+            "stone_arrow": "1",
+            "gunpowder": "2"
+        },
+        "search_tags": [
+            "fire arrow",
+            "火の矢",
+            "ひのや"
+        ]
+    },
+    "fire_extinguisher": {
+        "name": {
+            "en": "Fire Extenguisher",
+            "ja": "消化器"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "steel_ingot": 20,
+            "copper_ingot": 4,
+            "sulfur": 8,
+            "epoxy": 4,
+            "oxite": 8
+        },
+        "search_tags": [
+            "fire extenguisher",
+            "消化器",
+            "しょうかき"
+        ]
+    },
+    "fire_whacker": {
+        "name": {
+            "en": "Fire whacker",
+            "ja": "消火装置"
+        },
+        "tier": 1,
+        "from": {
+            "fiber": 10,
+            "stick": 4,
+            "stone": 2
+        },
+        "search_tags": [
+            "fire whacker",
+            "消火装置",
+            "しょうかそうち"
+        ]
+    },
+    "firepit": {
+        "name": {
+            "en": "Firepit",
+            "ja": "たき火穴"
+        },
+        "tier": 1,
+        "from": {
+            "stone": 100,
+            "wood": 25
+        },
+        "search_tags": [
+            "firepit",
+            "たき火穴",
+            "たきびあな"
+        ]
+    },
+    "fireplace": {
+        "name": {
+            "en": "Fireplace",
+            "ja": "暖炉"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "stone": 120,
+            "wood": 30
+        },
+        "search_tags": [
+            "fireplace",
+            "暖炉",
+            "だんろ"
+        ]
+    },
+    "flare_arrow": {
+        "name": {
+            "en": "Flare Arrow",
+            "ja": "信号の矢"
+        },
+        "tier": "1",
+        "from": {
+            "stone_arrow": "1",
+            "sulfur": "2"
+        },
+        "search_tags": [
+            "flare arrow",
+            "信号の矢",
+            "しんごうのや"
+        ]
+    },
+    "flashlight": {
+        "name": {
+            "en": "Flashlight",
+            "ja": "懐中電灯"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "electronics": 2,
+            "glass": 4,
+            "aluminium_ingot": 4,
+            "epoxy": 4
+        },
+        "search_tags": [
+            "flashlight",
+            "懐中電灯"
+        ]
+    },
+    "flint_arrow": {
+        "name": {
+            "en": "Flint Arrow",
+            "ja": "発火石の矢"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "leather": "1",
+            "stick": "5",
+            "iron_ore": 1
+        },
+        "craft_unit": "5",
+        "search_tags": [
+            "flint arrow",
+            "発火石の矢",
+            "はっかせきのや"
+        ]
+    },
+    "floor_torch": {
+        "name": {
+            "en": "Floor Torch",
+            "ja": "フロアトーチ"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "20",
+            "stick": "8",
+            "sulfur": "8"
+        },
+        "search_tags": [
+            "floor torch",
+            "フロアトーチ",
+            "ふろあとーち"
+        ]
+    },
+    "flour": {
+        "name": {
+            "en": "Flour",
+            "ja": "小麦粉"
+        },
+        "tier": "2",
+        "at": "mortar_and_pestle",
+        "from": {
+            "wheat": 10
+        },
+        "search_tags": [
+            "flour",
+            "小麦粉"
+        ]
+    },
+    "food_trough": {
+        "name": {
+            "en": "Food Trough",
+            "ja": "フードトラフ"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "wood": "60",
+            "stick": "8",
+            "iron_nail": "16"
+        },
+        "search_tags": [
+            "food trough",
+            "フードトラフ",
+            "ふーどとらふ"
+        ]
+    },
+    "fur": {
+        "name": {
+            "en": "Fur",
+            "ja": "毛皮"
+        },
+        "tier": 0,
+        "search_tags": [
+            "fur",
+            "毛皮"
+        ]
+    },
+    "glass": {
+        "name": {
+            "en": "Glass",
+            "ja": "ガラス"
+        },
+        "tier": 3,
+        "at": "concrete_furnace",
+        "from": {
+            "silica_ore": 1
+        },
+        "search_tags": [
+            "glass",
+            "ガラス"
+        ]
+    },
+    "glassworking_bench": {
+        "name": {
+            "en": "Glassworking Bench",
+            "ja": "ガラス加工台"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "iron_ingot": 24,
+            "wood": 10,
+            "epoxy": 6,
+            "rope": 6,
+            "copper_nail": 40
+        },
+        "search_tags": [
+            "glassworking bench",
+            "ガラス加工台"
+        ]
+    },
+    "gold_ore": {
+        "name": {
+            "en": "Gold Ore",
+            "ja": "金鉱石"
+        },
+        "tier": 0,
+        "search_tags": [
+            "gold ore",
+            "金鉱石"
+        ]
+    },
+    "gorse_flower": {
+        "name": {
+            "en": "Gorse Flower",
+            "ja": "ゴローズフラワー"
+        },
+        "tier": 0,
+        "search_tags": [
+            "gorse flower",
+            "ゴローズフラワー"
+        ]
+    },
+    "growth_fertilizer": {
+        "name": {
+            "en": "Growth Fertilizer",
+            "ja": "肥料"
+        },
+        "tier": 4,
+        "at": "chemistry_bench",
+        "from": {
+            "silica_ore": 1,
+            "basic_fertilizer": 1
+        },
+        "search_tags": [
+            "growth fertilizer",
+            "肥料",
+            "ひりょう"
+        ]
+    },
+    "gunpowder": {
+        "name": {
+            "en": "Gunpowder",
+            "ja": "火薬"
+        },
+        "tier": 2,
+        "at": "mortar_and_pestle",
+        "from": {
+            "sulfur": 1,
+            "charcoal": 3
+        },
+        "search_tags": [
+            "gunpowder",
+            "火薬"
+        ]
+    },
+    "heat_bandage": {
+        "name": {
+            "en": "Heat Bandage",
+            "ja": "加熱包帯"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "40",
+            "oxite": "4",
+            "charcoal": "10"
+        },
+        "search_tags": [
+            "heat bandage",
+            "加熱包帯",
+            "かねつほうたい"
+        ]
+    },
+    "herbalism_bench": {
+        "name": {
+            "en": "Herbalism Bench",
+            "ja": "製薬台"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "wood": 50,
+            "stick": 20,
+            "fiber": 12,
+            "stone": 12
+        },
+        "search_tags": [
+            "herbalism bench",
+            "製薬台"
+        ]
+    },
+    "high_quality_fertilizer": {
+        "name": {
+            "en": "High-Quality Fertilizer",
+            "ja": "高品質な肥料"
+        },
+        "tier": 4,
+        "at": "chemistry_bench",
+        "from": {
+            "sulfur": 1,
+            "basic_fertilizer": 5
+        },
+        "search_tags": [
+            "high-quality fertilizer",
+            "高品質な肥料",
+            "こうひんしつなひりょう"
+        ]
+    },
+    "ice": {
+        "name": {
+            "en": "Ice",
+            "ja": "氷"
+        },
+        "tier": 0,
+        "search_tags": [
+            "ice",
+            "氷",
+            "こおり"
+        ]
+    },
+    "ice_box": {
+        "name": {
+            "en": "Ice Box",
+            "ja": "アイスボックス"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "wood": "40",
+            "leather": "24",
+            "rope": "8",
+            "iron_ingot": "8",
+            "copper_nail": "4"
+        },
+        "search_tags": [
+            "ice box",
+            "アイスボックス",
+            "あいすぼっくす"
+        ]
+    },
+    "iron_axe": {
+        "name": {
+            "en": "Iron Axe",
+            "ja": "鉄の斧"
+        },
+        "tier": 2,
+        "at": "anvil_bench",
+        "from": {
+            "wood": 5,
+            "leather": 4,
+            "iron_ingot": 6,
+            "iron_nail": 2
+        },
+        "search_tags": [
+            "iron axe",
+            "鉄の斧",
+            "てつのおの"
+        ]
+    },
+    "iron_bolt": {
+        "name": {
+            "en": "Iron Bolt",
+            "ja": "鉄のボルト"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "wood": "1",
+            "iron_ingot": "2"
+        },
+        "craft_unit": "12",
+        "search_tags": [
+            "iron bolt",
+            "鉄のボルト",
+            "てつのぼると"
+        ]
+    },
+    "iron_hammer": {
+        "name": {
+            "en": "Iron Hammer",
+            "ja": "アイアンハンマー"
+        },
+        "tier": 2,
+        "at": "anvil_bench",
+        "from": {
+            "wood": "4",
+            "leather": 4,
+            "iron_ingot": 10
+        },
+        "search_tags": [
+            "iron hammer",
+            "アイアンハンマー",
+            "あいあんはんまー"
+        ]
+    },
+    "iron_ingot": {
+        "name": {
+            "en": "Iron Ingot",
+            "ja": "鉄インゴット"
+        },
+        "tier": 2,
+        "at": "stone_furnace",
+        "from": {
+            "iron_ore": 2
+        },
+        "search_tags": [
+            "iron ingot",
+            "鉄インゴット",
+            "てついんごっと"
+        ]
+    },
+    "iron_knife": {
+        "name": {
+            "en": "Iron Knife",
+            "ja": "鉄のナイフ"
+        },
+        "tier": 2,
+        "at": "anvil_bench",
+        "from": {
+            "wood": 5,
+            "leather": 4,
+            "iron_ingot": 6,
+            "iron_nail": 2
+        },
+        "search_tags": [
+            "iron knife",
+            "鉄のナイフ",
+            "てつのないふ"
+        ]
+    },
+    "iron_nail": {
+        "name": {
+            "en": "Iron Nail",
+            "ja": "鉄の釘"
+        },
+        "tier": 2,
+        "at": "anvil_bench",
+        "from": {
+            "iron_ingot": 1
+        },
+        "craft_unit": 10,
+        "search_tags": [
+            "iron nail",
+            "鉄の釘",
+            "てつのくぎ"
+        ]
+    },
+    "iron_ore": {
+        "name": {
+            "en": "Iron Ore",
+            "ja": "鉄鉱石"
+        },
+        "tier": 0,
+        "search_tags": [
+            "iron ore",
+            "鉄鉱石",
+            "てっこうせき"
+        ]
+    },
+    "iron_pickaxe": {
+        "name": {
+            "en": "Iron Pickaxe",
+            "ja": "鉄のつるはし"
+        },
+        "tier": 2,
+        "at": "anvil_bench",
+        "from": {
+            "wood": 5,
+            "leather": 4,
+            "iron_ingot": 6
+        },
+        "search_tags": [
+            "iron pickaxe",
+            "鉄のつるはし",
+            "てつのつるはし"
+        ]
+    },
+    "iron_sickle": {
+        "name": {
+            "en": "Iron Sickle",
+            "ja": "鉄の鎌"
+        },
+        "tier": 2,
+        "at": "anvil_bench",
+        "from": {
+            "wood": 4,
+            "leather": 4,
+            "iron_ingot": 10
+        },
+        "search_tags": [
+            "iron sickle",
+            "鉄の鎌",
+            "てつのかま"
+        ]
+    },
+    "iron_sledgehammer": {
+        "name": {
+            "en": "Iron Sledgehammer",
+            "ja": "鉄のスレッジハンマー"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "wood": "10",
+            "rope": "8",
+            "iron_ingot": "15"
+        },
+        "search_tags": [
+            "iron sledgehammer",
+            "鉄のスレッジハンマー",
+            "てつのすれっじはんまー"
+        ]
+    },
+    "iron_spear": {
+        "name": {
+            "en": "Iron Spear",
+            "ja": "鉄の槍"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "wood": "5",
+            "leather": "6",
+            "iron_ingot": "24"
+        },
+        "search_tags": [
+            "iron spear",
+            "鉄の槍",
+            "てつのやり"
+        ]
+    },
+    "jaguar_head": {
+        "name": {
+            "en": "Jaguar Head",
+            "ja": "ジャガーの頭"
+        },
+        "tier": 0,
+        "at": "taxidermy_knife",
+        "search_tags": [
+            "jaguar head",
+            "ジャガーの頭"
+        ]
+    },
+    "kitchen_bench": {
+        "name": {
+            "en": "Kitchen Bench",
+            "ja": "厨房作業台"
+        },
+        "tier": "3",
+        "at": "machining_bench",
+        "from": {
+            "refined_wood": "30",
+            "iron_ingot": "8",
+            "epoxy": "20",
+            "copper_nail": "20"
+        },
+        "search_tags": [
+            "kitchen bench",
+            "厨房作業台",
+            "ちゅうぼうさぎょうだい"
+        ]
+    },
+    "lantern": {
+        "name": {
+            "en": "Lantern",
+            "ja": "提灯"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "iron_ingot": 8,
+            "rope": 4,
+            "epoxy": 12,
+            "animal_fat": "5"
+        },
+        "search_tags": [
+            "lantern",
+            "提灯",
+            "ちょうちん"
+        ]
+    },
+    "leather": {
+        "name": {
+            "en": "Leather",
+            "ja": "皮革"
+        },
+        "tier": 0,
+        "search_tags": [
+            "leather",
+            "皮革"
+        ]
+    },
+    "leather_backpack": {
+        "name": {
+            "en": "Leather Backpack",
+            "ja": "皮革バックパック"
+        },
+        "tier": 2,
+        "at": "textiles_bench",
+        "from": {
+            "rope": 8,
+            "leather": 20,
+            "fiber": 10
+        },
+        "search_tags": [
+            "leather backpack",
+            "皮革バックパック"
+        ]
+    },
+    "lily": {
+        "name": {
+            "en": "Lily",
+            "ja": "百合"
+        },
+        "tier": 0,
+        "search_tags": [
+            "lily",
+            "百合"
+        ]
+    },
+    "longbow": {
+        "name": {
+            "en": "Longbow",
+            "ja": "ロングボウ"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "wood": "24",
+            "leather": "32",
+            "bone": "4"
+        },
+        "search_tags": [
+            "longbow",
+            "ロングボウ",
+            "ろんぐぼう"
+        ]
+    },
+    "machete": {
+        "name": {
+            "en": "Machete",
+            "ja": "マチェット"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "iron_ingot": 12,
+            "wood": 4,
+            "epoxy": 4,
+            "steel_screw": 2
+        },
+        "search_tags": [
+            "machete",
+            "マチェット"
+        ]
+    },
+    "machining_bench": {
+        "name": {
+            "en": "Machining Bench",
+            "ja": "機械加工台"
+        },
+        "tier": 3,
+        "at": "crafting_bench",
+        "from": {
+            "wood": 20,
+            "stone": 12,
+            "iron_nail": 120,
+            "iron_ingot": 40,
+            "epoxy": 10,
+            "rope": 24
+        },
+        "search_tags": [
+            "machining bench",
+            "機械加工台"
+        ]
+    },
+    "mammoth_head": {
+        "name": {
+            "en": "Mammoth Head",
+            "ja": "マンモスの頭"
+        },
+        "tier": 0,
+        "at": "taxidermy_knife",
+        "search_tags": [
+            "mammoth head",
+            "マンモスの頭"
+        ]
+    },
+    "masonry_bench": {
+        "name": {
+            "en": "Masonry Bench",
+            "ja": "石工台"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "wood": 80,
+            "leather": 12,
+            "iron_nail": 120,
+            "rope": 12
+        },
+        "search_tags": [
+            "masonry bench",
+            "石工台"
+        ]
+    },
+    "material_processor": {
+        "name": {
+            "en": "Material Processor",
+            "ja": "マテリアルプロセッサー"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "aluminium_ingot": 30,
+            "electronics": 80,
+            "steel_screw": 12,
+            "titanium_ingot": 8,
+            "carbon_fiber": 8
+        },
+        "search_tags": [
+            "material processor",
+            "マテリアルプロセッサー"
+        ]
+    },
+    "medium_wood_crate": {
+        "name": {
+            "en": "Medium Wood Crate",
+            "ja": "中型の木箱"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "32",
+            "wood": "32"
+        },
+        "search_tags": [
+            "medium wood crate",
+            "中型の木箱",
+            "ちゅうがたのきばこ"
+        ]
+    },
+    "mortar_and_pestle": {
+        "name": {
+            "en": "Mortar and Pestle",
+            "ja": "乳鉢とすり棒"
+        },
+        "tier": 2,
+        "from": {
+            "silica_ore": 4,
+            "stone": 12
+        },
+        "search_tags": [
+            "mortar and pestle",
+            "乳鉢とすり棒"
+        ]
+    },
+    "obsidian": {
+        "name": {
+            "en": "Obsidian",
+            "ja": "黒曜石"
+        },
+        "tier": 0,
+        "search_tags": [
+            "obsidian",
+            "黒曜石",
+            "こくようせき"
+        ]
+    },
+    "orbital_exchange_interface": {
+        "name": {
+            "en": "Orbital Exchange Interface",
+            "ja": "軌道交換インターフェース"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "wood": "10",
+            "rope": "8",
+            "iron_ingot": "7",
+            "copper_ingot": "7"
+        },
+        "search_tags": [
+            "orbital exchange interface",
+            "軌道交換インターフェース",
+            "きどうこうかんいんたーふぇーす"
+        ]
+    },
+    "organic_resin": {
+        "name": {
+            "en": "Organic Resin",
+            "ja": "有機樹脂"
+        },
+        "tier": 2,
+        "at": "mortar_and_pestle",
+        "from": {
+            "oxite": 1,
+            "wood": 1
+        },
+        "search_tags": [
+            "organic resin",
+            "有機樹脂"
+        ]
+    },
+    "oxidizer": {
+        "name": {
+            "en": "Oxidizer",
+            "ja": "酸素発生器"
+        },
+        "tier": "1",
+        "from": {
+            "stick": "8",
+            "fiber": "24",
+            "leather": "20",
+            "bone": "10"
+        },
+        "search_tags": [
+            "oxidizer",
+            "酸素発生器",
+            "さんそはっせいき"
+        ]
+    },
+    "oxite": {
+        "name": {
+            "en": "Oxite",
+            "ja": "オキサイド鉱石"
+        },
+        "tier": 0,
+        "search_tags": [
+            "oxite",
+            "オキサイド鉱石",
+            "おきさいどこうせき"
+        ]
+    },
+    "oxite_dissolver": {
+        "name": {
+            "en": "Oxite Dissolver",
+            "ja": "オキサイド分解器"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "wood": "18",
+            "leather": "24",
+            "bone": "8"
+        },
+        "search_tags": [
+            "oxite dissolver",
+            "オキサイド分解器",
+            "おきさいどぶんかいき"
+        ]
+    },
+    "oxygen_bladder": {
+        "name": {
+            "en": "Oxygen Bladder",
+            "ja": "酸素袋"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "fiber": 20,
+            "leather": 30,
+            "bone": 8
+        },
+        "search_tags": [
+            "oxygen bladder",
+            "酸素袋",
+            "さんそぶくろ"
+        ]
+    },
+    "oxygen_tank": {
+        "name": {
+            "en": "Oxygen Tank",
+            "ja": "酸素タンク"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "steel_ingot": 20,
+            "epoxy": 4
+        },
+        "search_tags": [
+            "oxygen tank",
+            "酸素タンク"
+        ]
+    },
+    "pastry": {
+        "name": {
+            "en": "Pastry",
+            "ja": "ペストリー"
+        },
+        "tier": 3,
+        "at": "kitchen_bench",
+        "from": {
+            "animal_fat": 1,
+            "flour": 1
+        },
+        "search_tags": [
+            "pastry",
+            "ペストリー"
+        ]
+    },
+    "platinum_axe": {
+        "name": {
+            "en": "Platinum Axe",
+            "ja": "プラチナの斧"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "wood": 2,
+            "leather": 4,
+            "platinum_ingot": 12
+        },
+        "search_tags": [
+            "platinum axe",
+            "プラチナの斧"
+        ]
+    },
+    "platinum_hammer": {
+        "name": {
+            "en": "Platinum Hammer",
+            "ja": "プラチナハンマー"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "wood": 5,
+            "epoxy": 4,
+            "platinum_ingot": 6,
+            "steel_screw": 2
+        },
+        "search_tags": [
+            "platinum hammer",
+            "プラチナハンマー"
+        ]
+    },
+    "platinum_ingot": {
+        "name": {
+            "en": "Platinum Ingot",
+            "ja": "プラチナインゴット"
+        },
+        "tier": 3,
+        "at": "concrete_furnace",
+        "from": {
+            "platinum_ore": 5
+        },
+        "search_tags": [
+            "platinum ingot",
+            "プラチナインゴット"
+        ]
+    },
+    "platinum_knife": {
+        "name": {
+            "en": "Platinum Knife",
+            "ja": "プラチナナイフ"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "wood": 2,
+            "leather": 4,
+            "platinum_ingot": 12
+        },
+        "search_tags": [
+            "platinum knife",
+            "プラチナナイフ"
+        ]
+    },
+    "platinum_ore": {
+        "name": {
+            "en": "Platinum Ore",
+            "ja": "プラチナ鉱石"
+        },
+        "tier": 0,
+        "search_tags": [
+            "platinum ore",
+            "プラチナ鉱石"
+        ]
+    },
+    "platinum_pickaxe": {
+        "name": {
+            "en": "Platinum Pickaxe",
+            "ja": "プラチナのつるはし"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "wood": 2,
+            "leather": 4,
+            "platinum_ingot": 12
+        },
+        "search_tags": [
+            "platinum pickaxe",
+            "プラチナのつるはし"
+        ]
+    },
+    "platinum_sickle": {
+        "name": {
+            "en": "Platinum Sickle",
+            "ja": "プラチナの鎌"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "wood": 4,
+            "stick": 2,
+            "platinum_ingot": 10
+        },
+        "search_tags": [
+            "platinum sickle",
+            "プラチナの鎌"
+        ]
+    },
+    "poison_arrow": {
+        "name": {
+            "en": "Poison Arrow",
+            "ja": "毒の矢"
+        },
+        "tier": "1",
+        "from": {
+            "stone_arrow": "1",
+            "poison_paste": "2"
+        },
+        "search_tags": [
+            "poison arrow",
+            "毒の矢",
+            "どくのや"
+        ]
+    },
+    "poison_paste": {
+        "name": {
+            "en": "Poison Paste",
+            "ja": "毒薬ペースト"
+        },
+        "tier": 2,
+        "at": "mortar_and_pestle",
+        "from": {
+            "spoiled_meat": 2,
+            "sulfur": 1
+        },
+        "search_tags": [
+            "poison paste",
+            "毒薬ペースト",
+            "どくやくぺーすと"
+        ]
+    },
+    "polar_bear_head": {
+        "name": {
+            "en": "Polar Bear Head",
+            "ja": "北極熊の頭"
+        },
+        "tier": 0,
+        "at": "taxidermy_knife",
+        "search_tags": [
+            "polar bear head",
+            "北極熊の頭"
+        ]
+    },
+    "polar_bear_pelt": {
+        "name": {
+            "en": "Polar Bear Pelt",
+            "ja": "北極熊の毛皮"
+        },
+        "tier": 0,
+        "search_tags": [
+            "polar bear pelt",
+            "北極熊の毛皮",
+            "ほっきょくぐまのけがわ"
+        ]
+    },
+    "portable_beacon": {
+        "name": {
+            "en": "Portable Beacon",
+            "ja": "携帯用ビーコン"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "composites": 20,
+            "glass": 12,
+            "electronics": 10,
+            "steel_screw": 8,
+            "copper_ingot": 8
+        },
+        "search_tags": [
+            "portable beacon",
+            "携帯用ビーコン"
+        ]
+    },
+    "potbelly_stove": {
+        "name": {
+            "en": "Potbelly Stove",
+            "ja": "だるまストーブ"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "iron_ingot": "40",
+            "copper_ingot": "8",
+            "epoxy": "10"
+        },
+        "search_tags": [
+            "potbelly stove",
+            "だるまストーブ",
+            "だるますとーぶ"
+        ]
+    },
+    "pumpkin": {
+        "name": {
+            "en": "Pumpkin",
+            "ja": "ペパカボチャ"
+        },
+        "tier": 0,
+        "search_tags": [
+            "pumpkin",
+            "ペパカボチャ"
+        ]
+    },
+    "rain_reservoir": {
+        "name": {
+            "en": "Rain Reservoir",
+            "ja": "雨水貯水池"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "stick": "8",
+            "wood": "24",
+            "stone": "60",
+            "leather": "8"
+        },
+        "search_tags": [
+            "rain reservoir",
+            "雨水貯水池",
+            "あまみずちょすいち",
+            "うすいちょすいち"
+        ]
+    },
+    "raw_fish": {
+        "name": {
+            "en": "Raw Fish",
+            "ja": "生魚"
+        },
+        "tier": 0,
+        "search_tags": [
+            "raw fish",
+            "生魚"
+        ]
+    },
+    "raw_meat": {
+        "name": {
+            "en": "Raw Meat",
+            "ja": "生肉"
+        },
+        "tier": 0,
+        "search_tags": [
+            "raw meat",
+            "生肉"
+        ]
+    },
+    "reed_flower": {
+        "name": {
+            "en": "Reed Flower",
+            "ja": "アシの花"
+        },
+        "tier": 0,
+        "search_tags": [
+            "reed flower",
+            "アシの花"
+        ]
+    },
+    "refined_gold": {
+        "name": {
+            "en": "Refined Gold",
+            "ja": "精製ゴールド"
+        },
+        "tier": 3,
+        "at": "concrete_furnace",
+        "from": {
+            "gold_ore": 2
+        },
+        "search_tags": [
+            "refined gold",
+            "精製ゴールド",
+            "せいせいごーるど"
+        ]
+    },
+    "refined_wood": {
+        "name": {
+            "en": "Refined Wood",
+            "ja": "洗練された木材"
+        },
+        "tier": "2",
+        "at": "carpentry_bench",
+        "from": {
+            "wood": 1
+        },
+        "craft_unit": "5",
+        "search_tags": [
+            "refined wood",
+            "洗練された木材",
+            "せんれんされたもくざい"
+        ]
+    },
+    "rope": {
+        "name": {
+            "en": "Rope",
+            "ja": "ロープ"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "fiber": 12
+        },
+        "search_tags": [
+            "rope",
+            "ロープ",
+            "ろーぷ"
+        ]
+    },
+    "salting_station": {
+        "name": {
+            "en": "Salting Station",
+            "ja": "塩漬けステーション"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "fiber": "60",
+            "stone": "25",
+            "wood": "50",
+            "charcoal": "25"
+        },
+        "search_tags": [
+            "salting station",
+            "塩漬けステーション",
+            "しおづけすてーしょん"
+        ]
+    },
+    "shaped_obsidian": {
+        "name": {
+            "en": "Shaped Obsidian",
+            "ja": "成形された黒曜石"
+        },
+        "tier": "2",
+        "at": "stone_furnace",
+        "from": {
+            "obsidian": "2"
+        },
+        "search_tags": [
+            "shaped obsidian",
+            "成形された黒曜石",
+            "せいけいされたこくようせき"
+        ]
+    },
+    "shovel": {
+        "name": {
+            "en": "Shovel",
+            "ja": "シャベル"
+        },
+        "tier": 2,
+        "at": "anvil_bench",
+        "from": {
+            "wood": 4,
+            "iron_ingot": 6
+        },
+        "search_tags": [
+            "shovel",
+            "シャベル",
+            "しゃべる"
+        ]
+    },
+    "silica_ore": {
+        "name": {
+            "en": "Silica Ore",
+            "ja": "シリカ鉱石"
+        },
+        "tier": 0,
+        "search_tags": [
+            "silica ore",
+            "シリカ鉱石"
+        ]
+    },
+    "skinning_bench": {
+        "name": {
+            "en": "Skinning Bench",
+            "ja": "皮剥ぎ台"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "fiber": 60,
+            "wood": 50,
+            "stone": 12,
+            "leather": 20
+        },
+        "search_tags": [
+            "skinning bench",
+            "皮剥ぎ台",
+            "かわはぎだい"
+        ]
+    },
+    "small_wood_crate": {
+        "name": {
+            "en": "Small Wood Crate",
+            "ja": "小型の木箱"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "16",
+            "wood": "24"
+        },
+        "search_tags": [
+            "small wood crate",
+            "小型の木箱",
+            "こがたのきばこ"
+        ]
+    },
+    "snow_leopard_head": {
+        "name": {
+            "en": "Snow Leopard Head",
+            "ja": "ユキヒョウの頭"
+        },
+        "tier": 0,
+        "at": "taxidermy_knife",
+        "search_tags": [
+            "snow leopard head",
+            "ユキヒョウの頭"
+        ]
+    },
+    "soy_bean": {
+        "name": {
+            "en": "Soy Bean",
+            "ja": "大豆"
+        },
+        "tier": 0,
+        "search_tags": [
+            "soy bean",
+            "大豆"
+        ]
+    },
+    "splint": {
+        "name": {
+            "en": "Splint",
+            "ja": "添え木"
+        },
+        "tier": "1",
+        "from": {
+            "wood": "2",
+            "stick": "8",
+            "rope": "6"
+        },
+        "search_tags": [
+            "splint",
+            "添え木",
+            "そえぎ"
+        ]
+    },
+    "spoiled_meat": {
+        "name": {
+            "en": "Spoiled Meat",
+            "ja": "痛んだ肉"
+        },
+        "tier": 0,
+        "search_tags": [
+            "spoiled meat",
+            "痛んだ肉"
+        ]
+    },
+    "spoiled_plants": {
+        "name": {
+            "en": "Spoiled Plants",
+            "ja": "腐った植物"
+        },
+        "tier": 0,
+        "search_tags": [
+            "spoiled plants",
+            "腐った植物"
+        ]
+    },
+    "sponge": {
+        "name": {
+            "en": "Sponge",
+            "ja": "スポンジ"
+        },
+        "tier": 0,
+        "search_tags": [
+            "sponge",
+            "スポンジ"
+        ]
+    },
+    "squash": {
+        "name": {
+            "en": "Squash",
+            "ja": "カボチャ"
+        },
+        "tier": 0,
+        "search_tags": [
+            "squash",
+            "カボチャ"
+        ]
+    },
+    "steel_arrow": {
+        "name": {
+            "en": "Steel Arrow",
+            "ja": "鋼の矢"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "epoxy": "1",
+            "stick": "5",
+            "steel_ingot": 1
+        },
+        "craft_unit": "5",
+        "search_tags": [
+            "steel arrow",
+            "鋼の矢",
+            "はがねのや"
+        ]
+    },
+    "steel_axe": {
+        "name": {
+            "en": "Steel Axe",
+            "ja": "鋼の斧"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "wood": 5,
+            "epoxy": 4,
+            "steel_ingot": 6,
+            "iron_nail": 2
+        },
+        "search_tags": [
+            "steel axe",
+            "鋼の斧",
+            "はがねのおの"
+        ]
+    },
+    "steel_bloom": {
+        "name": {
+            "en": "Steel Bloom",
+            "ja": "鋼片"
+        },
+        "tier": 2,
+        "at": "mortar_and_pestle",
+        "from": {
+            "iron_ore": 6,
+            "coal_ore": 1
+        },
+        "search_tags": [
+            "steel bloom",
+            "鋼片"
+        ]
+    },
+    "steel_bolt": {
+        "name": {
+            "en": "Steel Bolt",
+            "ja": "鋼のボルト"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "wood": "1",
+            "steel_ingot": 1
+        },
+        "search_tags": [
+            "steel bolt",
+            "鋼のボルト",
+            "はがねのぼると"
+        ]
+    },
+    "steel_hammer": {
+        "name": {
+            "en": "Steel Hammer",
+            "ja": "スチール製ハンマー"
+        },
+        "tier": 2,
+        "at": "anvil_bench",
+        "from": {
+            "wood": 5,
+            "epoxy": 4,
+            "steel_ingot": 6,
+            "iron_nail": 2
+        },
+        "search_tags": [
+            "steel hammer",
+            "スチール製ハンマー",
+            "すちーるせいはんまー"
+        ]
+    },
+    "steel_heater_shield": {
+        "name": {
+            "en": "Steel Heater Shield",
+            "ja": "スチールヒーターシールド"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "steel_ingot": "10",
+            "leather": "15"
+        },
+        "search_tags": [
+            "steel heater shield",
+            "スチールヒーターシールド",
+            "すちーるひーたーしーるど"
+        ]
+    },
+    "steel_ingot": {
+        "name": {
+            "en": "Steel Ingot",
+            "ja": "鋼インゴット"
+        },
+        "tier": 3,
+        "at": "concrete_furnace",
+        "from": {
+            "steel_bloom": 1
+        },
+        "search_tags": [
+            "steel ingot",
+            "鋼インゴット",
+            "はがねいんごっと"
+        ]
+    },
+    "steel_knife": {
+        "name": {
+            "en": "Steel Knife",
+            "ja": "鋼のナイフ"
+        },
+        "tier": 2,
+        "at": "anvil_bench",
+        "from": {
+            "wood": 5,
+            "epoxy": 4,
+            "steel_ingot": 6,
+            "iron_nail": 2
+        },
+        "search_tags": [
+            "steel knife",
+            "鋼のナイフ",
+            "はがねのないふ"
+        ]
+    },
+    "steel_pickaxe": {
+        "name": {
+            "en": "Steel Pickaxe",
+            "ja": "鋼のつるはし"
+        },
+        "tier": 2,
+        "at": "anvil_bench",
+        "from": {
+            "wood": 5,
+            "epoxy": 4,
+            "steel_ingot": 6
+        },
+        "search_tags": [
+            "steel pickaxe",
+            "鋼のつるはし",
+            "はがねのつるはし"
+        ]
+    },
+    "steel_rebar": {
+        "name": {
+            "en": "Steel Rebar",
+            "ja": "鉄筋"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "steel_ingot": 1
+        },
+        "craft_unit": 10,
+        "search_tags": [
+            "steel rebar",
+            "鉄筋"
+        ]
+    },
+    "steel_screw": {
+        "name": {
+            "en": "Steel Screw",
+            "ja": "鋼の釘"
+        },
+        "tier": 3,
+        "at": "machining_bench",
+        "from": {
+            "steel_ingot": 1
+        },
+        "craft_unit": 100,
+        "search_tags": [
+            "steel screw",
+            "鋼の釘"
+        ]
+    },
+    "steel_spear": {
+        "name": {
+            "en": "Steel Spear",
+            "ja": "鋼の槍"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "wood": "5",
+            "epoxy": "6",
+            "steel_ingot": "24"
+        },
+        "search_tags": [
+            "steel spear",
+            "鋼の槍",
+            "はがねのやり"
+        ]
+    },
+    "stick": {
+        "name": {
+            "en": "Stick",
+            "ja": "木の枝"
+        },
+        "tier": 0,
+        "search_tags": [
+            "stick",
+            "木の枝"
+        ]
+    },
+    "stone": {
+        "name": {
+            "en": "Stone",
+            "ja": "石"
+        },
+        "tier": 0,
+        "search_tags": [
+            "stone",
+            "石"
+        ]
+    },
+    "stone_arrow": {
+        "name": {
+            "en": "Stone Arrow",
+            "ja": "石の矢"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "1",
+            "stick": "1",
+            "stone": "1"
+        },
+        "search_tags": [
+            "stone arrow",
+            "石の矢",
+            "いしのや"
+        ]
+    },
+    "stone_axe": {
+        "name": {
+            "en": "Stone Axe",
+            "ja": "石の斧"
+        },
+        "tier": 1,
+        "from": {
+            "fiber": 10,
+            "stick": 4,
+            "stone": 6
+        },
+        "search_tags": [
+            "stone axe",
+            "石の斧",
+            "いしのおの"
+        ]
+    },
+    "stone_furnace": {
+        "name": {
+            "en": "Stone Furnace",
+            "ja": "石の溶炉"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "stick": 4,
+            "wood": 12,
+            "stone": 80,
+            "leather": 12
+        },
+        "search_tags": [
+            "stone furnace",
+            "石の溶炉",
+            "いしのようろ"
+        ]
+    },
+    "stone_knife": {
+        "name": {
+            "en": "Stone Knife",
+            "ja": "石のナイフ"
+        },
+        "tier": 1,
+        "from": {
+            "fiber": 2,
+            "stick": 2,
+            "stone": 4
+        },
+        "search_tags": [
+            "stone knife",
+            "石のナイフ",
+            "いしのないふ"
+        ]
+    },
+    "stone_pickaxe": {
+        "name": {
+            "en": "Stone Pickaxe",
+            "ja": "石のつるはし"
+        },
+        "tier": 1,
+        "from": {
+            "fiber": 10,
+            "stick": 4,
+            "stone": 6
+        },
+        "search_tags": [
+            "stone pickaxe",
+            "石のつるはし",
+            "いしのつるはし"
+        ]
+    },
+    "stone_pile": {
+        "name": {
+            "en": "Stone Pile",
+            "ja": "石の山"
+        },
+        "tier": "1",
+        "from": {
+            "stone": "100"
+        },
+        "search_tags": [
+            "stone pile",
+            "石の山",
+            "いしのやま"
+        ]
+    },
+    "sulfur": {
+        "name": {
+            "en": "Sulfur",
+            "ja": "硫黄"
+        },
+        "tier": 0,
+        "search_tags": [
+            "sulfur",
+            "硫黄"
+        ]
+    },
+    "suture_kit": {
+        "name": {
+            "en": "Suture Kit",
+            "ja": "縫合キット"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "10",
+            "bone": "5",
+            "leather": "2"
+        },
+        "search_tags": [
+            "suture kit",
+            "縫合キット",
+            "ほうごうきっと"
+        ]
+    },
+    "taxidermy_knife": {
+        "name": {
+            "en": "Taxidermy Knife",
+            "ja": "剥製用ナイフ"
+        },
+        "tier": 2,
+        "at": "anvil_bench",
+        "from": {
+            "wood": 2,
+            "iron_nail": 2,
+            "iron_ingot": 6,
+            "leather": 4
+        },
+        "search_tags": [
+            "taxidermy knife",
+            "剥製用ナイフ",
+            "はくせいようないふ"
+        ]
+    },
+    "tea": {
+        "name": {
+            "en": "Tea",
+            "ja": "お茶"
+        },
+        "tier": 0,
+        "search_tags": [
+            "tea",
+            "お茶"
+        ]
+    },
+    "textiles_bench": {
+        "name": {
+            "en": "Textiles Bench",
+            "ja": "製衣台"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "fiber": 60,
+            "stick": 20,
+            "wood": 50,
+            "stone": 12
+        },
+        "search_tags": [
+            "textiles bench",
+            "製衣台",
+            "せいいだい"
+        ]
+    },
+    "titanium_axe": {
+        "name": {
+            "en": "Titanium Axe",
+            "ja": "チタニウムの斧"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "wood": 2,
+            "leather": 4,
+            "titanium_ingot": 12
+        },
+        "search_tags": [
+            "titanium axe",
+            "チタニウムの斧"
+        ]
+    },
+    "titanium_hammer": {
+        "name": {
+            "en": "Titanium Hammer",
+            "ja": "チタニウムハンマー"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "carbon_fiber": 4,
+            "steel_screw": 10,
+            "epoxy": 4,
+            "titanium_ingot": 10
+        },
+        "search_tags": [
+            "titanium hammer",
+            "チタニウムハンマー"
+        ]
+    },
+    "titanium_ingot": {
+        "name": {
+            "en": "Titanium Ingot",
+            "ja": "チタニウムインゴット"
+        },
+        "tier": 0,
+        "at": "concrete_furnace",
+        "from": {
+            "titanium_ore": 5
+        },
+        "search_tags": [
+            "titanium ingot",
+            "チタニウムインゴット"
+        ]
+    },
+    "titanium_knife": {
+        "name": {
+            "en": "Titanium Knife",
+            "ja": "チタニウムのナイフ"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "carbon_fiber": 4,
+            "steel_screw": 2,
+            "epoxy": 4,
+            "titanium_ingot": 8
+        },
+        "search_tags": [
+            "titanium knife",
+            "チタニウムのナイフ"
+        ]
+    },
+    "titanium_ore": {
+        "name": {
+            "en": "Titanium Ore",
+            "ja": "チタニウム鉱石"
+        },
+        "tier": 3,
+        "search_tags": [
+            "titanium ore",
+            "チタニウム鉱石"
+        ]
+    },
+    "titanium_pickaxe": {
+        "name": {
+            "en": "Titanium Pickaxe",
+            "ja": "チタニウムのつるはし"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "carbon_fiber": 4,
+            "steel_screw": 8,
+            "epoxy": 4,
+            "titanium_ingot": 12
+        },
+        "search_tags": [
+            "titanium pickaxe",
+            "チタニウムのつるはし"
+        ]
+    },
+    "titanium_sickle": {
+        "name": {
+            "en": "Titanium Sickle",
+            "ja": "チタニウムの鎌"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "carbon_fiber": 4,
+            "steel_screw": 2,
+            "epoxy": 4,
+            "titanium_ingot": 10
+        },
+        "search_tags": [
+            "titanium sickle",
+            "チタニウムの鎌"
+        ]
+    },
+    "tree_sap": {
+        "name": {
+            "en": "Tree Sap",
+            "ja": "樹液"
+        },
+        "tier": 2,
+        "at": "mortar_and_pestle",
+        "from": {
+            "stick": 4
+        },
+        "search_tags": [
+            "tree sap",
+            "樹液"
+        ]
+    },
+    "trophy_bench": {
+        "name": {
+            "en": "Trophy Bench",
+            "ja": "トロフィー台"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "wood": 60,
+            "copper_nail": 50,
+            "iron_ingot": 2,
+            "rope": 12
+        },
+        "search_tags": [
+            "trophy bench",
+            "トロフィー台",
+            "とろふぃーだい"
+        ]
+    },
+    "water_bomb": {
+        "name": {
+            "en": "Water Bomb",
+            "ja": "水爆弾"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "leather": "5",
+            "fiber": "15"
+        },
+        "search_tags": [
+            "water bomb",
+            "水爆弾",
+            "みずばくだん"
+        ]
+    },
+    "water_pipe_tool": {
+        "name": {
+            "en": "Water Pipe Tool",
+            "ja": "水道管ツール"
+        },
+        "tier": 4,
+        "at": "fabricator",
+        "from": {
+            "copper_ingot": 20,
+            "refined_gold": 8,
+            "carbon_fiber": 4
+        },
+        "search_tags": [
+            "water pipe tool",
+            "水道管ツール"
+        ]
+    },
+    "water_trough": {
+        "name": {
+            "en": "Water Trough",
+            "ja": "ウォータートラフ"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "wood": "60",
+            "stick": "8",
+            "iron_nail": "16"
+        },
+        "search_tags": [
+            "water trough",
+            "ウォータートラフ",
+            "うぉーたーとらふ"
+        ]
+    },
+    "watering_can": {
+        "name": {
+            "en": "Watering Can",
+            "ja": "じょうろ"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "iron_ingot": "5",
+            "leather": "4",
+            "iron_nail": "2"
+        },
+        "search_tags": [
+            "watering can",
+            "じょうろ"
+        ]
+    },
+    "watermelon": {
+        "name": {
+            "en": "Watermelon",
+            "ja": "スイカ"
+        },
+        "tier": 0,
+        "search_tags": [
+            "watermelon",
+            "スイカ",
+            "すいか"
+        ]
+    },
+    "waterskin": {
+        "name": {
+            "en": "Waterskin",
+            "ja": "水袋"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "fiber": "10",
+            "leather": "12",
+            "bone": "4"
+        },
+        "search_tags": [
+            "waterskin",
+            "水袋",
+            "みずぶくろ"
+        ]
+    },
+    "wheat": {
+        "name": {
+            "en": "Wheat",
+            "ja": "小麦"
+        },
+        "tier": 0,
+        "search_tags": [
+            "wheat",
+            "小麦"
+        ]
+    },
+    "wild_berry": {
+        "name": {
+            "en": "Wild Berry",
+            "ja": "ワイルドベリー"
+        },
+        "tier": 0,
+        "search_tags": [
+            "wild berry",
+            "ワイルドベリー"
+        ]
+    },
+    "wood": {
+        "name": {
+            "en": "Wood",
+            "ja": "木材"
+        },
+        "tier": 0,
+        "search_tags": [
+            "wood",
+            "木材"
+        ]
+    },
+    "wood_bow": {
+        "name": {
+            "en": "Wood Bow",
+            "ja": "木の弓"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "30",
+            "stick": "24"
+        },
+        "search_tags": [
+            "wood bow",
+            "木の弓",
+            "きのゆみ"
+        ]
+    },
+    "wood_composter": {
+        "name": {
+            "en": "Wood Composter",
+            "ja": "木材用コンポスター"
+        },
+        "tier": 2,
+        "at": "crafting_bench",
+        "from": {
+            "wood": 25,
+            "stone": 10,
+            "spoiled_plants": 5,
+            "sulfur": 5
+        },
+        "search_tags": [
+            "wood composter",
+            "木材用コンポスター",
+            "もくざいようこんぽすたー"
+        ]
+    },
+    "wood_crop_plot": {
+        "name": {
+            "en": "Wood Crop Plot",
+            "ja": "木製作物畑"
+        },
+        "tier": "2",
+        "at": "crafting_bench",
+        "from": {
+            "wood": "8",
+            "sulfur": "10"
+        },
+        "search_tags": [
+            "wood crop plot",
+            "木製作物畑",
+            "もくせいさくもつばたけ"
+        ]
+    },
+    "wood_hammer": {
+        "name": {
+            "en": "Wood Hammer",
+            "ja": "木のハンマー"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "10",
+            "stick": "4",
+            "stone": "6"
+        },
+        "search_tags": [
+            "wood hammer",
+            "木のハンマー",
+            "きのはんまー"
+        ]
+    },
+    "wood_pile": {
+        "name": {
+            "en": "Wood Pile",
+            "ja": "木の山"
+        },
+        "tier": "1",
+        "from": {
+            "wood": "100"
+        },
+        "search_tags": [
+            "wood pile",
+            "木の山",
+            "きのやま"
+        ]
+    },
+    "wood_rag_torch": {
+        "name": {
+            "en": "Wood Rag Torch",
+            "ja": "ウッドラグトーチ"
+        },
+        "tier": 1,
+        "from": {
+            "fiber": 40,
+            "stick": 8
+        },
+        "search_tags": [
+            "wood rag torch",
+            "ウッドラグトーチ",
+            "うっどらぐとーち"
+        ]
+    },
+    "wood_shield": {
+        "name": {
+            "en": "Wood Shield",
+            "ja": "木製盾"
+        },
+        "tier": "2",
+        "at": "anvil_bench",
+        "from": {
+            "wood": "15",
+            "fiber": "20",
+            "leather": "5",
+            "iron_ingot": "3"
+        },
+        "search_tags": [
+            "wood shield",
+            "木製盾",
+            "もくせいたて"
+        ]
+    },
+    "wood_spear": {
+        "name": {
+            "en": "Wood Spear",
+            "ja": "木の槍"
+        },
+        "tier": "1",
+        "from": {
+            "fiber": "12",
+            "stick": "18"
+        },
+        "search_tags": [
+            "wood spear",
+            "木の槍",
+            "きのやり"
+        ]
+    },
+    "wood_torch": {
+        "name": {
+            "en": "Wood Torch",
+            "ja": "木のトーチ"
+        },
+        "tier": 1,
+        "from": {
+            "fiber": 40,
+            "stick": 8,
+            "sulfur": 8
+        },
+        "search_tags": [
+            "wood torch",
+            "木のトーチ",
+            "きのとーち"
+        ]
+    },
+    "wooden_shovel": {
+        "name": {
+            "en": "Wooden Shovel",
+            "ja": "木製シャベル"
+        },
+        "tier": "1",
+        "from": {
+            "wood": "15",
+            "stick": "10",
+            "fiber": "15"
+        },
+        "search_tags": [
+            "wooden shovel",
+            "木製シャベル",
+            "もくせいしゃべる"
+        ]
+    },
+    "yeast": {
+        "name": {
+            "en": "Yeast",
+            "ja": "酵母"
+        },
+        "tier": 0,
+        "search_tags": [
+            "yeast",
+            "酵母",
+            "こうぼ"
+        ]
+    }
+}
