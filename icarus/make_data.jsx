@@ -112,7 +112,7 @@ const App = () => {
                 "tier": 0,
                 "at": "",
                 "craft_unit": 1,
-                "from": [],
+                "from": [["", 1]],
                 "search_tags": []
             }
         }
@@ -278,7 +278,7 @@ const DataCard = ({ id, item, updateItem, isError }) => {
         let newFrom = item["from"].map(([item_id, item_count]) => [item_id, item_count]);
         newFrom[index][col] = value;
         // 一番下の行のidが変更されたら、新しい行を追加する
-        if (col === 1 && item["from"].length <= index+1) {
+        if (col === 0 && item["from"].length <= index+1) {
             newFrom.push(["", 1]);
         }
         _updateItem("from", newFrom);
