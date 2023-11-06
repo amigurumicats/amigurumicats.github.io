@@ -1,37 +1,15 @@
 /*
 TODO
-    - 言語切り替え
-    - ツリーにat表示？
-        - 表示だけなら簡単だが、チェックの同期がめんどくさい
-        - 1回だけ頑張ってatのリストを作り、そのリストをContextなりPropなりで渡す？
-        - そもそもチェックの同期をしない？
-        - う〜ん、なんかあんまりいい表示方法が思いつかない
-            - 素材リストの一番上でも下でもあんまりしっくりこない
-    - 次に必要な素材 or まだ足りてない素材の一覧？
-    - 種別アイコン？
-        - 採取素材、武器・道具、設備、家具・壁、中間生成物、薬・料理
-    - データ追加、データ修正
+- タブ追加
+    - 根だけ表示
+    - ツリー表示(今のやつ)
+    - 葉だけ表示
 
 */
 
 "use strict";
 
-const { createContext, useContext, useState, useEffect } = React
-
-
-// データチェック
-for (const [id, d] of Object.entries(data)) {
-    if (!("tier" in d)) { console.log(`${id}: invalid tier`); }
-    if (!d["name"]["en"] || !d["name"]["ja"]) { console.log(`${id}: invalid name`); }
-    if (d["at"] && !(d["at"] in data)) { console.log(`${id}: invalid at`); }
-    if (d["from"]) {
-        for (const [from_id, count] of Object.entries(d["from"])) {
-            if (!(from_id in data) || count < 1) {
-                console.log(`${id}: invalid from: ${from_id}`);
-            }
-        }
-    }
-};
+const { createContext, useContext, useState, useEffect } = React;
 
 
 // util
@@ -42,7 +20,7 @@ const union_set = (set_a, set_b) => {
 }
 
 
-const calc_resources = (item_id, num) => {
+const calc_resources = (data, item_id, num) => {
     /*
     Args:
         item_id: string
@@ -79,7 +57,7 @@ const calc_resources = (item_id, num) => {
 
     for (const [from_id, from_num] of Object.entries(item["from"])) {
         const n = ("craft_unit" in item) ? Math.ceil(from_num * num / item["craft_unit"]) : from_num * num;
-        const[from_res, from_at] = calc_resources(from_id, n);
+        const[from_res, from_at] = calc_resources(data, from_id, n);
         res["from"][from_id] = from_res;
         at = union_set(at, from_at);
     }
@@ -93,7 +71,7 @@ const calc_resources = (item_id, num) => {
 }
 
 
-const make_require = (todo) => {
+const make_require = (data, todo) => {
     /*
     Args:
         todo: {
@@ -113,7 +91,7 @@ const make_require = (todo) => {
     let now_ats = new Set();
 
     for (const [item_id, item_num] of Object.entries(todo)) {
-        const [item_res, item_at] = calc_resources(item_id, item_num);
+        const [item_res, item_at] = calc_resources(data, item_id, item_num);
         res[item_id] = item_res;
         now_ats = union_set(now_ats, item_at);
     }
@@ -122,7 +100,7 @@ const make_require = (todo) => {
         let next_ats = new Set();
         for (const now_at of now_ats.keys()) {
             if (now_at in res) continue;
-            const [res_at, new_at] = calc_resources(now_at, 1);
+            const [res_at, new_at] = calc_resources(data, now_at, 1);
             res[now_at] = res_at;
             next_ats = union_set(next_ats, new_at);
         }
@@ -135,36 +113,57 @@ const make_require = (todo) => {
 
 
 
+const langContext = createContext();
+const dataContext = createContext();
+
 const App = () => {
 
-    const [isShowModal, setIsShowModal] = useState(false);
-    const [todo, setTodo] = useState({});
+    const [lang, setLang] = useState("ja");  // {"ja", "en"}
+    const [data, setData] = useState({});
 
+    const [todo, setTodo] = useState({});
     const [resource, setResource] = useState({});
+    const [isShowModal, setIsShowModal] = useState(false);
 
     useEffect(() => {
-        setResource(make_require(todo));
-    }, [todo]);
+        // データ取得
+        fetch("assets/data.json")
+            .then((resp) => resp.json())
+            .then((resp_json) => {
+                setData(resp_json);
+            })
+    }, []);
+
+    const _setTodo = (newTodo) => {
+        setResource(make_require(data, newTodo));
+        setTodo(newTodo);
+    }
 
     return (
-        <>
-            <div id="header">
-                <div className="header_text">ICARUS resource calculator</div>
-                <button className="edit_todo" onClick={() => setIsShowModal(true)}></button>
-            </div>
-            <Modal isShow={isShowModal} setIsShow={setIsShowModal} todo={todo} setTodo={setTodo} />
-            <ResourceTree resource={resource} setResource={setResource} />
-            <div className="buffer"></div>
-        </>
+        <dataContext.Provider value={data}>
+            <langContext.Provider value={lang}>
+                <div id="header">
+                    <div className="header_text">ICARUS resource calculator</div>
+                    <button className="edit_todo" onClick={() => setIsShowModal(true)}></button>
+                    <select className="select_lang" value={lang} onChange={(e) => setLang(e.target.value)}>
+                        <option value="ja">ja</option>
+                        <option value="en">en</option>
+                    </select>
+                </div>
+                <Modal isShow={isShowModal} setIsShow={setIsShowModal} todo={todo} setTodo={_setTodo} />
+                <ResourceTree resource={resource} setResource={setResource} />
+                <div className="buffer"></div>
+            </langContext.Provider>
+        </dataContext.Provider>
     )
 }
 
 const Modal = ({ isShow, setIsShow, todo, setTodo }) => {
     /*
     todoリストを編集するモーダル
-
-    TODO: リスト2つのデザイン(素材アイコンを消すので)
     */
+    const data = useContext(dataContext);
+
     // モーダルを閉じたときに反映されるようにする
     const [nowtodo, setNowtodo] = useState(todo);
     const [searchtier, setSearchtier] = useState(-1);
@@ -194,7 +193,7 @@ const Modal = ({ isShow, setIsShow, todo, setTodo }) => {
         showItems = showItems.filter((id) => data[id]["tier"] === searchtier);
     }
     if (searchtext) {
-        showItems = showItems.filter((id) => id.includes(searchtext) || data[id]["name"]["en"].includes(searchtext) || data[id]["name"]["ja"].includes(searchtext));
+        showItems = showItems.filter((id) => data[id]["search_tags"].some((tag) => tag.includes(searchtext)));
     }
 
     if (!isShow) return;
@@ -251,13 +250,13 @@ const ItemSelectedTile = ({ item_id, count, updateCount, deleteItem }) => {
     モーダル中一番上のtodoリストに反映されるべきアイテム
     アイテムの必要個数を変えたり、削除したりできる
     */
+    const data = useContext(dataContext);
+    const lang = useContext(langContext);
 
     const item = data[item_id];
 
     const [prev_local_count, setPrevLocalCount] = useState(count);
     const [local_text, setLocalText] = useState(count);
-
-    // const onChange = (e) => { setLocalText(e.target.value); }
 
     const onBlur = () => {
         // 入力終了時の処理
@@ -279,9 +278,9 @@ const ItemSelectedTile = ({ item_id, count, updateCount, deleteItem }) => {
 
     return (
         <div className={`item_selected_tile tier${item["tier"]}`}>
-            <div className="item_text">{item["name"]["ja"]}</div>
+            <div className="item_text">{item["name"][lang]}</div>
             <button className="dec" onClick={() => _updateCount(Math.max(0, count-1))}></button>
-            <input type="text" value={local_text} onChange={(e) => { setLocalText(e.target.value) }} onBlur={() => onBlur()}></input>
+            <input type="text" value={local_text} onChange={(e) => { setLocalText(e.target.value) }} onBlur={onBlur}></input>
             <button className="inc" onClick={() => _updateCount(count + 1)}></button>
             <button className="delete_item" onClick={deleteItem}></button>
         </div>
@@ -293,6 +292,9 @@ const ItemSelectTile = ({ item_id, onClick }) => {
     モーダル中下のアイテム一覧表示
     これをクリックするとtodoにアイテムが追加される
     */
+    const data = useContext(dataContext);
+    const lang = useContext(langContext);
+
     const item = data[item_id];
 
     const [isShowTooltip, setIsShowTooltip] = useState(false);
@@ -304,7 +306,7 @@ const ItemSelectTile = ({ item_id, onClick }) => {
             onMouseEnter={() => setIsShowTooltip(true)}
             onMouseLeave={() => setIsShowTooltip(false)}
         >
-            {item["name"]["ja"]}
+            {item["name"][lang]}
             {isShowTooltip && <ToolTip item_id={item_id} />}
         </div>
     )
@@ -331,6 +333,8 @@ const ResourceTree = ({ resource, setResource }) => {
 }
 
 const ResourceNode = ({ node, onCheckFrom }) => {
+
+    const lang = useContext(langContext);
 
     const onCheck = () => {
         let new_resource = Object.assign({}, node);
@@ -359,7 +363,7 @@ const ResourceNode = ({ node, onCheckFrom }) => {
                         onMouseLeave={() => setIsShowTooltip(false)}
                     >
                         <div className="tree_node_text">
-                            {node["name"]["ja"]}
+                            {node["name"][lang]}
                         </div>
                         <div className="tree_node_count">
                             {node["count"]}
@@ -382,7 +386,7 @@ const ResourceNode = ({ node, onCheckFrom }) => {
                     onMouseLeave={() => setIsShowTooltip(false)}
                 >
                     <div className="tree_node_text">
-                        {node["name"]["ja"]}
+                        {node["name"][lang]}
                     </div>
                     <div className="tree_node_count">
                         {node["count"]}
@@ -396,6 +400,8 @@ const ResourceNode = ({ node, onCheckFrom }) => {
 }
 
 const ToolTip = ({ item_id }) => {
+    const data = useContext(dataContext);
+    const lang = useContext(langContext);
 
     if (!item_id || !data[item_id]) return null
     const item = data[item_id];
@@ -404,7 +410,7 @@ const ToolTip = ({ item_id }) => {
         if (!item["at"]) return null
         const at_id = item["at"];
         if (!data[at_id]) return null
-        return (<div className="tooltip_text">At: {data[at_id]["name"]["en"]} / {data[at_id]["name"]["ja"]}</div>)
+        return (<div className="tooltip_text">At: {data[at_id]["name"][lang]}</div>)
     })();
 
     const from_jsx = (() => {
@@ -414,14 +420,14 @@ const ToolTip = ({ item_id }) => {
             <>
                 <hr />
                 From:
-                {Object.entries(item["from"]).map(([from_id, count]) => <div className="tooltip_text" key={`from_${from_id}`}>{data[from_id]["name"]["en"]} / {data[from_id]["name"]["ja"]} : {count}</div>)}
+                {Object.entries(item["from"]).map(([from_id, count]) => <div className="tooltip_text" key={`from_${from_id}`}>{data[from_id]["name"][lang]} : {count}</div>)}
             </>
         )
     })();
 
     return (
         <div className="tooltip">
-            <div className="tooltip_text">{item["name"]["en"]} / {item["name"]["ja"]}</div>
+            <div className="tooltip_text">{item["name"][lang]}</div>
             <div className="tooltip_text">Tier: {item["tier"]}</div>
             {at_jsx}
             {from_jsx}

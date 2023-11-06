@@ -30,6 +30,9 @@ body {
   font-size: 20px;
   font-family: "Material Icons";
 }
+#header .select_lang {
+  margin-left: 16px;
+}
 
 #modal_overlay {
   position: fixed;
