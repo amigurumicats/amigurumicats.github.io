@@ -4272,7 +4272,7 @@
             "en": "Titanium Ingot",
             "ja": "チタニウムインゴット"
         },
-        "tier": 0,
+        "tier": 3,
         "at": "concrete_furnace",
         "from": {
             "titanium_ore": 5
@@ -4307,7 +4307,7 @@
             "en": "Titanium Ore",
             "ja": "チタニウム鉱石"
         },
-        "tier": 3,
+        "tier": 0,
         "search_tags": [
             "titanium ore",
             "チタニウム鉱石",
